@@ -12,39 +12,39 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = DP_BUJ0034
-build_property.ProjectDir = C:\Users\ValMe\source\repos\DP_BUJ0034\DP_BUJ0034\
+build_property.ProjectDir = C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/App.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/AppShell.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/Board.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/Board.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.Board.xaml
 build_metadata.AdditionalFiles.TargetPath = Board.xaml
 build_metadata.AdditionalFiles.RelativePath = Board.xaml
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/MainPage.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/Resources/Styles/Colors.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/ValMe/source/repos/DP_BUJ0034/DP_BUJ0034/Resources/Styles/Styles.xaml]
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
