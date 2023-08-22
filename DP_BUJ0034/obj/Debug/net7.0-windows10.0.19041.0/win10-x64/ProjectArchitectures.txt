@@ -1,1 +1,1 @@
-C:\Users\ValMe\source\repos\DP_BUJ0034\DP_BUJ0034\DP_BUJ0034.csproj;x64
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\DP_BUJ0034.csproj;x64

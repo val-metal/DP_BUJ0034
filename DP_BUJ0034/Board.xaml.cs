@@ -4,6 +4,7 @@ using DP_BUJ0034.Engine;
 using Microsoft.Maui.Graphics;
 
 
+
 namespace DP_BUJ0034;
 
 public partial class Board : ContentPage
@@ -15,18 +16,29 @@ public partial class Board : ContentPage
         
         playFrame = new PlayFrame(this.Resources["drawablee"] as Drawable,1);
         //canvas.Drawable=
-        canvas.Invalidate();
+       idn();
 
 
     }
-
-    private void goBackPop(object sender, EventArgs e)
+    private async void idn()
     {
+        await Task.Delay(150);
+        canvas.Invalidate();
         Drawable neco = this.Resources["drawablee"] as Drawable;
         playFrame.drawable = neco;
         playFrame.play(neco.height, neco.width);
         canvas.Drawable = playFrame.drawable;
         canvas.Invalidate();
+
+    }
+
+    private void goBackPop(object sender, EventArgs e)
+    {
+        
+
+    }
+    private async void Page_Loaded(object sender, EventArgs e)
+    {
         
     }
 

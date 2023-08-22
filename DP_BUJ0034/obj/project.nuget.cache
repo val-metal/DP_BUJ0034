@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dLeUWifG4wWFuCU9RqPRZOHIkx7YH26jRcTOtUlcprosTxcLCSp4GKn7nHq3YO9ficv7qmbwsHcqEgLBbdK/aw==",
+  "dgSpecHash": "hvbRBkwqFTjSH1OunlyeLBRdjXLRKeGUcq6nUxFW3ZPVyg2PDsYcvEdsVAhTR+ET0lT9umMu3G/m27pKfxA7+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ValMe\\source\\repos\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
+  "projectFilePath": "C:\\Users\\ValMe\\Documents\\GitHub\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ValMe\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:drawables="clr-namespace:DP_BUJ0034.Drawables"
              x:Class="DP_BUJ0034.Board"
-             Title="Board">
+             Title="Board"
+             >
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>

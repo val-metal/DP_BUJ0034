@@ -24019,11 +24019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ValMe\\source\\repos\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
+      "projectUniqueName": "C:\\Users\\ValMe\\Documents\\GitHub\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
       "projectName": "DP_BUJ0034",
-      "projectPath": "C:\\Users\\ValMe\\source\\repos\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
+      "projectPath": "C:\\Users\\ValMe\\Documents\\GitHub\\DP_BUJ0034\\DP_BUJ0034\\DP_BUJ0034.csproj",
       "packagesPath": "C:\\Users\\ValMe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ValMe\\source\\repos\\DP_BUJ0034\\DP_BUJ0034\\obj\\",
+      "outputPath": "C:\\Users\\ValMe\\Documents\\GitHub\\DP_BUJ0034\\DP_BUJ0034\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

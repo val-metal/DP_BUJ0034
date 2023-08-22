@@ -15,10 +15,7 @@ namespace DP_BUJ0034.Engine
                
         public PlayFrame(Drawable drawable,int num_path) { 
             this.drawable = drawable;
-            this.gameBoard =new GameBoard(drawable.height,drawable.width,num_path);
-            
-            drawable.gameBoard = gameBoard;
-            
+            this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path);
 
         }
         public void play(float height ,float width)
