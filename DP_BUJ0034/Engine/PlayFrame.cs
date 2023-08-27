@@ -20,7 +20,10 @@ namespace DP_BUJ0034.Engine
         }
         public void play(float height ,float width)
         {
-            gameBoard.generate_paths(height,width);
+            for (int i = 0; i < gameBoard.num_paths; i++)
+            {
+                gameBoard.generate_paths(height, width,i);
+            }
             drawable.gameBoard = gameBoard;
         }
     }

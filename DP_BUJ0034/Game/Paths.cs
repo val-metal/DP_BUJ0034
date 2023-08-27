@@ -13,11 +13,13 @@ namespace DP_BUJ0034.Game
         public List<(Dots, Dots)> controldots;
         //Pro QuadroTo
         public List<Dots> controldot;
+        public List<float> angels;
 
         public Paths(){ 
             this.dot = new List<Dots>();
             this .controldots = new List<(Dots, Dots)>();
             this.controldot = new List<Dots>();
+            this.angels = new List<float>();
         }
 
     }

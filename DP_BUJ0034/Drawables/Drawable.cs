@@ -24,15 +24,23 @@ namespace DP_BUJ0034.Drawables
             {
                 DrawBorder(canvas, dirtyRect);
                 DrawStardEnd(canvas);
-                //Modrá
-                //DrawCurveTo(canvas);
-                //Červená
-                DrawQuadTo(canvas);
-                //Zelená
-                DrawLineTo(canvas);
                 
+                for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++)
+                {
+                    DrawDots(canvas, currentPath);
+                    //Modrá
+                    //DrawCurveTo(canvas,currentPath);
+                    //Červená
+                    DrawQuadTo(canvas, currentPath);
+                    //Zelená
+                    DrawLineTo(canvas, currentPath);
+                    
+                }
+
+
+
             }
-            
+
         }
         public void DrawBorder(ICanvas canvas, RectF dirtyRect)
         {
@@ -57,16 +65,28 @@ namespace DP_BUJ0034.Drawables
             canvas.StrokeSize = 4;
             canvas.DrawCircle(gameBoard.end.x, gameBoard.end.y, 5);
         }
-        public void DrawCurveTo(ICanvas canvas)
+        public void DrawDots(ICanvas canvas, int currentPath)
+        {
+            for(int i = 0;i< gameBoard.path[currentPath].dot.Count-1;i++)
+            {
+                canvas.StrokeColor = Colors.Red;
+                canvas.StrokeSize = 1;
+                canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, i*2);
+            }
+            
+            
+            
+        }
+        public void DrawCurveTo(ICanvas canvas, int currentPath)
         {
             PathF path_draw_Curve = new PathF();
             path_draw_Curve.MoveTo(gameBoard.start.x, gameBoard.start.y);
 
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[0].dot.Count, "OK");
-            for (int i = 0; i < gameBoard.path[0].controldots.Count; i++)
+            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
+            for (int i = 0; i < gameBoard.path[currentPath].controldots.Count; i++)
             {
-                path_draw_Curve.CurveTo(gameBoard.path[0].controldots[i].Item1.x, gameBoard.path[0].controldots[i].Item1.y, gameBoard.path[0].controldots[i].Item2.x, gameBoard.path[0].controldots[i].Item2.y, gameBoard.path[0].dot[i].x, gameBoard.path[0].dot[i].y);
-                //path_draw.QuadTo(gameBoard.controldot[i].x, gameBoard.controldot[i].y, gameBoard.path[0].dot[i].x, gameBoard.path[0].dot[i].y);
+                path_draw_Curve.CurveTo(gameBoard.path[currentPath].controldots[i].Item1.x, gameBoard.path[currentPath].controldots[i].Item1.y, gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
+                //path_draw.QuadTo(gameBoard.controldot[i].x, gameBoard.controldot[i].y, gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
             }
             canvas.StrokeColor = Colors.Blue;
             canvas.StrokeSize = 4;
@@ -74,45 +94,46 @@ namespace DP_BUJ0034.Drawables
             canvas.DrawPath(path_draw_Curve);
         }
 
-        public void DrawQuadTo(ICanvas canvas)
+        public void DrawQuadTo(ICanvas canvas, int currentPath)
         {
+
             PathF path_draw = new PathF();
             path_draw.MoveTo(gameBoard.start.x, gameBoard.start.y);
 
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[0].dot.Count, "OK");
-            for (int i = 0; i < gameBoard.path[0].controldot.Count; i++)
+            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
+            for (int i = 0; i < gameBoard.path[currentPath].controldot.Count; i++)
             {
-                //path_draw.CurveTo(gameBoard.controldots[i].Item1.x, gameBoard.controldots[i].Item1.y, gameBoard.controldots[i].Item2.x, gameBoard.controldots[i].Item2.y, gameBoard.path[0].dot[i].x, gameBoard.path[0].dot[i].y);
-                path_draw.QuadTo(gameBoard.path[0].controldot[i].x, gameBoard.path[0].controldot[i].y, gameBoard.path[0].dot[i + 1].x, gameBoard.path[0].dot[i + 1].y);
+                //path_draw.CurveTo(gameBoard.controldots[i].Item1.x, gameBoard.controldots[i].Item1.y, gameBoard.controldots[i].Item2.x, gameBoard.controldots[i].Item2.y, gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
+                path_draw.QuadTo(gameBoard.path[currentPath].controldot[i].x, gameBoard.path[currentPath].controldot[i].y, gameBoard.path[currentPath].dot[i + 1].x, gameBoard.path[currentPath].dot[i + 1].y);
             }
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 2;
             canvas.StrokeLineJoin = LineJoin.Round;
             canvas.DrawPath(path_draw);
         }
-        /*public void DrawQuadTo(ICanvas canvas)
+        /*public void DrawQuadTo(ICanvas canvas, int currentPath)
         {
             PathF path_draw = new PathF();
             path_draw.MoveTo(gameBoard.start.x, gameBoard.start.y);
 
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[0].dot.Count, "OK");
-            for (int i = 0; i < gameBoard.path[0].controldot.Count; i++)
+            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
+            for (int i = 0; i < gameBoard.path[currentPath].controldot.Count; i++)
             {
-                //path_draw.CurveTo(gameBoard.controldots[i].Item1.x, gameBoard.controldots[i].Item1.y, gameBoard.controldots[i].Item2.x, gameBoard.controldots[i].Item2.y, gameBoard.path[0].dot[i].x, gameBoard.path[0].dot[i].y);
-                path_draw.QuadTo(gameBoard.path[0].controldot[i].x, gameBoard.path[0].controldot[i].y, gameBoard.path[0].dot[i + 1].x, gameBoard.path[0].dot[i + 1].y);
+                //path_draw.CurveTo(gameBoard.controldots[i].Item1.x, gameBoard.controldots[i].Item1.y, gameBoard.controldots[i].Item2.x, gameBoard.controldots[i].Item2.y, gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
+                path_draw.QuadTo(gameBoard.path[currentPath].controldot[i].x, gameBoard.path[currentPath].controldot[i].y, gameBoard.path[currentPath].dot[i + 1].x, gameBoard.path[currentPath].dot[i + 1].y);
             }
             canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 2;
             canvas.StrokeLineJoin = LineJoin.Round;
             canvas.DrawPath(path_draw);
         }*/
-        public void DrawLineTo(ICanvas canvas)
+        public void DrawLineTo(ICanvas canvas, int currentPath)
         {
             PathF path_draw_without_bezier = new PathF();
             path_draw_without_bezier.MoveTo(gameBoard.start.x, gameBoard.start.y);
-            for (int i = 0; i < gameBoard.path[0].dot.Count; i++)
+            for (int i = 0; i < gameBoard.path[currentPath].dot.Count; i++)
             {
-                path_draw_without_bezier.LineTo(gameBoard.path[0].dot[i].x, gameBoard.path[0].dot[i].y);
+                path_draw_without_bezier.LineTo(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
 
             }
             canvas.StrokeColor = Colors.Green;
@@ -120,6 +141,6 @@ namespace DP_BUJ0034.Drawables
             canvas.StrokeLineJoin = LineJoin.Round;
             canvas.DrawPath(path_draw_without_bezier);
         }
-        
+
     }
 }
