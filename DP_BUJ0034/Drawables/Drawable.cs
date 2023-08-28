@@ -69,9 +69,9 @@ namespace DP_BUJ0034.Drawables
         {
             for(int i = 0;i< gameBoard.path[currentPath].dot.Count-1;i++)
             {
-                canvas.StrokeColor = Colors.Red;
+                canvas.StrokeColor = Colors.Blue;
                 canvas.StrokeSize = 1;
-                canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, i*2);
+                canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y,2);
             }
             
             

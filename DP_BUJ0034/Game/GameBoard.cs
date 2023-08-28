@@ -37,16 +37,25 @@ namespace DP_BUJ0034.Game
             start = new Points(true, false, height / 8, width / 8*4);
             end = new Points(false, true, height / 9 *8, width / 9 *5);
 
-            Generate_dots1(start, end,currentPath);
+            Generate_dots(start, end,currentPath);
 
-            for (int j = 0; j < path[currentPath].dot.Count - 2; j++)
+            /* for (int j = 0; j < path[currentPath].dot.Count - 2; j++)
+             {
+                 CalculateAngels(path[currentPath].dot[j], path[currentPath].dot[j + 1], path[currentPath].dot[j + 2],currentPath);
+
+             }
+             path[currentPath].angels.Add(180);*/
+            bool positive = false;
+            for (int i = 0; i < path[currentPath].dot.Count - 2; i++)
             {
-                CalculateAngels(path[currentPath].dot[j], path[currentPath].dot[j + 1], path[currentPath].dot[j + 2],currentPath);
+                Random random = new Random();
+                float randomDistance = 0;
 
+                randomDistance = (float)random.NextDouble() * 60 + 20;
+
+                CalculateBezier_Point1(path[currentPath].dot[i], path[currentPath].dot[i + 1], path[currentPath].dot[i + 2], randomDistance, currentPath,i,positive);
             }
-            path[currentPath].angels.Add(180);
-
-            vyhlazeni(currentPath);
+            //vyhlazeni(currentPath);
             
             
 
@@ -111,7 +120,7 @@ namespace DP_BUJ0034.Game
                     positive = true;
                 }
                 */
-                CalculateBezier_Point1(path[currentPath].dot[i], path[currentPath].dot[i + 1], randomDistance, currentPath);
+                //CalculateBezier_Point1(path[currentPath].dot[i], path[currentPath].dot[i + 1], randomDistance, currentPath, i);
             }
         }
 
@@ -141,6 +150,22 @@ namespace DP_BUJ0034.Game
                 float newY = path[currentPath].dot.Last().y + (float)(vyska * Math.Sin(angle));
 
                 path[currentPath].dot.Add(new Dots(newX, newY));
+                /*if (x > 1)
+                {
+                    float angel = CalculateAngel(path[currentPath].dot[x - 2], path[currentPath].dot[x - 1], path[currentPath].dot[x]);
+                    if (angel < 90 || angel >270)
+                    {
+                       float centerx = (path[currentPath].dot[x-1].x + path[currentPath].dot[x].x) / 2;
+                       float centery = (path[currentPath].dot[x-1].y + path[currentPath].dot[x].y) / 2;
+                       path[currentPath].dot.Insert(x+1, new Dots(centerx, centery));
+                       //path[currentPath].angels.Insert(x + 1, 180);
+                    }
+                }*/
+
+                
+                
+
+
                 x++;
                /* if (newX == width / 8  || newX == width / 8 * 7 || newY==height/15*14 || newY == height / 15 || x==50)
                 {
@@ -184,8 +209,27 @@ namespace DP_BUJ0034.Game
             }
             path[currentPath].dot.Add(new Dots(end.x, end.y));
         }
-        
-          
+
+        public float CalculateAngel(Dots pointA, Dots pointB, Dots pointC)
+        {
+            float directionABX = pointA.x - pointB.x;
+            float directionABY = pointA.y - pointB.y;
+            float directionBCX = pointC.x - pointB.x;
+            float directionBCY = pointC.y - pointB.y;
+
+            float angleAB = (float)Math.Atan2(directionABY, directionABX);
+            float angleBC = (float)Math.Atan2(directionBCY, directionBCX);
+
+            float angleBetween = angleBC - angleAB;
+            if (angleBetween < 0)
+            {
+                angleBetween += 2 * (float)Math.PI;
+            }
+
+            float angleInDegrees = angleBetween * (180 / (float)Math.PI);
+            return angleInDegrees;
+
+        }
         //Toto používám
         public void CalculateAngels(Dots pointA, Dots pointB, Dots pointC,int currentPath)
         {
@@ -209,8 +253,19 @@ namespace DP_BUJ0034.Game
         }
 
         
-        public void CalculateBezier_Point1(Dots point1, Dots point2, float randomDistance, int currentPath)
+        public void CalculateBezier_Point1(Dots point1, Dots point2, Dots point3,float randomDistance, int currentPath,int i, bool positive)
         {
+            float angel=CalculateAngel(point1, point2, point3);
+            //float angel = CalculateAngel(path[currentPath].dot[x - 2], path[currentPath].dot[x - 1], path[currentPath].dot[x]);
+            /*if (angel < 90 )
+            {
+                float centerx = (point2.x + point3.x) / 2;
+                float centery = (point2.y + point3.y) / 2;
+                
+                //path[currentPath].angels.Insert(x + 1, 180);
+                int searched=path[currentPath].dot.FindIndex(dot=>dot.x==point3.x && dot.y==point3.y);
+                path[currentPath].dot.Insert(searched, new Dots(centerx, centery));
+            }*/
             Dots midPoint = new Dots((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 
             float deltaX = point2.x - point1.x;
@@ -225,11 +280,72 @@ namespace DP_BUJ0034.Game
             perpendicularY /= length;
 
             // Výpočet bodu na kolmici s náhodnou délkou
-            float dx = midPoint.x + randomDistance * perpendicularX;
-            float dy = midPoint.y + randomDistance * perpendicularY;
-            Dots controldot1 = new Dots(dx, dy);
+            float dx1 = midPoint.x + randomDistance * perpendicularX;
+            float dy1 = midPoint.y + randomDistance * perpendicularY;
+            float dx2 = midPoint.x + randomDistance * perpendicularX;
+            float dy2 = midPoint.y + randomDistance * perpendicularY;
+            Dots controldot1 = new Dots(dx1, dy1);
+            Dots controldot2 = new Dots(dx2, dy2);
+            if (i == 0)
+            {
+                float angelRozdil = CalculateAngel(point1, point2, point3);
+                if (angelRozdil > 180)
+                {
+                    path[currentPath].controldot.Add(controldot2);
+                }
+                else
+                {
+                    path[currentPath].controldot.Add(controldot1);
+                }
+                
+            }
+            else
+            {
+                float angelRozdil= CalculateAngel(point1, point2, point3);
+                float angel1 = CalculateAngel(path[currentPath].controldot.Last(), point1, controldot1);
+                float angel2 = CalculateAngel(path[currentPath].controldot.Last(), point1, controldot2);
 
-            path[currentPath].controldot.Add(controldot1);
+
+                /* if (angelRozdil == 180)
+                 {
+                     if (positive == false)
+                     {
+                         path[currentPath].controldot.Add(controldot2);
+                         positive = true;
+                     }
+                     else
+                     {
+                         path[currentPath].controldot.Add(controldot2);
+                         positive=false;
+                     }
+                 }
+                 else  */
+               
+                    if (angel1 >= angelRozdil)
+                    {
+                        path[currentPath].controldot.Add(controldot1);
+                    }
+                    else if( angel2>angelRozdil)
+                    {
+                        path[currentPath].controldot.Add(controldot2);
+                    }
+                
+                /*}
+                else
+                {
+                    if (angel1 > angel2)
+                    {
+                        path[currentPath].controldot.Add(controldot1);
+                    }
+                    else
+                    {
+                        path[currentPath].controldot.Add(controldot2);
+                    }
+                }*/
+                
+            }
+            
+
         }
         
         /*public void CalculateBezier_Point1(Dots point1, Dots point2)
