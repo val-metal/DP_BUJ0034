@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-09-01T18:50:37.344</Modified>
+      <Modified>2023-09-12T19:56:47.943</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-09-01T18:50:36.741</Modified>
+      <Modified>2023-09-12T19:56:47.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\DP_BUJ0034.runtimeconfig.json">
       <PackagePath>DP_BUJ0034.runtimeconfig.json</PackagePath>
-      <Modified>2023-08-21T13:32:54.318</Modified>
+      <Modified>2023-09-11T23:08:12.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\DP_BUJ0034.dll">
       <PackagePath>DP_BUJ0034.dll</PackagePath>
-      <Modified>2023-09-01T18:50:35.482</Modified>
+      <Modified>2023-09-12T19:56:45.805</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DP_BUJ0034.exe</PackagePath>
-      <Modified>2023-09-01T18:50:35.494</Modified>
+      <Modified>2023-09-12T19:56:45.819</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.7\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -849,6 +849,10 @@
       <PackagePath>Microsoft.Maui.Graphics.dll</PackagePath>
       <Modified>2023-04-25T16:33:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.maui.graphics.skia\7.0.86\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.Skia.dll">
+      <PackagePath>Microsoft.Maui.Graphics.Skia.dll</PackagePath>
+      <Modified>2023-04-25T16:34:12.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\7.0.86\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
       <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
       <Modified>2023-04-25T16:34:08.000</Modified>
@@ -909,6 +913,14 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2022-11-08T19:31:22.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp\2.88.2\lib\net6.0\SkiaSharp.dll">
+      <PackagePath>SkiaSharp.dll</PackagePath>
+      <Modified>2022-09-08T12:47:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp.views.winui\2.88.2\lib\net6.0-windows10.0.19041.0\SkiaSharp.Views.Windows.dll">
+      <PackagePath>SkiaSharp.Views.Windows.dll</PackagePath>
+      <Modified>2022-09-08T12:48:06.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.graphics.win2d\1.0.4\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2022-10-04T20:41:34.000</Modified>
@@ -917,9 +929,13 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-11-08T19:31:24.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp.nativeassets.win32\2.88.2\runtimes\win-x64\native\libSkiaSharp.dll">
+      <PackagePath>libSkiaSharp.dll</PackagePath>
+      <Modified>2022-09-08T12:48:32.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\DP_BUJ0034.deps.json">
       <PackagePath>DP_BUJ0034.deps.json</PackagePath>
-      <Modified>2023-09-01T18:50:37.044</Modified>
+      <Modified>2023-09-12T19:56:47.781</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.86\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -967,207 +983,215 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-08-14T13:25:45.153</Modified>
+      <Modified>2023-09-11T20:04:20.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.547</Modified>
+      <Modified>2023-09-11T20:04:20.860</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.563</Modified>
+      <Modified>2023-09-11T20:04:20.880</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.581</Modified>
+      <Modified>2023-09-11T20:04:20.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.610</Modified>
+      <Modified>2023-09-11T20:04:20.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.715</Modified>
+      <Modified>2023-09-11T20:04:21.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.254</Modified>
+      <Modified>2023-09-11T20:04:20.604</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.259</Modified>
+      <Modified>2023-09-11T20:04:20.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.275</Modified>
+      <Modified>2023-09-11T20:04:20.626</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.262</Modified>
+      <Modified>2023-09-11T20:04:20.612</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.266</Modified>
+      <Modified>2023-09-11T20:04:20.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.226</Modified>
+      <Modified>2023-09-11T20:04:20.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.231</Modified>
+      <Modified>2023-09-11T20:04:20.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.250</Modified>
+      <Modified>2023-09-11T20:04:20.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.236</Modified>
+      <Modified>2023-09-11T20:04:20.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.240</Modified>
+      <Modified>2023-09-11T20:04:20.586</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.166</Modified>
+      <Modified>2023-09-11T20:04:20.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.172</Modified>
+      <Modified>2023-09-11T20:04:20.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.177</Modified>
+      <Modified>2023-09-11T20:04:20.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.182</Modified>
+      <Modified>2023-09-11T20:04:20.533</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.191</Modified>
+      <Modified>2023-09-11T20:04:20.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.195</Modified>
+      <Modified>2023-09-11T20:04:20.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.200</Modified>
+      <Modified>2023-09-11T20:04:20.549</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.221</Modified>
+      <Modified>2023-09-11T20:04:20.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.204</Modified>
+      <Modified>2023-09-11T20:04:20.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.209</Modified>
+      <Modified>2023-09-11T20:04:20.556</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.356</Modified>
+      <Modified>2023-09-11T20:04:20.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.363</Modified>
+      <Modified>2023-09-11T20:04:20.696</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.372</Modified>
+      <Modified>2023-09-11T20:04:20.706</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.388</Modified>
+      <Modified>2023-09-11T20:04:20.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.421</Modified>
+      <Modified>2023-09-11T20:04:20.748</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.316</Modified>
+      <Modified>2023-09-11T20:04:20.654</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.321</Modified>
+      <Modified>2023-09-11T20:04:20.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.328</Modified>
+      <Modified>2023-09-11T20:04:20.665</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.336</Modified>
+      <Modified>2023-09-11T20:04:20.671</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.349</Modified>
+      <Modified>2023-09-11T20:04:20.682</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.281</Modified>
+      <Modified>2023-09-11T20:04:20.630</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.286</Modified>
+      <Modified>2023-09-11T20:04:20.634</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.292</Modified>
+      <Modified>2023-09-11T20:04:20.639</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.299</Modified>
+      <Modified>2023-09-11T20:04:20.643</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.309</Modified>
+      <Modified>2023-09-11T20:04:20.650</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.431</Modified>
+      <Modified>2023-09-11T20:04:20.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.443</Modified>
+      <Modified>2023-09-11T20:04:20.766</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.458</Modified>
+      <Modified>2023-09-11T20:04:20.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.477</Modified>
+      <Modified>2023-09-11T20:04:20.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.531</Modified>
+      <Modified>2023-09-11T20:04:20.845</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.209</Modified>
+      <Modified>2023-09-11T20:04:20.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.222</Modified>
+      <Modified>2023-09-11T20:04:20.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.244</Modified>
+      <Modified>2023-09-11T20:04:20.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.276</Modified>
+      <Modified>2023-09-11T20:04:20.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-08-14T13:25:45.358</Modified>
+      <Modified>2023-09-11T20:04:20.614</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass64.scale-100.png">
+      <PackagePath>grass64.scale-100.png</PackagePath>
+      <Modified>2023-09-11T20:00:08.007</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\stone64.scale-100.png">
+      <PackagePath>stone64.scale-100.png</PackagePath>
+      <Modified>2023-09-11T19:53:13.999</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

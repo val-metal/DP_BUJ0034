@@ -155,3 +155,6 @@ gifdecoder.aar
 glide.aar
 GoogleGson.aar
 Xamarin.Google.Crypto.Tink.Android.aar
+SkiaSharp.dll
+Microsoft.Maui.Graphics.Skia.dll
+SkiaSharp.Views.Android.dll

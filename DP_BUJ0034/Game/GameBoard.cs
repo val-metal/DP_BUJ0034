@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace DP_BUJ0034.Game{
 
@@ -30,61 +30,227 @@ namespace DP_BUJ0034.Game{
 
         }
 
-        public void generate_paths(float height, float width, int currentPath){
+        public void generate_paths(float height, float width, int currentPath)
+        {
 
             this.height = width;
             this.width = height;
-            start = new Points(true, false, height / 8, width / 8*4);
-            end = new Points(false, true, height / 9 *8, width / 9 *5);
+            start = new Points(true, false, height / 16 + 15, width / 9 * (float)4.5);
+            end = new Points(false, true, height / 16 * 15, width / 9 * (float)4.5);
 
-            Generate_dots(start, end, currentPath);
-            //Generate_dots1(start, end, currentPath);
+            //Try_smer(start, end, currentPath);
+            Generate_dots1(start, end, currentPath);
 
-            for (int i = 0; i < path[currentPath].dot.Count - 1; i++){
+            for (int i = 0; i < path[currentPath].dot.Count - 1; i++)
+            {
                 Dots point1 = path[currentPath].dot[i];
                 Dots point2 = path[currentPath].dot[i + 1];
 
-                CalculateBezier_Points(point1, point2, i,currentPath);
+                CalculateBezier_Points(point1, point2, i, currentPath);
+            }
+            Generate_dots_for_back_path(currentPath);
+        }
+
+        public void Try_smer(Points start, Points end, int currentPath)
+        {
+            path[currentPath] = new Paths();
+            path[currentPath].dot.Add(new Dots(start.x, start.y));
+            float[] angles = { 0, 45, 90, 135, 180, 225, 270, 315 };
+            for (int i = 0; i < 8; i++)
+            {
+                float newX = path[currentPath].dot.Last().x + (float)(40 * Math.Cos(angles[i]));
+                float newY = path[currentPath].dot.Last().y + (float)(40 * Math.Sin(angles[i]));
+                Dots eventual_dot = new Dots(newX, newY);
+                path[currentPath].dot.Add(eventual_dot);
+            }
+            path[currentPath].dot.Add(new Dots(end.x, end.y));
+        }
+
+        static void ShuffleArray<T>(T[] try_angles)
+        {
+            Random random = new Random();
+            int n = try_angles.Length;
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                int j = random.Next(0, i + 1);
+
+                // Prohodí prvky na pozicích i a j
+                T temp = try_angles[i];
+                try_angles[i] = try_angles[j];
+                try_angles[j] = temp;
+            }
+        }
+        public void Generate_dots_for_back_path(int currentPath)
+        {
+            int distance = 20;
+
+            for (int i = 0; i < path[currentPath].dot.Count; i++)
+            {
+                float dx, dy;
+                float dx_normalized, dy_normalized;
+
+                if (i == 0)
+                {
+                    // Pro první bod použijeme směr vektoru k dalšímu bodu
+                    dx = path[currentPath].dot[i + 1].x - path[currentPath].dot[i].x;
+                    dy = path[currentPath].dot[i + 1].y - path[currentPath].dot[i].y;
+                }
+                else if (i == path[currentPath].dot.Count - 1)
+                {
+                    // Pro poslední bod použijeme směr vektoru od předchozího bodu
+                    dx = path[currentPath].dot[i].x - path[currentPath].dot[i - 1].x;
+                    dy = path[currentPath].dot[i].y - path[currentPath].dot[i - 1].y;
+                }
+                else
+                {
+                    // Pro všechny ostatní body interpolujeme směrový vektor
+                    dx = path[currentPath].dot[i + 1].x - path[currentPath].dot[i - 1].x;
+                    dy = path[currentPath].dot[i + 1].y - path[currentPath].dot[i - 1].y;
+                }
+
+                // Normalizace směrového vektoru
+                float length = (float)Math.Sqrt(dx * dx + dy * dy);
+                dx_normalized = dx / length;
+                dy_normalized = dy / length;
+
+                /*float ang = -MathF.PI / 2;
+                double x_orthogonal = dx_normalized * Math.Cos(ang) - dy_normalized * Math.Sin(ang);
+                double y_orthogonal = dx_normalized * Math.Sin(ang) + dy_normalized * Math.Cos(ang);
+                dx_normalized = (float)x_orthogonal;
+                dy_normalized = (float)y_orthogonal;
+                */
+                // Vytvoření bodu pro zpětnou trasu posunutého kolmo o vzdálenost "distance"
+                float back_x = path[currentPath].dot[i].x - (dy_normalized * distance);
+                float back_y = path[currentPath].dot[i].y + (dx_normalized * distance);
+
+                if (i != path[currentPath].dot.Count - 1)
+                {
+                    var controll = path[currentPath].controldots[i];
+                    float controll1x = controll.Item1.x - (dy_normalized * distance);
+                    float controll1y = controll.Item1.y + (dx_normalized * distance);
+                    float controll2x = controll.Item2.x - (dy_normalized * distance);
+                    float controll2y = controll.Item2.y + (dx_normalized * distance);
+                    path[currentPath].controlbackdot.Add((new Dots(controll1x, controll1y), new Dots(controll2x, controll2y)));
+                }
+                
+
+                // Uložení bodu do back_dot
+                path[currentPath].backdot.Add(new Dots(back_x, back_y));
             }
         }
 
-        public void Generate_dots1(Points start, Points end, int currentPath){
 
+        public void Generate_dots1(Points start, Points end, int currentPath){
+            Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
             path[currentPath] = new Paths();
             path[currentPath].dot.Add(new Dots(start.x, start.y));
             bool lastDot = false;
             int x = 0;
-            while (lastDot != true){
-                Random random = new Random();
-                int randomSmer = (int)(random.NextDouble() * 4);
-                int randomDistancex = (int)(random.NextDouble() * 8 + 10);
-                int randomDistancey = (int)(random.NextDouble() * 8 + 6);
+            Random random = new Random();
+            float[] angles = { 0, 45, 90, 135, 180, 225, 270, 315 };
+            int randomSmer = 0;
+            float angle = 0;
+            while (lastDot != true) {
 
-                //float[] angles = { 0, (float)Math.PI / 4, (float)Math.PI / 2, 3 * (float)Math.PI / 4, (float)Math.PI, -3 * (float)Math.PI / 4, -(float)Math.PI / 2, -(float)Math.PI / 4 };
-                float[] angles = { 0, (float)Math.PI / 4, (float)Math.PI / 2, 3 * (float)Math.PI / 4, (float)Math.PI};
-                
-                float angle = angles[randomSmer];
-                float sirka = width / randomDistancex;
-                float vyska = height / randomDistancey;
 
-                float newX = path[currentPath].dot.Last().x + (float)(sirka * Math.Cos(angle));
-                float newY = path[currentPath].dot.Last().y + (float)(vyska * Math.Sin(angle));
-                
-                x++;
-                if (newX > 0 && newX < width && newY > 0 && newY < height) { path[currentPath].dot.Add(new Dots(newX, newY)); }
-                else{ 
-                    break;
+                float distance = width / 10;
+                float tolerance = 10 * distance / 100;
+                float random_tolerance = (float)random.NextDouble() * (2 * tolerance) - tolerance;
+                float final_distance = distance + random_tolerance;
+                int angels_count = angles.Length;
+
+
+                randomSmer=random.Next(0,angels_count);
+                float newX = path[currentPath].dot.Last().x + (float)(final_distance * Math.Cos(angles[randomSmer]));
+                float newY = path[currentPath].dot.Last().y + (float)(final_distance * Math.Sin(angles[randomSmer]));
+                Dots eventual_dot = new Dots(newX, newY);
+                int count_of_dots = path[currentPath].dot.Count();
+                float is_angel_bad = 90;
+                if (x > 0) {
+                    is_angel_bad = CalculateAngel(path[currentPath].dot[count_of_dots - 2], path[currentPath].dot[count_of_dots - 1], eventual_dot, currentPath);
                 }
-                /*
-                if (newX <= width / 8  || newX >=( width / 8) * 7 || newY>=(height/8)*7 || newY <= height / 8 || x==50){
+                //Pokud je bod v hracím poli a nemá ostrý ůhel (rozuměj 60ˇ)
+                if (newX > width / 16 && newX < width / 16 * 15 && newY > height / 9 && newY < height / 9 * 8 && is_angel_bad >= 60 && is_angel_bad <= 300)
+                {
+                    
+                    path[currentPath].dot.Add(eventual_dot);
+                    randomSmer = (int)(random.Next(0, angels_count));
+                    angle = angles[randomSmer];
+                }
+                //Pokud je bod blízko cíle
+                else if (newX > width / 16 * 14)
+                {
+                    path[currentPath].dot.Add(new Dots(end.x, end.y));
                     lastDot = true;
                 }
-                else{
-                    path[currentPath].dot.Add(new Dots(newX, newY));
+                else
+                {
+                    
+                    if (is_angel_bad >= 300)
+                    {
+                        is_angel_bad = is_angel_bad - 300;
+
+                    }
+                    float[] try_angles;
+                    float try_angle = is_angel_bad;
+                    Dots try_dot = new Dots(0, 0);
+                    if (newX <= width / 16)
+                    {
+                        try_angles = new float[] { 315, 0, 45 };
+                    }
+                    else if (newX >= width / 16 * 15)
+                    {
+                        try_angles = new float[] { 225, 180, 135 };
+                    }
+                    else if (newY <= height / 9)
+                    {
+                        //Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
+                        try_angles = new float[] { 45, 90, 135 };
+                    }
+                    else if(newY >=( height/ 9 * 8))
+                    {
+                       // Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT2222:" + height + " WIDTH" + width, "OK");
+                        try_angles = new float[] { 315, 270, 225 };
+                    }
+                    else { try_angles = angles; }
+                    bool found = false;
+                    ShuffleArray(try_angles);
+                    for (int j = 0; j < try_angles.Length; j++)
+                    {
+                         float try_newX = path[currentPath].dot.Last().x + (float)(final_distance * Math.Cos(try_angles[j]));
+                         float try_newY = path[currentPath].dot.Last().y + (float)(final_distance * Math.Sin(try_angles[j]));
+                        try_dot = new Dots(try_newX, try_newY);
+                        if (x > 0)
+                        {
+                            try_angle = CalculateAngel(path[currentPath].dot[count_of_dots - 2], path[currentPath].dot[count_of_dots - 1], try_dot, currentPath);
+                        }
+
+                        if (try_dot.x > width / 16 && try_dot.x < width / 16 * 15 && try_dot.y > height / 9 && try_dot.y < (height / 9) * 8 && try_angle >= 60 && try_angle <= 300)
+                         {
+                            if (try_dot.x > width / 16 * 14)
+                            {
+                                path[currentPath].dot.Add(new Dots(end.x, end.y));
+                                lastDot = true;
+                            }
+                            found = true;
+                            break;
+                         }
+                    }
+                    if (!lastDot && found)
+                    {
+                        path[currentPath].dot.Add(try_dot);
+                    }
+                    if (!found && x==50)
+                    {
+                        path[currentPath].dot.Add(new Dots(end.x, end.y));
+                        lastDot = true;
+                        //path[currentPath].dot.Remove(path[currentPath].dot[path[currentPath].dot.Count - 1]);
+                    }
                 }
-                */
+                x++;
             }
-            path[currentPath].dot.Add(new Dots(end.x, end.y));
+            
         }
 
         //Funční body pro viditelné testování

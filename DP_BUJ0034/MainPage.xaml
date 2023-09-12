@@ -35,6 +35,23 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
+            <!-- Počet cest StackLayout -->
+            <Label Text="Počet cest" />
+            <StackLayout x:Name="PocetCestStack" Orientation="Horizontal">
+                <!--<Button Text="1" Clicked="PocetCestButtonClicked" />
+                <Button Text="2" Clicked="PocetCestButtonClicked" />
+                <Button Text="3" Clicked="PocetCestButtonClicked" />
+                <Button Text="4" Clicked="PocetCestButtonClicked" />-->
+            </StackLayout>
+
+            <!-- Obtížnost StackLayout -->
+            <Label Text="Obtížnost" />
+            <StackLayout x:Name="ObtiznostStack" Orientation="Horizontal">
+                <!--<Button Text="Lehká" Clicked="ObtiznostButtonClicked" />
+                <Button Text="Střední" Clicked="ObtiznostButtonClicked" />
+                <Button Text="Těžká" Clicked="ObtiznostButtonClicked" />-->
+            </StackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 

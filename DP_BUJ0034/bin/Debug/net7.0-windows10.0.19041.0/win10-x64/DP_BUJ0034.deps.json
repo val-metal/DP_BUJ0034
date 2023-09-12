@@ -15,6 +15,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging.Debug": "7.0.0",
           "Microsoft.Maui.Graphics": "7.0.86",
+          "Microsoft.Maui.Graphics.Skia": "7.0.86",
           "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "7.0.86",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
           "Microsoft.WindowsAppSDK": "1.2.221209.1",
@@ -913,6 +914,19 @@
           }
         }
       },
+      "Microsoft.Maui.Graphics.Skia/7.0.86": {
+        "dependencies": {
+          "Microsoft.Maui.Graphics": "7.0.86",
+          "SkiaSharp": "2.88.2",
+          "SkiaSharp.Views.WinUI": "2.88.2"
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.19041/Microsoft.Maui.Graphics.Skia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "7.0.70.16"
+          }
+        }
+      },
       "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/7.0.86": {
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.0.4",
@@ -992,6 +1006,38 @@
         "native": {
           "runtimes/win10-x64/native/Microsoft.WindowsAppRuntime.Bootstrap.dll": {
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp/2.88.2": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.2",
+          "SkiaSharp.NativeAssets.macOS": "2.88.2"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.2.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.2": {},
+      "SkiaSharp.NativeAssets.Win32/2.88.2": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.WinUI/2.88.2": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.2.221209.1",
+          "SkiaSharp": "2.88.2"
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041.0/SkiaSharp.Views.Windows.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.2.0"
           }
         }
       }
@@ -1105,6 +1151,13 @@
       "path": "microsoft.maui.graphics/7.0.86",
       "hashPath": "microsoft.maui.graphics.7.0.86.nupkg.sha512"
     },
+    "Microsoft.Maui.Graphics.Skia/7.0.86": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6r1KnCnY4fA57tSCdSZyA0Q9bYckdp7w6TEhsyu/yJGkjDoXnsD4FzaUwOmZBFLCR9MOq+VnVCMHp4/ZY/sYNw==",
+      "path": "microsoft.maui.graphics.skia/7.0.86",
+      "hashPath": "microsoft.maui.graphics.skia.7.0.86.nupkg.sha512"
+    },
     "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/7.0.86": {
       "type": "package",
       "serviceable": true,
@@ -1125,6 +1178,34 @@
       "sha512": "sha512-1Y8KDCmUqytdduubaQhRz6aqaP7YhVSPE/fHeqLMsK3DrV+eBThrqkM6R/8N2lu0mwkNfKSTSAhixrTR72nyWA==",
       "path": "microsoft.windowsappsdk/1.2.221209.1",
       "hashPath": "microsoft.windowsappsdk.1.2.221209.1.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B7ToGj6WO4K4iEtD1Lydrt5FARxMNbNjnlEa4M2TaKs3EM0cmZLrJjCaZvfOJL9gXkswJb5pTSJL9Qz9AHd+Jw==",
+      "path": "skiasharp/2.88.2",
+      "hashPath": "skiasharp.2.88.2.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mUtY9w9KP6LnhE3VgwE331ttOclx239MENCo1aPT27AJX6QkDpeeqSK83/Rggu3NYPkUwIdg6fU1MOBdv2as4A==",
+      "path": "skiasharp.nativeassets.macos/2.88.2",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.2.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FgUHWpnfLcFiqAXuJEgcvUn5p7gHwkkfclWFU8LKfydUzwJyq+izWxL5OCVgbB8wYrX/TSx42uh8LwstEAURzw==",
+      "path": "skiasharp.nativeassets.win32/2.88.2",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.2.nupkg.sha512"
+    },
+    "SkiaSharp.Views.WinUI/2.88.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JruXb+XkcfFBJgxe0HXBoQrg5NqQcT/NyfEPuJSAriEmK5sXbgiReR++0ESPTb1MIoI4Qp4C6l7kgfPI4uF5rA==",
+      "path": "skiasharp.views.winui/2.88.2",
+      "hashPath": "skiasharp.views.winui.2.88.2.nupkg.sha512"
     }
   },
   "runtimes": {

@@ -637,6 +637,9 @@
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.maui.graphics\7.0.86\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.dll">
       <PackagePath>Microsoft.Maui.Graphics.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.maui.graphics.skia\7.0.86\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.Skia.dll">
+      <PackagePath>Microsoft.Maui.Graphics.Skia.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\7.0.86\lib\net7.0-windows10.0.19041\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
       <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
     </AppxPackagedFile>
@@ -682,11 +685,20 @@
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp\2.88.2\lib\net6.0\SkiaSharp.dll">
+      <PackagePath>SkiaSharp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp.views.winui\2.88.2\lib\net6.0-windows10.0.19041.0\SkiaSharp.Views.Windows.dll">
+      <PackagePath>SkiaSharp.Views.Windows.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.graphics.win2d\1.0.4\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\.nuget\packages\skiasharp.nativeassets.win32\2.88.2\runtimes\win-x64\native\libSkiaSharp.dll">
+      <PackagePath>libSkiaSharp.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\DP_BUJ0034.deps.json">
       <PackagePath>DP_BUJ0034.deps.json</PackagePath>
@@ -876,6 +888,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass64.scale-100.png">
+      <PackagePath>grass64.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\stone64.scale-100.png">
+      <PackagePath>stone64.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

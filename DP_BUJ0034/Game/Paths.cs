@@ -11,14 +11,16 @@ namespace DP_BUJ0034.Game
         public List<Dots> dot { get; set; }
         //Pro CurveTo
         public List<(Dots, Dots)> controldots;
-        //Pro QuadroTo
-        public List<Dots> controldot;
+        //Pro uzavření cesty vykreslení
+        public List<(Dots, Dots)> controlbackdot;
+        public List<Dots> backdot { get; set; }
         public List<float> angels;
 
         public Paths(){ 
             this.dot = new List<Dots>();
-            this .controldots = new List<(Dots, Dots)>();
-            this.controldot = new List<Dots>();
+            this.controldots = new List<(Dots, Dots)>();
+            this.controlbackdot = new List<(Dots, Dots)>();
+            this.backdot = new List<Dots>();
             this.angels = new List<float>();
         }
 
