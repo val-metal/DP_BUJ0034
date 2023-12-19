@@ -14,9 +14,21 @@ public partial class Board : ContentPage
     {
 		InitializeComponent();
         
-        playFrame = new PlayFrame(this.Resources["drawablee"] as Drawable,1);
+        playFrame = new PlayFrame(this.Resources["drawablee"] as Drawable,3,1);
+        playFrame.drawable.textureProvider.loadByName("SteamSky");
         //canvas.Drawable=
        idn();
+
+
+    }
+    public Board(string type,int num_paths, int difficulty)
+    {
+        InitializeComponent();
+
+        playFrame = new PlayFrame(this.Resources["drawablee"] as Drawable, num_paths,difficulty);
+        playFrame.drawable.textureProvider.loadByName(type);
+        //canvas.Drawable=
+        idn();
 
 
     }
@@ -32,18 +44,19 @@ public partial class Board : ContentPage
 
     }
 
-    private void goBackPop(object sender, EventArgs e)
-    {
-        
-
-    }
-    private async void Page_Loaded(object sender, EventArgs e)
-    {
-        
-    }
+  
+    
 
     private void GameView_DragInteraction(object sender, TouchEventArgs e)
     {
+        var touch = e.Touches.First();
+        //Application.Current.MainPage.DisplayAlert("Upozornìní", "Toto je ukázkové upozornìní."+touch.X+" "+playFrame.gameBoard.player.position.X, "OK");
+        playFrame.movePlayer(touch.X, touch.Y);
+        canvas.Invalidate();
+    }
 
+    private void Back_Clicked(object sender, EventArgs e)
+    {
+        this.Navigation.PopAsync();
     }
 }

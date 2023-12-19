@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Reflection;
 using IImage = Microsoft.Maui.Graphics.IImage;
 using System.Numerics;
+using Microsoft.Maui.Graphics;
+using DP_BUJ0034.Engine;
 
 
 #if IOS || ANDROID || MACCATALYST
@@ -25,34 +27,19 @@ namespace DP_BUJ0034.Drawables{
         public float height { get; set; }
         public float width { get; set; }
         public GameBoard gameBoard { get; set; }
-        public void Draw(ICanvas canvas, RectF dirtyRect){
+        public TextureProvider textureProvider { get; set; }
+        public Drawable() { textureProvider = new(); }
+        IImage imageback;
+        public void Draw(ICanvas canvas, RectF dirtyRect) {
             this.width = dirtyRect.Height;
             this.height = dirtyRect.Width;
-            SkiaBitmapExportContext skiaBitmapExportContext = new((int)width, (int)height, 1);
-           // ICanvas canvas = skiaBitmapExportContext.Canvas;
-            IImage image;
-            Assembly assembly = GetType().GetTypeInfo().Assembly;
-            //canvas.BlendMode = BlendMode.Difference;
-            using (Stream stream = assembly.GetManifestResourceStream("DP_BUJ0034.Resources.Images.stone64.png"))
-            {
-                #if IOS || ANDROID || MACCATALYST
-                                // PlatformImage isn't currently supported on Windows.
-                                image = PlatformImage.FromStream(stream);
-                #elif WINDOWS
-                    image = new W2DImageLoadingService().FromStream(stream);
-                #endif
-            }
+            // SkiaBitmapExportContext skiaBitmapExportContext = new((int)width, (int)height, 1);
+            // ICanvas canvas = skiaBitmapExportContext.Canvas;
 
-            if (image != null)
-            {
-                ImagePaint imagePaint = new ImagePaint
-                {
-                    Image = image.Downsize(100)
-                };
-                canvas.SetFillPaint(imagePaint, RectF.Zero);
+            DrawBackground(canvas);
+            //canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
+            //Size playerpos =new Size(height/16, width-((width / 9)*2))
                 
-               // canvas.FillRectangle(0, 0, height, width);
-            }
             if (gameBoard != null)
             {
                 DrawBorder(canvas, dirtyRect);
@@ -61,13 +48,26 @@ namespace DP_BUJ0034.Drawables{
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++){
                    // DrawStardEnd(canvas);
 
-                    DrawDots(canvas, currentPath);
+                    
                    // DrawControlDots(canvas, currentPath);
                     //Žlutá
                     DrawCurveTo(canvas,currentPath);
                     //Zelená
                     //DrawLineTo(canvas, currentPath);
                 }
+                for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++)
+                {
+                    // DrawStardEnd(canvas);
+
+
+                    // DrawControlDots(canvas, currentPath);
+                    //Žlutá
+                    DrawDots(canvas, currentPath);
+                    //Zelená
+                    //DrawLineTo(canvas, currentPath);
+                }
+                
+                DrawPlayer(canvas);
             }
             string mainDir = FileSystem.Current.AppDataDirectory;
 
@@ -76,6 +76,31 @@ namespace DP_BUJ0034.Drawables{
             //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + mainDir, "OK");
             //skiaBitmapExportContext.WriteToStream
             //canvass = canvas;
+        }
+        private void DrawBackground(ICanvas canvas)
+        {
+            if (textureProvider.isBackgroundTexture())
+            {
+                ImagePaint imagePaint = new ImagePaint
+                {
+                    Image = textureProvider.getBackgroundTexture().Downsize(100)
+                };
+                canvas.SetFillPaint(imagePaint, RectF.Zero);
+
+                canvas.FillRectangle(0, 0, height, width);
+            }
+            else {
+                canvas.DrawImage(textureProvider.getBackgroundTexture(), 0,0,height,width);
+            }
+        }
+        private void DrawPlayer(ICanvas canvas)
+        {
+                for (int i = 0; i < gameBoard.num_paths; i++)
+                {
+                    canvas.DrawRectangle(gameBoard.player[i].position.X - gameBoard.player[i].size / 2, gameBoard.player[i].position.Y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
+                    canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.X - gameBoard.player[i].size / 2, gameBoard.player[i].position.Y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
+                }
+            
         }
         public void DrawBorder(ICanvas canvas, RectF dirtyRect)
         {
@@ -97,28 +122,29 @@ namespace DP_BUJ0034.Drawables{
             canvas.StrokeSize = 1;
             canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
         }
-        public void DrawStardEnd(ICanvas canvas){
+        //public void DrawStardEnd(ICanvas canvas){
 
-            canvas.StrokeColor = Colors.LightYellow;
-            canvas.StrokeSize = 4;
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.start.x + " " + gameBoard.start.y, "OK");
-            canvas.DrawCircle(gameBoard.start.x, gameBoard.start.y, 5);
-            canvas.StrokeColor = Colors.LightGreen;
-            canvas.StrokeSize = 4;
-            canvas.DrawCircle(gameBoard.end.x, gameBoard.end.y, 5);
-        }
+        //    canvas.StrokeColor = Colors.LightYellow;
+        //    canvas.StrokeSize = 4;
+        //    //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.start.x + " " + gameBoard.start.y, "OK");
+        //    canvas.DrawCircle(gameBoard.start.x, gameBoard.start.y, 5);
+        //    canvas.StrokeColor = Colors.LightGreen;
+        //    canvas.StrokeSize = 4;
+        //    canvas.DrawCircle(gameBoard.end.x, gameBoard.end.y, 5);
+        //}
         public void DrawDots(ICanvas canvas, int currentPath){
 
             for(int i = 0;i< gameBoard.path[currentPath].dot.Count;i++){
                 if (i == 0){
                     canvas.StrokeColor = Colors.LightYellow;
                     canvas.StrokeSize = 5;
-                    canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 5);
+                    
+                    //canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 5);
                 }
                 else if (i == gameBoard.path[currentPath].dot.Count()-1){
-                    canvas.StrokeColor = Colors.Green;
-                    canvas.StrokeSize = 5;
-                    canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 10);
+                   
+                    canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 45, 45);
+// canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 10);
                 }
                 else{
                     canvas.StrokeColor = Colors.CadetBlue;
@@ -138,7 +164,7 @@ namespace DP_BUJ0034.Drawables{
 
                     canvas.StrokeSize = 3;
                     canvas.FillColor = Colors.Yellow;
-                    canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, 8);
+                    //canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, 8);
                 }
                 else{
                     canvas.StrokeColor = Colors.Blue;
@@ -146,7 +172,7 @@ namespace DP_BUJ0034.Drawables{
                     canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item1.x, gameBoard.path[currentPath].controldots[i].Item1.y, 6);
 
                     canvas.StrokeSize = 3;
-                    canvas.FillColor = Colors.Yellow;
+                    //canvas.FillColor = Colors.Yellow;
                     canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, 8);
                 
                 }       
@@ -159,14 +185,26 @@ namespace DP_BUJ0034.Drawables{
             //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
             for (int i = 0; i < gameBoard.path[currentPath].controldots.Count; i++)
             {
-                path_draw_Curve.CurveTo(gameBoard.path[currentPath].controldots[i].Item1.x, gameBoard.path[currentPath].controldots[i].Item1.y, gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, gameBoard.path[currentPath].dot[i + 1].x, gameBoard.path[currentPath].dot[i + 1].y);
+                path_draw_Curve.CurveTo(
+                    gameBoard.path[currentPath].controldots[i].Item1.x,
+                    gameBoard.path[currentPath].controldots[i].Item1.y,
+                    gameBoard.path[currentPath].controldots[i].Item2.x,
+                    gameBoard.path[currentPath].controldots[i].Item2.y, 
+                    gameBoard.path[currentPath].dot[i + 1].x,
+                    gameBoard.path[currentPath].dot[i + 1].y);
             }
             //path_draw_Curve.MoveTo(gameBoard.path[currentPath].backdot[0].x, gameBoard.path[currentPath].backdot[0].y);
             //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[0].x, gameBoard.path[currentPath].dot[0].y);
             //path_draw_Curve.MoveTo(gameBoard.path[currentPath].backdot[0].x, gameBoard.path[currentPath].backdot[0].y);
-            path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].backdot.Count - 1].x, gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
-            
-            for (int i = gameBoard.path[currentPath].controlbackdot.Count - 2; i >= 0; i--)
+            path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].backdot.Count - 1].x,
+                gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
+
+            for (int i = gameBoard.path[currentPath].backdot_with_t.Count-1;i>=0; i--)
+            {
+                path_draw_Curve.LineTo(gameBoard.path[currentPath].backdot_with_t[i].x, gameBoard.path[currentPath].backdot_with_t[i].y);
+            }
+            //Toto když tak odkomentovat -- je to to zpětné vykreslení cesty bez vzálenosti
+            /*for (int i = gameBoard.path[currentPath].controlbackdot.Count - 2; i >= 0; i--)
             {
                 path_draw_Curve.CurveTo(
                     gameBoard.path[currentPath].controlbackdot[i].Item2.x,
@@ -176,7 +214,7 @@ namespace DP_BUJ0034.Drawables{
                     gameBoard.path[currentPath].backdot[i ].x,
                     gameBoard.path[currentPath].backdot[i ].y
                 );
-            }
+            }*/
 
             //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].x, gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
 
@@ -207,31 +245,19 @@ namespace DP_BUJ0034.Drawables{
             canvas.StrokeSize = 1;
             canvas.StrokeLineJoin = LineJoin.Round;
             //canvas.ClipPath(path_draw_Curve,WindingMode.NonZero);
-            IImage image;
-            Assembly assembly = GetType().GetTypeInfo().Assembly;
-            using (Stream stream = assembly.GetManifestResourceStream("DP_BUJ0034.Resources.Images.grass64.png"))
-            {
-            #if IOS || ANDROID || MACCATALYST
-                            // PlatformImage isn't currently supported on Windows.
-                            image = PlatformImage.FromStream(stream);
-            #elif WINDOWS
-                                image = new W2DImageLoadingService().FromStream(stream);
-            #endif
-            }
+            
 
-            if (image != null)
-            {
                 ImagePaint imagePaint = new ImagePaint
                 {
-                    Image = image.Downsize(100)
+                    Image = textureProvider.getRouteTexture(currentPath).Downsize(100)
                 };
                 path_draw_Curve.Close();
 
                 canvas.SetFillPaint(imagePaint, RectF.Zero);
-                canvas.FillPath(path_draw_Curve,WindingMode.EvenOdd);
+                canvas.FillPath(path_draw_Curve,WindingMode.NonZero);
                 //canvas.FillRectangle(0, 0, height, width);
                 canvas.StrokeDashOffset = 5;
-            }
+            
 
             // canvas.StrokeSize = 8;
             canvas.DrawPath(path_draw_Curve);
@@ -255,9 +281,9 @@ namespace DP_BUJ0034.Drawables{
             canvas.StrokeColor = Colors.Green;
             canvas.StrokeSize = 1;
             canvas.StrokeLineJoin = LineJoin.Round;
-            canvas.DrawPath(path_draw_without_bezier);
+            //canvas.DrawPath(path_draw_without_bezier);
             canvas.StrokeColor = Colors.Red;
-            canvas.DrawPath(path_draw);
+            //canvas.DrawPath(path_draw);
         }
     }
 }

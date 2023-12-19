@@ -1,0 +1,115 @@
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DP_BUJ0034.ViewModels
+{
+    public partial class LevelSettingsViewModel : ObservableObject
+    {
+        [ObservableProperty]
+        int numPaths;
+        private string type;
+        Button path_1;
+        Button path_2;
+        Button path_3;
+        Button path_3_1;
+        Button difficulty_1;
+        Button difficulty_2;
+        Button difficulty_3;
+        [RelayCommand]
+        private void pocetCest(object num)
+        {
+            NumPaths = Int32.Parse((string)num) ;
+            if (NumPaths == 1)
+            {
+                path_1.ImageSource = "path1_1_check.png";
+                path_2.ImageSource = "path2_2.png";
+                path_3.ImageSource = "path3_3.png";
+                path_3_1.ImageSource = "path3_1.png";
+             }
+            else if (NumPaths == 2)
+            {
+                path_1.ImageSource = "path1_1.png";
+                path_2.ImageSource = "path2_2_check.png";
+                path_3.ImageSource = "path3_3.png";
+                path_3_1.ImageSource = "path3_1.png";
+            }
+            else if (NumPaths == 3)
+            {
+                path_1.ImageSource = "path1_1.png";
+                path_2.ImageSource = "path2_2.png";
+                path_3.ImageSource = "path3_3_check.png";
+                path_3_1.ImageSource = "path3_1.png";
+            }
+            else if (NumPaths == 4)
+            {
+                path_1.ImageSource = "path1_1.png";
+                path_2.ImageSource = "path2_2.png";
+                path_3.ImageSource = "path3_3.png";
+                path_3_1.ImageSource = "path3_1_check.png";
+            }
+        }
+
+        [ObservableProperty]
+        int difficulty;
+        [RelayCommand]
+        private void num_of_stars(object num_of_star)
+        {
+            Difficulty = Int32.Parse((string)num_of_star);
+
+            if (Difficulty == 1)
+            {
+                difficulty_1.ImageSource = "star_1_check.png";
+                difficulty_2.ImageSource = "star_2.png";
+                difficulty_3.ImageSource = "star_3.png";
+            }
+            else if (Difficulty == 2)
+            {
+
+                difficulty_1.ImageSource = "star_1.png";
+                difficulty_2.ImageSource = "star_2_check.png";
+                difficulty_3.ImageSource = "star_3.png";
+
+                /*difficulty_1.BorderWidth = 0;
+                difficulty_2.BorderWidth = 3;
+                difficulty_2.BorderColor = Colors.Red;
+                difficulty_3.BorderWidth = 0;*/
+            }
+            else if (Difficulty == 3)
+            {
+
+                difficulty_1.ImageSource = "star_1.png";
+                difficulty_2.ImageSource = "star_2.png";
+                difficulty_3.ImageSource = "star_3_check.png";
+                
+                /*difficulty_1.BorderWidth = 0;
+                difficulty_2.BorderWidth = 0;
+                difficulty_3.BorderWidth = 3;
+                difficulty_3.BorderColor = Colors.Red;*/
+            }
+        }
+
+        [RelayCommand]
+        private async Task startGame()
+        {
+            await Shell.Current.Navigation.PushAsync(new Board(type,NumPaths,Difficulty));
+        }
+
+
+        public LevelSettingsViewModel(string type, Button path_1, Button path_2, Button path_3, Button path_3_1, Button difficulty_1, Button difficulty_2, Button difficulty_3) {
+            this.type = type;
+            this.path_1 = path_1;
+            this.path_2 = path_2;
+            this.path_3 = path_3;
+            this.path_3_1=path_3_1;
+            this.difficulty_1= difficulty_1;
+            this.difficulty_2= difficulty_2;
+            this.difficulty_3= difficulty_3;
+        }
+
+    }
+}

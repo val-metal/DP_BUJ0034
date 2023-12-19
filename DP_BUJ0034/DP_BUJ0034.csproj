@@ -39,7 +39,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -49,18 +48,115 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\a.png" />
+	  <MauiImage Remove="Resources\Images\astro.png" />
+	  <MauiImage Remove="Resources\Images\dotnet_bot.svg" />
+	  <MauiImage Remove="Resources\Images\end1.png" />
 	  <MauiImage Remove="Resources\Images\grass64.png" />
 	  <MauiImage Remove="Resources\Images\stone64.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\a.png" />
+	  <None Remove="Resources\Images\astro.png" />
+	  <None Remove="Resources\Images\AtticButton.png" />
+	  <None Remove="Resources\Images\Attic\border.png" />
+	  <None Remove="Resources\Images\Attic\end1.png" />
+	  <None Remove="Resources\Images\Attic\path1.png" />
+	  <None Remove="Resources\Images\Attic\start.png" />
+	  <None Remove="Resources\Images\clouds64x64.png" />
+	  <None Remove="Resources\Images\end1.png" />
+	  <None Remove="Resources\Images\NeonCity\background_1280x720.png" />
+	  <None Remove="Resources\Images\NeonCity\end1.png" />
+	  <None Remove="Resources\Images\NeonCity\end2.png" />
+	  <None Remove="Resources\Images\NeonCity\end3.png" />
+	  <None Remove="Resources\Images\NeonCity\neonpath.png" />
+	  <None Remove="Resources\Images\NeonCity\neonpath2.png" />
+	  <None Remove="Resources\Images\NeonCity\neonpath3.png" />
+	  <None Remove="Resources\Images\NeonCity\player1.png" />
+	  <None Remove="Resources\Images\NeonCity\player2.png" />
+	  <None Remove="Resources\Images\NeonCity\player3.png" />
+	  <None Remove="Resources\Images\neonlogo.png" />
+	  <None Remove="Resources\Images\path1_1.png" />
+	  <None Remove="Resources\Images\path1_1_check.png" />
+	  <None Remove="Resources\Images\path2_2.png" />
+	  <None Remove="Resources\Images\path2_2_check.png" />
+	  <None Remove="Resources\Images\path3_1.png" />
+	  <None Remove="Resources\Images\path3_1_check.png" />
+	  <None Remove="Resources\Images\path3_3.png" />
+	  <None Remove="Resources\Images\path3_3_check.png" />
+	  <None Remove="Resources\Images\star_1.png" />
+	  <None Remove="Resources\Images\star_1_check.png" />
+	  <None Remove="Resources\Images\star_2.png" />
+	  <None Remove="Resources\Images\star_2_check.png" />
+	  <None Remove="Resources\Images\star_3.png" />
+	  <None Remove="Resources\Images\star_3_check.png" />
+	  <None Remove="Resources\Images\SteamMountains\ballon2.png" />
+	  <None Remove="Resources\Images\SteamMountains\ballon3.png" />
+	  <None Remove="Resources\Images\SteamMountains\ballon64x64.png" />
+	  <None Remove="Resources\Images\SteamMountains\clouds64x.png" />
+	  <None Remove="Resources\Images\SteamMountains\cloudtexture2.png" />
+	  <None Remove="Resources\Images\SteamMountains\cloudtexture3.png" />
+	  <None Remove="Resources\Images\SteamMountains\mountains1280x720_single.png" />
+	  <None Remove="Resources\Images\SteamMountains\tower1.png" />
+	  <None Remove="Resources\Images\SteamMountains\tower2.png" />
+	  <None Remove="Resources\Images\SteamMountains\tower3.png" />
+	  <None Remove="Resources\Raw\happy1.mp3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\Attic\end1.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\astro.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic\border.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic\path1.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic\start.png" />
+	  <EmbeddedResource Include="Resources\Images\a.png" />
+	  <AndroidAotProfile Include="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+	  <EmbeddedResource Include="Resources\Images\end1.png" />
 	  <EmbeddedResource Include="Resources\Images\grass64.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\end1.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\end2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\end3.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath3.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\player1.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\player2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\player3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\cloudtexture2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\cloudtexture3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower1.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower3.png" />
 	  <EmbeddedResource Include="Resources\Images\stone64.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="7.0.86" />
+		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon64x64.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\clouds64x.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\SteamMountains\mountains1280x720_single.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\NeonCity\background_1280x720.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -71,6 +167,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Board.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LevelSettings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SelectLevelMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

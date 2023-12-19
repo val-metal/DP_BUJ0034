@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using DP_BUJ0034.Engine;
+using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace DP_BUJ0034.Game{
@@ -15,10 +17,12 @@ namespace DP_BUJ0034.Game{
 
         public float height;
         public float width;
+        public bool playerIsLoaded { get; set; }
+        public Player[] player { get; set; }
         public int num_paths { get; set; }
         public Paths[] path { get; set; }
-        public Points start { get; set; }
-        public Points end { get; set; }
+        public Points[] start { get; set; }
+        public Points[] end { get; set; }
         Points[] point;
 
         public GameBoard(float height, float width, int num_paths){
@@ -26,6 +30,9 @@ namespace DP_BUJ0034.Game{
             this.height = height;
             this.width = width;
             path = new Paths[num_paths];
+            player=new Player[num_paths];
+            start=new Points[num_paths];
+            end=new Points[num_paths];
             this.num_paths = num_paths;
 
         }
@@ -35,11 +42,10 @@ namespace DP_BUJ0034.Game{
 
             this.height = width;
             this.width = height;
-            start = new Points(true, false, height / 16 + 15, width / 9 * (float)4.5);
-            end = new Points(false, true, height / 16 * 15, width / 9 * (float)4.5);
+            start[currentPath] = new Points(true, false, height / 16 + 15, width / 9 * (float)(2.5*currentPath+1));
+            end[currentPath] = new Points(false, true, height / 16 * 15, width / 9 * (float)(2.5*currentPath+1));
 
-            //Try_smer(start, end, currentPath);
-            Generate_dots1(start, end, currentPath);
+            Generate_dots1(start[currentPath], end[currentPath], currentPath);
 
             for (int i = 0; i < path[currentPath].dot.Count - 1; i++)
             {
@@ -49,6 +55,7 @@ namespace DP_BUJ0034.Game{
                 CalculateBezier_Points(point1, point2, i, currentPath);
             }
             Generate_dots_for_back_path(currentPath);
+            Generate_dots_for_back_path_with_t(currentPath);
         }
 
         public void Try_smer(Points start, Points end, int currentPath)
@@ -140,9 +147,76 @@ namespace DP_BUJ0034.Game{
             }
         }
 
+        public void Generate_dots_for_back_path_with_t(int currentPath)
+        {
+            int distance = 20;
+            for (int i = 0; i < path[currentPath].dot.Count()-1; i++)
+            {
+                Dots p1 = path[currentPath].dot[i];
+                Dots p2 = path[currentPath].controldots[i].Item1;
+                Dots p3 = path[currentPath].controldots[i].Item2;
+                Dots p4 = path[currentPath].dot[i + 1];
+
+                for (float t = 0; t <= 0.95; t = t + (float)0.05)
+                {
+                    Dots point = getPointAt(t, p1, p2, p3, p4);
+                    Dots normal = getNormalAt(t, p1, p2, p3, p4);
+
+                    Dots offsetPoint = new Dots(
+                x: point.x + normal.x * distance,
+                y: point.y + normal.y * distance);
+
+
+                    path[currentPath].backdot_with_t.Add(offsetPoint);
+                }
+            }
+
+        }
+
+        public Dots getPointAt(float t, Dots p1, Dots p2, Dots p3, Dots p4)
+        {
+            float x = (float)Math.Pow(1 - t, 3) * p1.x +
+                    3 * (float)Math.Pow(1 - t, 2) * t * p2.x +
+                    3 * (1 - t) * (float)Math.Pow(t, 2) * p3.x +
+                   (float)Math.Pow(t, 3) * p4.x;
+            float y = (float)Math.Pow(1 - t, 3) * p1.y +
+                    3 * (float)Math.Pow(1 - t, 2) * t * p2.y +
+                    3 * (1 - t) * (float)Math.Pow(t, 2) * p3.y +
+                    (float)Math.Pow(t, 3) * p4.y;
+
+            Dots send = new Dots(x, y);
+            return send;
+        }
+
+        public Dots getNormalAt(float t, Dots p1, Dots p2, Dots p3, Dots p4)
+        {
+            Dots d = getDerivateAt(t, p1, p2, p3, p4);
+            float q = (float)Math.Sqrt(d.x * d.x + d.y * d.y);
+
+            float x = -d.y / q;
+            float y = d.x / q;
+
+            Dots send = new Dots(x, y);
+            return send;
+        }
+        public Dots getDerivateAt(float t, Dots p1, Dots p2, Dots p3, Dots p4)
+        {
+            float x = -3 * (float)Math.Pow(1 - t, 2) * p1.x +
+            (3 * (float)Math.Pow(1 - t, 2) - 6 * (1 - t) * t) * p2.x +
+            (6 * (1 - t) * t - 3 * (float)Math.Pow(t, 2)) * p3.x +
+            3 * (float)Math.Pow(t, 2) * p4.x;
+            float y = -3 * (float)Math.Pow(1 - t, 2) * p1.y +
+                    (3 * (float)Math.Pow(1 - t, 2) - 6 * (1 - t) * t) * p2.y +
+                    (6 * (1 - t) * t - 3 * (float)Math.Pow(t, 2)) * p3.y +
+                    3 * (float)Math.Pow(t, 2) * p4.y;
+
+
+            Dots send = new Dots(x, y);
+            return send;
+        }
 
         public void Generate_dots1(Points start, Points end, int currentPath){
-            Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
+            //Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
             path[currentPath] = new Paths();
             path[currentPath].dot.Add(new Dots(start.x, start.y));
             bool lastDot = false;
@@ -179,7 +253,7 @@ namespace DP_BUJ0034.Game{
                     angle = angles[randomSmer];
                 }
                 //Pokud je bod blízko cíle
-                else if (newX > width / 16 * 14)
+                else if (newX > width / 16 * 13)
                 {
                     path[currentPath].dot.Add(new Dots(end.x, end.y));
                     lastDot = true;
@@ -252,6 +326,7 @@ namespace DP_BUJ0034.Game{
             }
             
         }
+        /*
 
         //Funční body pro viditelné testování
         public void Generate_dots(Points start, Points end, int currentPath){
@@ -293,7 +368,7 @@ namespace DP_BUJ0034.Game{
             }
 
             path[currentPath].dot.Add(new Dots(end.x, end.y));
-        }
+        }*/
         
           
         //Toto používám
