@@ -913,6 +913,9 @@
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass64.scale-100.png">
       <PackagePath>grass64.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\menu1.scale-100.gif">
+      <PackagePath>menu1.scale-100.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\neonlogo.scale-100.png">
       <PackagePath>neonlogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
