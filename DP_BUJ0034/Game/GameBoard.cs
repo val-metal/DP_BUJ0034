@@ -222,13 +222,13 @@ namespace DP_BUJ0034.Game{
             bool lastDot = false;
             int x = 0;
             Random random = new Random();
-            float[] angles = { 0, 45, 90, 135, 180, 225, 270, 315 };
+            float[] angles = { 45, 90, 135, 180, 225, 270, 315 };
             int randomSmer = 0;
             float angle = 0;
             while (lastDot != true) {
 
 
-                float distance = width / 10;
+                float distance = width / 8;
                 float tolerance = 10 * distance / 100;
                 float random_tolerance = (float)random.NextDouble() * (2 * tolerance) - tolerance;
                 float final_distance = distance + random_tolerance;
@@ -247,13 +247,12 @@ namespace DP_BUJ0034.Game{
                 //Pokud je bod v hracím poli a nemá ostrý ůhel (rozuměj 60ˇ)
                 if (newX > width / 16 && newX < width / 16 * 15 && newY > height / 9 && newY < height / 9 * 8 && is_angel_bad >= 60 && is_angel_bad <= 300)
                 {
-                    
                     path[currentPath].dot.Add(eventual_dot);
                     randomSmer = (int)(random.Next(0, angels_count));
                     angle = angles[randomSmer];
                 }
                 //Pokud je bod blízko cíle
-                else if (newX > width / 16 * 13)
+                else if (newX > width / 16 * 14)
                 {
                     path[currentPath].dot.Add(new Dots(end.x, end.y));
                     lastDot = true;

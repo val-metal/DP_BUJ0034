@@ -18,12 +18,12 @@ namespace DP_BUJ0034.Engine
 {
     public class TextureProvider
     {
-        public TextureProvider() { player = new List<IImage>();routes = new List<IImage>(); ends = new List<IImage>(); }
+        public TextureProvider() { player = new List<IImage>();paths = new List<IImage>(); finish = new List<IImage>(); }
         TextureSet textureSet;
         IImage backgroundImage;
         List<IImage> player;
-        List<IImage> routes;
-        List<IImage> ends;
+        List<IImage> paths;
+        List<IImage> finish;
         public bool isLoaded { get; set; }
 
         public bool isBackgroundTexture()
@@ -32,18 +32,9 @@ namespace DP_BUJ0034.Engine
         }
         public void loadByName(string name)
         {
-            if (name == "AtticTextureSet")
-            {
-                textureSet = new AtticTextureSet();
-            }
-            else if (name == "SteamSky")
-            {
-                textureSet = new SteamMountainTextureSet();
-            }
-            else if (name == "NeonCity")
-            {
-                textureSet = new NeonCityTextureSet();
-            }
+           
+            textureSet = new TextureSet(name);
+            
             loadImages();
             isLoaded = true;
         }
@@ -60,14 +51,14 @@ namespace DP_BUJ0034.Engine
                 backgroundImage = new W2DImageLoadingService().FromStream(stream);
                 #endif
             }
-            for(int i=0;i<textureSet.routes.Count;i++) {
-                using (Stream stream = assembly.GetManifestResourceStream(textureSet.routes[i]))
+            for(int i=0;i<textureSet.paths.Count;i++) {
+                using (Stream stream = assembly.GetManifestResourceStream(textureSet.paths[i]))
                 {
 #if IOS || ANDROID || MACCATALYST
                                                 // PlatformImage isn't currently supported on Windows.
-                    routes.Add(PlatformImage.FromStream(stream));
+                    paths.Add(PlatformImage.FromStream(stream));
 #elif WINDOWS
-                    routes.Add(new W2DImageLoadingService().FromStream(stream));
+                    paths.Add(new W2DImageLoadingService().FromStream(stream));
 #endif
                 }
 
@@ -86,15 +77,15 @@ namespace DP_BUJ0034.Engine
                 }
 
             }
-            for (int i = 0; i < textureSet.ends.Count; i++)
+            for (int i = 0; i < textureSet.finish.Count; i++)
             {
-                using (Stream stream = assembly.GetManifestResourceStream(textureSet.ends[i]))
+                using (Stream stream = assembly.GetManifestResourceStream(textureSet.finish[i]))
                 {
 #if IOS || ANDROID || MACCATALYST
                     // PlatformImage isn't currently supported on Windows.
-                    ends.Add(PlatformImage.FromStream(stream));
+                    finish.Add(PlatformImage.FromStream(stream));
 #elif WINDOWS
-                    ends.Add(new W2DImageLoadingService().FromStream(stream));
+                    finish.Add(new W2DImageLoadingService().FromStream(stream));
 #endif
                 }
 
@@ -113,21 +104,21 @@ namespace DP_BUJ0034.Engine
         }
         public IImage getRouteTexture(int i)
         {
-            if (i > textureSet.routes.Count - 1 || i < 0)
+            if (i > textureSet.paths.Count - 1 || i < 0)
             {
-                i = textureSet.routes.Count - 1;
+                i = textureSet.paths.Count - 1;
                 // throw new SpriteIsNotFoundException("Texture cant be found");
             }
-            return routes[i];
+            return paths[i];
         }
         public IImage getEndsTexture(int i)
         {
-            if (i > textureSet.ends.Count - 1 || i < 0)
+            if (i > textureSet.finish.Count - 1 || i < 0)
             {
                 //throw new SpriteIsNotFoundException("Texture cant be found");
-                i = textureSet.ends.Count - 1;
+                i = textureSet.finish.Count - 1;
             }
-            return ends[i];
+            return finish[i];
         }
         public IImage getBackgroundTexture()
         {

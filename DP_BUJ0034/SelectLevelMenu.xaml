@@ -26,7 +26,7 @@
             ImageSource="atticbutton.png"
             MaximumHeightRequest="64"
             MaximumWidthRequest="145"
-            CommandParameter="AtticTextureSet"
+            CommandParameter="Attic"
             Command="{Binding gotolevelSettingsCommand}"
             />
         <Button
@@ -38,6 +38,39 @@
             MaximumHeightRequest="64"
             MaximumWidthRequest="145"
             CommandParameter="NeonCity"
+            Command="{Binding gotolevelSettingsCommand}"
+            />
+        <Button
+            x:Name="car"
+            VerticalOptions="CenterAndExpand"
+            Text="Neon"
+            Padding="0,0,0,20"
+            ImageSource="neonlogo.png"
+            MaximumHeightRequest="64"
+            MaximumWidthRequest="145"
+            CommandParameter="Car"
+            Command="{Binding gotolevelSettingsCommand}"
+            />
+        <Button
+            x:Name="frog"
+            VerticalOptions="CenterAndExpand"
+            Text="Frog"
+            Padding="0,0,0,20"
+            ImageSource="neonlogo.png"
+            MaximumHeightRequest="64"
+            MaximumWidthRequest="145"
+            CommandParameter="Frog"
+            Command="{Binding gotolevelSettingsCommand}"
+            />
+        <Button
+            x:Name="Train"
+            VerticalOptions="CenterAndExpand"
+            Text="Frog"
+            Padding="0,0,0,20"
+            ImageSource="neonlogo.png"
+            MaximumHeightRequest="64"
+            MaximumWidthRequest="145"
+            CommandParameter="Train"
             Command="{Binding gotolevelSettingsCommand}"
             />
     </VerticalStackLayout>

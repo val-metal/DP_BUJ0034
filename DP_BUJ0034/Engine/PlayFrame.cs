@@ -42,7 +42,7 @@ namespace DP_BUJ0034.Engine
             }
             for (int i = 0; i < gameBoard.num_paths; i++)
             {
-                gameBoard.player[i] = (new Player(new Point(gameBoard.start[i].x, gameBoard.start[i].y), 32)); //((gameBoard.width/9)*i)+gameBoard.width/9)
+                gameBoard.player[i] = (new Player(new Point(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
 
             }
             drawable.gameBoard = gameBoard;

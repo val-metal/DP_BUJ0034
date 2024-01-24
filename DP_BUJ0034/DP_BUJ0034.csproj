@@ -48,6 +48,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Images\Attic\**" />
+	  <Compile Remove="Resources\Images\Attic\**" />
+	  <EmbeddedResource Remove="Resources\Images\Attic\**" />
+	  <MauiCss Remove="Resources\Images\Attic\**" />
+	  <MauiImage Remove="Resources\Images\Attic\**" />
+	  <MauiXaml Remove="Resources\Images\Attic\**" />
+	  <None Remove="Resources\Images\Attic\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiImage Remove="Resources\Images\a.png" />
 	  <MauiImage Remove="Resources\Images\astro.png" />
 	  <MauiImage Remove="Resources\Images\dotnet_bot.svg" />
@@ -60,23 +70,75 @@
 	  <None Remove="Resources\Images\a.png" />
 	  <None Remove="Resources\Images\astro.png" />
 	  <None Remove="Resources\Images\AtticButton.png" />
-	  <None Remove="Resources\Images\Attic\border.png" />
-	  <None Remove="Resources\Images\Attic\end1.png" />
-	  <None Remove="Resources\Images\Attic\path1.png" />
-	  <None Remove="Resources\Images\Attic\start.png" />
+	  <None Remove="Resources\Images\Attic_\border.png" />
+	  <None Remove="Resources\Images\Attic_\end1.png" />
+	  <None Remove="Resources\Images\Attic_\path1.png" />
+	  <None Remove="Resources\Images\Attic_\start.png" />
+	  <None Remove="Resources\Images\Car\Background_Texture.png" />
+	  <None Remove="Resources\Images\Car\Finish_1.png" />
+	  <None Remove="Resources\Images\Car\Finish_2.png" />
+	  <None Remove="Resources\Images\Car\Finish_3.png" />
+	  <None Remove="Resources\Images\Car\Path_Texture_1.png" />
+	  <None Remove="Resources\Images\Car\Path_Texture_2.png" />
+	  <None Remove="Resources\Images\Car\Path_Texture_3.png" />
+	  <None Remove="Resources\Images\Car\Player_1.png" />
+	  <None Remove="Resources\Images\Car\Player_2.png" />
+	  <None Remove="Resources\Images\Car\Player_3.png" />
 	  <None Remove="Resources\Images\clouds64x64.png" />
+	  <None Remove="Resources\Images\Dragon_\Finish_1.png" />
+	  <None Remove="Resources\Images\Dragon_\Finish_2.png" />
+	  <None Remove="Resources\Images\Dragon_\Finish_3.png" />
+	  <None Remove="Resources\Images\Dragon_\Player_1.png" />
+	  <None Remove="Resources\Images\Dragon_\Player_2.png" />
+	  <None Remove="Resources\Images\Dragon_\Player_3.png" />
 	  <None Remove="Resources\Images\end1.png" />
+	  <None Remove="Resources\Images\Frog\Background_Texture.png" />
+	  <None Remove="Resources\Images\Frog\Finish_1.png" />
+	  <None Remove="Resources\Images\Frog\Finish_2.png" />
+	  <None Remove="Resources\Images\Frog\Finish_3.png" />
+	  <None Remove="Resources\Images\Frog\Path_Texture_1.png" />
+	  <None Remove="Resources\Images\Frog\Path_Texture_2.png" />
+	  <None Remove="Resources\Images\Frog\Path_Texture_3.png" />
+	  <None Remove="Resources\Images\Frog\Player_1.png" />
+	  <None Remove="Resources\Images\Frog\Player_2.png" />
+	  <None Remove="Resources\Images\Frog\Player_3.png" />
+	  <None Remove="Resources\Images\Fruit_\Finish_1.png" />
+	  <None Remove="Resources\Images\Fruit_\Finish_2.png" />
+	  <None Remove="Resources\Images\Fruit_\Finish_3.png" />
+	  <None Remove="Resources\Images\Fruit_\Player_1.png" />
+	  <None Remove="Resources\Images\Fruit_\Player_2.png" />
+	  <None Remove="Resources\Images\Fruit_\Player_3.png" />
 	  <None Remove="Resources\Images\menu1.gif" />
+	  <None Remove="Resources\Images\Mermaid\Background_Img.png" />
+	  <None Remove="Resources\Images\Mermaid\Finish_1.png" />
+	  <None Remove="Resources\Images\Mermaid\Finish_2.png" />
+	  <None Remove="Resources\Images\Mermaid\Finish_3.png" />
+	  <None Remove="Resources\Images\Mermaid\Path_Item_1.png" />
+	  <None Remove="Resources\Images\Mermaid\Path_Item_2.png" />
+	  <None Remove="Resources\Images\Mermaid\Path_Item_3.png" />
+	  <None Remove="Resources\Images\Mermaid\Player_1.png" />
+	  <None Remove="Resources\Images\Mermaid\Player_2.png" />
+	  <None Remove="Resources\Images\Mermaid\Player_3.png" />
 	  <None Remove="Resources\Images\NeonCity\background_1280x720.png" />
+	  <None Remove="Resources\Images\NeonCity\Background_Img.png" />
 	  <None Remove="Resources\Images\NeonCity\end1.png" />
 	  <None Remove="Resources\Images\NeonCity\end2.png" />
 	  <None Remove="Resources\Images\NeonCity\end3.png" />
+	  <None Remove="Resources\Images\NeonCity\Finish_1.png" />
+	  <None Remove="Resources\Images\NeonCity\Finish_2.png" />
+	  <None Remove="Resources\Images\NeonCity\Finish_3.png" />
 	  <None Remove="Resources\Images\NeonCity\neonpath.png" />
 	  <None Remove="Resources\Images\NeonCity\neonpath2.png" />
 	  <None Remove="Resources\Images\NeonCity\neonpath3.png" />
+	  <None Remove="Resources\Images\NeonCity\Path_Color_1.png" />
+	  <None Remove="Resources\Images\NeonCity\Path_Color_2.png" />
+	  <None Remove="Resources\Images\NeonCity\Path_Color_3.png" />
 	  <None Remove="Resources\Images\NeonCity\player1.png" />
 	  <None Remove="Resources\Images\NeonCity\player2.png" />
 	  <None Remove="Resources\Images\NeonCity\player3.png" />
+	  <None Remove="Resources\Images\NeonCity\Player_1.png" />
+	  <None Remove="Resources\Images\NeonCity\Player_2.png" />
+	  <None Remove="Resources\Images\NeonCity\Player_3.png" />
 	  <None Remove="Resources\Images\neonlogo.png" />
 	  <None Remove="Resources\Images\path1_1.png" />
 	  <None Remove="Resources\Images\path1_1_check.png" />
@@ -86,55 +148,160 @@
 	  <None Remove="Resources\Images\path3_1_check.png" />
 	  <None Remove="Resources\Images\path3_3.png" />
 	  <None Remove="Resources\Images\path3_3_check.png" />
+	  <None Remove="Resources\Images\Pirate_\pirate1.png" />
+	  <None Remove="Resources\Images\Pirate_\pirate2.png" />
+	  <None Remove="Resources\Images\Pirate_\pirate3.png" />
+	  <None Remove="Resources\Images\Pirate_\piratemap.png" />
+	  <None Remove="Resources\Images\Pirate_\ship1.png" />
+	  <None Remove="Resources\Images\Pirate_\ship2.png" />
+	  <None Remove="Resources\Images\Pirate_\ship3.png" />
+	  <None Remove="Resources\Images\Pirate_\treasure1.png" />
+	  <None Remove="Resources\Images\Pirate_\treasure2.png" />
+	  <None Remove="Resources\Images\Pirate_\treasure3.png" />
+	  <None Remove="Resources\Images\Princess_\Finish_1.png" />
+	  <None Remove="Resources\Images\Princess_\Finish_2.png" />
+	  <None Remove="Resources\Images\Princess_\Finish_3.png" />
+	  <None Remove="Resources\Images\Princess_\Player_1.png" />
+	  <None Remove="Resources\Images\Princess_\Player_2.png" />
+	  <None Remove="Resources\Images\Princess_\Player_3.png" />
 	  <None Remove="Resources\Images\star_1.png" />
 	  <None Remove="Resources\Images\star_1_check.png" />
 	  <None Remove="Resources\Images\star_2.png" />
 	  <None Remove="Resources\Images\star_2_check.png" />
 	  <None Remove="Resources\Images\star_3.png" />
 	  <None Remove="Resources\Images\star_3_check.png" />
-	  <None Remove="Resources\Images\SteamMountains\ballon2.png" />
-	  <None Remove="Resources\Images\SteamMountains\ballon3.png" />
-	  <None Remove="Resources\Images\SteamMountains\ballon64x64.png" />
-	  <None Remove="Resources\Images\SteamMountains\clouds64x.png" />
-	  <None Remove="Resources\Images\SteamMountains\cloudtexture2.png" />
-	  <None Remove="Resources\Images\SteamMountains\cloudtexture3.png" />
-	  <None Remove="Resources\Images\SteamMountains\mountains1280x720_single.png" />
-	  <None Remove="Resources\Images\SteamMountains\tower1.png" />
-	  <None Remove="Resources\Images\SteamMountains\tower2.png" />
-	  <None Remove="Resources\Images\SteamMountains\tower3.png" />
+	  <None Remove="Resources\Images\SteamSky\Background_Img.png" />
+	  <None Remove="Resources\Images\SteamSky\ballon2.png" />
+	  <None Remove="Resources\Images\SteamSky\ballon3.png" />
+	  <None Remove="Resources\Images\SteamSky\ballon64x64.png" />
+	  <None Remove="Resources\Images\SteamSky\clouds64x.png" />
+	  <None Remove="Resources\Images\SteamSky\cloudtexture2.png" />
+	  <None Remove="Resources\Images\SteamSky\cloudtexture3.png" />
+	  <None Remove="Resources\Images\SteamSky\Finish_1.png" />
+	  <None Remove="Resources\Images\SteamSky\Finish_2.png" />
+	  <None Remove="Resources\Images\SteamSky\Finish_3.png" />
+	  <None Remove="Resources\Images\SteamSky\mountains1280x720_single.png" />
+	  <None Remove="Resources\Images\SteamSky\Path_Texture_1.png" />
+	  <None Remove="Resources\Images\SteamSky\Path_Texture_2.png" />
+	  <None Remove="Resources\Images\SteamSky\Path_Texture_3.png" />
+	  <None Remove="Resources\Images\SteamSky\Player_1.png" />
+	  <None Remove="Resources\Images\SteamSky\Player_2.png" />
+	  <None Remove="Resources\Images\SteamSky\Player_3.png" />
+	  <None Remove="Resources\Images\SteamSky\tower1.png" />
+	  <None Remove="Resources\Images\SteamSky\tower2.png" />
+	  <None Remove="Resources\Images\SteamSky\tower3.png" />
+	  <None Remove="Resources\Images\Train\Background_Texture.png" />
+	  <None Remove="Resources\Images\Train\Finish_1.png" />
+	  <None Remove="Resources\Images\Train\Finish_2.png" />
+	  <None Remove="Resources\Images\Train\Finish_3.png" />
+	  <None Remove="Resources\Images\Train\Path_Color_1.png" />
+	  <None Remove="Resources\Images\Train\Path_Color_2.png" />
+	  <None Remove="Resources\Images\Train\Path_Color_3.png" />
+	  <None Remove="Resources\Images\Train\Player_1.png" />
+	  <None Remove="Resources\Images\Train\Player_2.png" />
+	  <None Remove="Resources\Images\Train\Player_3.png" />
 	  <None Remove="Resources\Raw\happy1.mp3" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Images\Attic\end1.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\astro.png" />
-	  <EmbeddedResource Include="Resources\Images\Attic\border.png" />
-	  <EmbeddedResource Include="Resources\Images\Attic\path1.png" />
-	  <EmbeddedResource Include="Resources\Images\Attic\start.png" />
 	  <EmbeddedResource Include="Resources\Images\a.png" />
 	  <AndroidAotProfile Include="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+	  <EmbeddedResource Include="Resources\Images\Attic_\border.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic_\end1.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic_\path1.png" />
+	  <EmbeddedResource Include="Resources\Images\Attic_\start.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Background_Texture.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Path_Texture_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Path_Texture_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Path_Texture_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Car\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\end1.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Background_Texture.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Path_Texture_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Path_Texture_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Path_Texture_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Frog\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Fruit_\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\grass64.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\end1.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\end2.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\end3.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath2.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\neonpath3.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\player1.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\player2.png" />
-	  <EmbeddedResource Include="Resources\Images\NeonCity\player3.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon2.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon3.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\cloudtexture2.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\cloudtexture3.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower1.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower2.png" />
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\tower3.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Background_Img.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Path_Item_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Path_Item_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Path_Item_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Mermaid\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Background_Img.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Path_Color_1.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Path_Color_2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Path_Color_3.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\pirate1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\pirate2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\pirate3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\piratemap.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\ship1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\ship2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\ship3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\treasure1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\treasure2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate_\treasure3.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess_\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Background_Img.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Path_Texture_1.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Path_Texture_2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Path_Texture_3.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\SteamSky\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\stone64.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Background_Texture.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Path_Color_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Path_Color_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Path_Color_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Train\Player_3.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -142,22 +309,6 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="7.0.86" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\ballon64x64.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\clouds64x.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Images\SteamMountains\mountains1280x720_single.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Images\NeonCity\background_1280x720.png" />
 	</ItemGroup>
 
 	<ItemGroup>
