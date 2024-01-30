@@ -200,6 +200,7 @@
 	  <None Remove="Resources\Images\Train\Player_1.png" />
 	  <None Remove="Resources\Images\Train\Player_2.png" />
 	  <None Remove="Resources\Images\Train\Player_3.png" />
+	  <None Remove="Resources\Raw\AllLevels.json" />
 	  <None Remove="Resources\Raw\happy1.mp3" />
 	</ItemGroup>
 
@@ -319,6 +320,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Board.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="FinishPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="LevelSettings.xaml">

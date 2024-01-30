@@ -20,6 +20,14 @@ namespace DP_BUJ0034.Game
             return new Dots(a.x - b.x, a.y - b.y);
         }
 
+        public static float EuclidDistance(Dots a, Dots b)
+        {
+            float deltaX = a.x - b.x;
+            float deltaY = a.y - b.y;
+
+            return MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
+        }
+
 
         public static Dots Multiply(Dots dot, float scalar)
         {

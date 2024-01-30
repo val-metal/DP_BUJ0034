@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DP_BUJ0034.FinishPage"
+             xmlns:viewmodel="clr-namespace:DP_BUJ0034.ViewModels"
+             x:DataType="viewmodel:FinishPageViewModel"
+             Title="FinishPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="You win!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+        <Image Source="{Binding ImgName}" HeightRequest="64" WidthRequest="64"></Image>
+        <Button Text="Back to Menu" Command="{Binding GoToMenuCommand}"></Button>
+    </VerticalStackLayout>
+</ContentPage>

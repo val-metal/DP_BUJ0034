@@ -721,6 +721,9 @@
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\Resources\Raw\AllLevels.json">
+      <PackagePath>AllLevels.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\DP_BUJ0034\Resources\Raw\happy1.mp3">
       <PackagePath>happy1.mp3</PackagePath>
     </AppxPackagedFile>

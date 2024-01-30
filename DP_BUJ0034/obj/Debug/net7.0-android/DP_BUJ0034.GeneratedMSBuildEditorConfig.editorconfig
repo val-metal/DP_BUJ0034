@@ -32,6 +32,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.Board.xaml
 build_metadata.AdditionalFiles.TargetPath = Board.xaml
 build_metadata.AdditionalFiles.RelativePath = Board.xaml
 
+[C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/FinishPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.FinishPage.xaml
+build_metadata.AdditionalFiles.TargetPath = FinishPage.xaml
+build_metadata.AdditionalFiles.RelativePath = FinishPage.xaml
+
 [C:/Users/ValMe/Documents/GitHub/DP_BUJ0034/DP_BUJ0034/LevelSettings.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DP_BUJ0034.LevelSettings.xaml

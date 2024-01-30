@@ -7,6 +7,6 @@ public partial class SelectLevelMenu : ContentPage
 	public SelectLevelMenu()
 	{
 		InitializeComponent();
-		BindingContext = new SelectLevelViewModel();
+		BindingContext = new SelectLevelViewModel(LevelsLoad);
 	}
 }

@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace DP_BUJ0034.Game
 {
-    public class Points
+    public class Points:Dots
     {
         bool isStart;
         bool isEnd;
-        public float x { get;set; }
-        public float y { get;set; }
-        public Points(bool isStart, bool isEnd,float x,float y) { 
+        public bool isVisited=false;
+        public Points(bool isStart, bool isEnd,float x,float y):base(x,y) { 
             this.isStart = isStart; 
             this.isEnd = isEnd;
-            this.x = x;
-            this.y = y;
         }
     }
 }

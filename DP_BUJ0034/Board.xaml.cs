@@ -10,6 +10,7 @@ namespace DP_BUJ0034;
 public partial class Board : ContentPage
 {
     PlayFrame playFrame;
+    string type;
 	public Board()
     {
 		InitializeComponent();
@@ -27,6 +28,7 @@ public partial class Board : ContentPage
 
         playFrame = new PlayFrame(this.Resources["drawablee"] as Drawable, num_paths,difficulty);
         playFrame.drawable.textureProvider.loadByName(type);
+        this.type = type;
         //canvas.Drawable=
         idn();
 
@@ -52,6 +54,10 @@ public partial class Board : ContentPage
         var touch = e.Touches.First();
         //Application.Current.MainPage.DisplayAlert("Upozornìní", "Toto je ukázkové upozornìní."+touch.X+" "+playFrame.gameBoard.player.position.X, "OK");
         playFrame.movePlayer(touch.X, touch.Y);
+        if (playFrame.gameEnds)
+        {
+            this.Navigation.PushAsync(new FinishPage(playFrame.num_paths,playFrame.num_difficulty,type));
+        }
         canvas.Invalidate();
     }
 

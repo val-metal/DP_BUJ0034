@@ -97,8 +97,8 @@ namespace DP_BUJ0034.Drawables{
         {
                 for (int i = 0; i < gameBoard.num_paths; i++)
                 {
-                    canvas.DrawRectangle(gameBoard.player[i].position.X - gameBoard.player[i].size / 2, gameBoard.player[i].position.Y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
-                    canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.X - gameBoard.player[i].size / 2, gameBoard.player[i].position.Y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
+                    canvas.DrawRectangle(gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
+                    canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                 }
             
         }
