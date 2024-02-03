@@ -143,7 +143,7 @@ namespace DP_BUJ0034.Drawables{
                 }
                 else if (i == gameBoard.path[currentPath].dot.Count()-1){
                    
-                    canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 45, 45);
+                    canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x-22.5f, gameBoard.path[currentPath].dot[i].y-22.5f, 45, 45);
 // canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 10);
                 }
                 else{

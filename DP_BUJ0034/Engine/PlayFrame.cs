@@ -21,7 +21,7 @@ namespace DP_BUJ0034.Engine
         public PlayFrame(Drawable drawable,int num_path,int difficulty) {
             gameEnds = false;
             this.drawable = drawable;
-            this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path);
+            this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path, difficulty);
 
             this.num_paths = num_path;
             this.num_difficulty = difficulty;
