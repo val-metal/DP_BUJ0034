@@ -111,6 +111,10 @@ namespace DP_BUJ0034.Engine
             }
             return paths[i];
         }
+        public bool isRouteOfItems()
+        {
+            return textureSet.pathIsIteam;
+        }
         public IImage getEndsTexture(int i)
         {
             if (i > textureSet.finish.Count - 1 || i < 0)

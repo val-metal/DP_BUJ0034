@@ -30,7 +30,7 @@ namespace DP_BUJ0034.Drawables{
 
         public int curretPlayer { get; set; }
         public TextureProvider textureProvider { get; set; }
-        public Drawable() { textureProvider = new(); }
+        public Drawable() {textureProvider=new(); }
         IImage imageback;
         public void Draw(ICanvas canvas, RectF dirtyRect) {
             
@@ -49,8 +49,6 @@ namespace DP_BUJ0034.Drawables{
                 DrawGameBorder(canvas, dirtyRect);
 
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++){
-                    // DrawStardEnd(canvas);
-
 
                     // DrawControlDots(canvas, currentPath);
                     //Žlutá
@@ -211,50 +209,12 @@ namespace DP_BUJ0034.Drawables{
             {
                 path_draw_Curve.LineTo(gameBoard.path[currentPath].backdot_with_t[i].x, gameBoard.path[currentPath].backdot_with_t[i].y);
             }
-            //Toto když tak odkomentovat -- je to to zpětné vykreslení cesty bez vzálenosti
-            /*for (int i = gameBoard.path[currentPath].controlbackdot.Count - 2; i >= 0; i--)
-            {
-                path_draw_Curve.CurveTo(
-                    gameBoard.path[currentPath].controlbackdot[i].Item2.x,
-                    gameBoard.path[currentPath].controlbackdot[i].Item2.y,
-                    gameBoard.path[currentPath].controlbackdot[i].Item1.x,
-                    gameBoard.path[currentPath].controlbackdot[i].Item1.y,
-                    gameBoard.path[currentPath].backdot[i ].x,
-                    gameBoard.path[currentPath].backdot[i ].y
-                );
-            }*/
-
-            //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].x, gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
-
-
-            //path_draw_Curve.MoveTo(gameBoard.start.x, gameBoard.start.y);
-            /*
-            path_draw_Curve.LineTo(gameBoard.start.x - 5, gameBoard.start.y - 5);
-            path_draw_Curve.LineTo(gameBoard.start.x+5, gameBoard.start.y + 5);
-            for (int i = 0; i < gameBoard.path[currentPath].controldots.Count; i++)
-            {
-                path_draw_Curve.CurveTo(gameBoard.path[currentPath].controldots[i].Item1.x-5, gameBoard.path[currentPath].controldots[i].Item1.y - 5, gameBoard.path[currentPath].controldots[i].Item2.x - 5, gameBoard.path[currentPath].controldots[i].Item2.y - 5, gameBoard.path[currentPath].dot[i + 1].x - 5, gameBoard.path[currentPath].dot[i + 1].y - 5);
-            }
-            path_draw_Curve.LineTo(gameBoard.end.x - 5, gameBoard.end.y - 5);
-           */
-            //gameBoard.path[currentPath].dot[i + 1].x, gameBoard.path[currentPath].dot[i + 1].y - 2
-            /* path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count-1].x, gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count-1].y + 5);
-             for (int j = gameBoard.path[currentPath].controldots.Count-1; j > 0; j--)
-             {
-                 //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
-                 path_draw_Curve.CurveTo(gameBoard.path[currentPath].controldots[j].Item2.x+5, gameBoard.path[currentPath].controldots[j].Item2.y + 5, gameBoard.path[currentPath].controldots[j].Item1.x+5, gameBoard.path[currentPath].controldots[j].Item1.y + 5, gameBoard.path[currentPath].dot[j].x+5, gameBoard.path[currentPath].dot[j].y + 5);
-
-             }
-             path_draw_Curve.LineTo(gameBoard.start.x, gameBoard.start.y - 5);*/
-
-
 
             canvas.StrokeColor = Colors.Yellow;
             canvas.StrokeSize = 1;
             canvas.StrokeLineJoin = LineJoin.Round;
-            //canvas.ClipPath(path_draw_Curve,WindingMode.NonZero);
-            
-
+            if (!textureProvider.isRouteOfItems())
+            {
                 ImagePaint imagePaint = new ImagePaint
                 {
                     Image = textureProvider.getRouteTexture(currentPath).Downsize(100)
@@ -262,17 +222,19 @@ namespace DP_BUJ0034.Drawables{
                 path_draw_Curve.Close();
 
                 canvas.SetFillPaint(imagePaint, RectF.Zero);
-                canvas.FillPath(path_draw_Curve,WindingMode.NonZero);
+                canvas.FillPath(path_draw_Curve, WindingMode.NonZero);
                 //canvas.FillRectangle(0, 0, height, width);
                 canvas.StrokeDashOffset = 5;
-            
-
-            // canvas.StrokeSize = 8;
-            canvas.DrawPath(path_draw_Curve);
-            //canvas.BlendMode = BlendMode.Color;
-            
-
-           //canvas.FillPath(path_draw_Curve,WindingMode.NonZero);
+                canvas.DrawPath(path_draw_Curve);
+            }
+            else
+            {
+                for (int i = 0; i < gameBoard.path[currentPath].backdot_with_t.Count; i += 10)
+                {
+                    canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x-20, gameBoard.path[currentPath].backdot_with_t[i].y-20,20,20);
+                }
+                
+            }
         }
 
         public void DrawLineTo(ICanvas canvas, int currentPath)

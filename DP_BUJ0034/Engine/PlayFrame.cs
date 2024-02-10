@@ -1,4 +1,5 @@
-﻿using DP_BUJ0034.Drawables;
+﻿
+using DP_BUJ0034.Drawables;
 using DP_BUJ0034.Game;
 using Microsoft.Maui.Graphics;
 using System;
@@ -17,6 +18,7 @@ namespace DP_BUJ0034.Engine
         public bool gameEnds { get; set; }
         public int num_paths { get; set; }
         public int num_difficulty { get; set; }
+        private int id_last_player_move; 
                
         public PlayFrame(Drawable drawable,int num_path,int difficulty) {
             gameEnds = false;
@@ -32,25 +34,44 @@ namespace DP_BUJ0034.Engine
             {
                 gameEnds = true;
             }
-            for (int playerI = 0; playerI < gameBoard.player.Length; playerI++)
+            double distance_last = Math.Sqrt(Math.Pow((x - (gameBoard.player[id_last_player_move].size / 2)) - gameBoard.player[id_last_player_move].position.x, 2) + Math.Pow((y - (gameBoard.player[id_last_player_move].size / 2)) - gameBoard.player[id_last_player_move].position.y, 2));
+            if (distance_last < gameBoard.player[id_last_player_move].size)
             {
-                double distance = Math.Sqrt(Math.Pow((x - (gameBoard.player[playerI].size / 2)) - gameBoard.player[playerI].position.x, 2) + Math.Pow((y - (gameBoard.player[playerI].size / 2)) - gameBoard.player[playerI].position.y, 2));
-                if (distance < gameBoard.player[playerI].size)
+                gameBoard.player[id_last_player_move].position = new Dots(x, y);
+
+                float end_distance = Dots.EuclidDistance(gameBoard.player[id_last_player_move].getCenter(), gameBoard.end[id_last_player_move]);
+                if (end_distance < gameBoard.player[id_last_player_move].size)
                 {
-                    gameBoard.player[playerI].position = new Dots(x, y);
-
-                    float end_distance = Dots.EuclidDistance(gameBoard.player[playerI].getCenter(), gameBoard.end[playerI]);
-                    if ( end_distance< gameBoard.player[playerI].size)
+                    gameBoard.end[id_last_player_move].isVisited = true;
+                }
+                //else
+                //{
+                //    gameBoard.end[playerI].isVisited = false;
+                //}
+                drawable.curretPlayer = id_last_player_move;
+            }
+            else
+            {
+                for (int playerI = 0; playerI < gameBoard.player.Length; playerI++)
+                {
+                    double distance = Math.Sqrt(Math.Pow((x - (gameBoard.player[playerI].size / 2)) - gameBoard.player[playerI].position.x, 2) + Math.Pow((y - (gameBoard.player[playerI].size / 2)) - gameBoard.player[playerI].position.y, 2));
+                    if (distance < gameBoard.player[playerI].size)
                     {
-                        gameBoard.end[playerI].isVisited = true;
-                    }
-                    //else
-                    //{
-                    //    gameBoard.end[playerI].isVisited = false;
-                    //}
-                    drawable.curretPlayer = playerI;
+                        gameBoard.player[playerI].position = new Dots(x, y);
 
-                    break;
+                        float end_distance = Dots.EuclidDistance(gameBoard.player[playerI].getCenter(), gameBoard.end[playerI]);
+                        if (end_distance < gameBoard.player[playerI].size)
+                        {
+                            gameBoard.end[playerI].isVisited = true;
+                        }
+                        //else
+                        //{
+                        //    gameBoard.end[playerI].isVisited = false;
+                        //}
+                        drawable.curretPlayer = playerI;
+                        id_last_player_move = playerI;
+                        break;
+                    }
                 }
             }
         }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 using System;
 using Plugin.Maui.Audio;
 using System.Runtime.CompilerServices;
+using System.Text.Json;
 
 namespace DP_BUJ0034.Engine
 {
-    class AudioPlayerWrapper
+    public class AudioPlayerWrapper
     {
-        private static AudioPlayerWrapper instance;
         private IAudioPlayer audioPlayer;
         private string currentAudio;
-        private AudioPlayerWrapper()
+        public AudioPlayerWrapper()
         {
         }
-        public async void Play(string audioName)
+        public async Task Play(string audioName)
         {
             if (audioPlayer is not null)
             {
@@ -29,19 +29,40 @@ namespace DP_BUJ0034.Engine
             currentAudio = audioName;
             audioPlayer.PlaybackEnded += repeat;
         }
+        public async Task PlayRandom()
+        {
+            using var stream = await FileSystem.OpenAppPackageFileAsync("MusicFiles.json");
+            using var reader = new StreamReader(stream);
+
+            string contents = reader.ReadToEnd();
+            MusicFile[] mfs = JsonSerializer.Deserialize<MusicFile[]>(contents);
+            if (mfs.Length > 0)
+            {
+                Random random = new Random();
+                int randomIndex = random.Next(0, mfs.Length); 
+
+               await Play(mfs[randomIndex].Name); 
+
+            }
+            else
+            {
+                // TODO :Exp
+            }
+
+        }
         private void repeat(object sender, EventArgs e)
         {
             audioPlayer.Play();
         }
-        public static AudioPlayerWrapper GetInstance()
-        {
-            if (instance == null)
-            {
-                instance = new AudioPlayerWrapper();
-            }
+        //public static AudioPlayerWrapper GetInstance()
+        //{
+        //    if (instance == null)
+        //    {
+        //        instance = new AudioPlayerWrapper();
+        //    }
 
-            return instance;
-        }
+        //    return instance;
+        //}
 
     }
 }

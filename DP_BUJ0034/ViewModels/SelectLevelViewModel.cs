@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DP_BUJ0034.Engine;
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace DP_BUJ0034.ViewModels
         int[] scores;
         [ObservableProperty]
         int complete_score;
-        public SelectLevelViewModel(VerticalStackLayout LevelsLoad) {
-
-            Task t=configPage(LevelsLoad);
+        public SelectLevelViewModel() {
+        }
+        public async Task insertLevels(VerticalStackLayout vsl)
+        {
+            Task t = configPage(vsl);
             t.WaitAsync(CancellationToken.None);
             loadScores();
         }
@@ -30,9 +33,10 @@ namespace DP_BUJ0034.ViewModels
         public async Task configPage(VerticalStackLayout LevelsLoad)
         {
             levelInfos = await LevelLoader.LoadAllLevels();
-            for(int i = 0; i < levelInfos.Length; i++)
+            for(int i = 0; i < levelInfos.Length-1; i++)
             {
                 Button temp = new Button();
+                string name = levelInfos[i].name;
                 temp.Text = levelInfos[i].nameOfButton;
 
 
@@ -42,7 +46,9 @@ namespace DP_BUJ0034.ViewModels
                 temp.MaximumHeightRequest = 64;
                 temp.MaximumWidthRequest = 150;
                 temp.CommandParameter = levelInfos[i].name;
-                temp.Command = gotolevelSettingsCommand;
+                temp.Command = new Command(async () => { await Shell.Current.Navigation.PushAsync(new LevelSettings(name)); });
+
+
 
                 LevelsLoad.Children.Add(temp);
                 

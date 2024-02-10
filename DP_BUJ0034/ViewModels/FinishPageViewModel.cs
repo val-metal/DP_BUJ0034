@@ -35,6 +35,10 @@ namespace DP_BUJ0034.ViewModels
             addScore(type);
 
         }
+        public async Task showScore(int num_paths, int difficulty, string type)
+        { 
+            
+        }
         public async Task addScore(string type)
         {
            await ScoreLoader.GetInstance().AddStars(difficulty,type);
@@ -43,7 +47,7 @@ namespace DP_BUJ0034.ViewModels
 
         public void GoToMenu()
         {
-            Shell.Current.Navigation.PushAsync(new SelectLevelMenu());
+            Shell.Current.Navigation.PushAsync(new SelectLevelMenu(new SelectLevelViewModel()));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,17 +10,16 @@ namespace DP_BUJ0034
 {
     public class ScoreLoader
     {
-        private static ScoreLoader instance { get; set; }
+        static ScoreLoader instance;
         LevelInfo[] levelinfo;
         public List<int> stars { get; set; }
         public int complete_score { get; set; }
         private ScoreLoader() { 
 
         }
-
         public static ScoreLoader GetInstance()
-        { 
-            if(instance == null)
+        {
+            if (instance == null)
             {
                 instance = new ScoreLoader();
             }

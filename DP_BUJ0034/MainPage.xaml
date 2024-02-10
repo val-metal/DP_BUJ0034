@@ -2,16 +2,50 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DP_BUJ0034.MainPage"
+             xmlns:viewmodel="clr-namespace:DP_BUJ0034.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel"
              BackgroundImageSource="menu1.gif"
+             Title=""
              >
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Frame BackgroundColor="#80FFFFFF" Opacity="60" CornerRadius="20" Padding="30,10,30,10" VerticalOptions="CenterAndExpand">
-            <StackLayout VerticalOptions="CenterAndExpand" Spacing="10">
-                <Button x:Name="CounterBtn" Text="Click me" SemanticProperties.Hint="Counts the number of times you click" Clicked="OnCounterClicked" HorizontalOptions="Center" Opacity="1.0"/>
-                <Button x:Name="menulevelsbutton" Text="Hrát" Clicked="GoToMenuSelect" HorizontalOptions="Center" Opacity="1.0"/>
-            </StackLayout>
-        </Frame>
-    </StackLayout>
+    <Grid RowDefinitions="1.7*,2*, 0.5*"
+          ColumnDefinitions="1*, 2*, 1*">
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="White" Opacity="0.5"
+                 CornerRadius="20"
+                 >
+        </BoxView>
+        <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="50">Název APP</Label>
+        <Border BackgroundColor="#3E0449" Opacity="0.3"  Margin="30"
+                Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="66,0,0,66" />
+            </Border.StrokeShape>
+        </Border>
+        <Border Stroke="#3E0449" StrokeThickness="7" Margin="30"
+                Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="66,0,0,66" />
+            </Border.StrokeShape>
+            <Label Text="Název APP"
+           TextColor="White" 
+            
+            FontSize="50"
+                   VerticalOptions="Center" HorizontalOptions="Center" 
+            />
+        </Border>
+       
+        <Grid Grid.Row="1" Grid.Column="1"
+            RowDefinitions="0.8*,1.2*,1.2*, 0.8*"
+          ColumnDefinitions="0.8*, 2*, 0.8*"
+              RowSpacing="5">
+
+            <Button Grid.Row="1" Grid.Column="1" x:Name="menulevelsbutton" Text="Hrát si" FontSize="20" Command="{Binding goToMenuSelectCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="1.0"/>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="CounterBtn" Text="Nastavení" FontSize="20" Clicked="OnCounterClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Opacity="1.0"/>
+        </Grid>
+        
+    </Grid>
+
 
 
 </ContentPage>

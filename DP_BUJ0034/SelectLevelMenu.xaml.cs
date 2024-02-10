@@ -4,9 +4,11 @@ namespace DP_BUJ0034;
 
 public partial class SelectLevelMenu : ContentPage
 {
-	public SelectLevelMenu()
+	public SelectLevelMenu(SelectLevelViewModel svm)
 	{
 		InitializeComponent();
-		BindingContext = new SelectLevelViewModel(LevelsLoad);
+		svm.insertLevels(LevelsLoad);
+		BindingContext = svm;
+		
 	}
 }

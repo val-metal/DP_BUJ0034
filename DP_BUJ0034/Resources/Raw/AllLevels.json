@@ -30,8 +30,23 @@
     "pathForRes": "menu_pirate.png"
   },
   {
+    "name": "Pirate2",
+    "nameOfButton": "Pirate2",
+    "pathForRes": "menu_pirate2.png"
+  },
+  {
     "name": "SteamSky",
     "nameOfButton": "SteamSky",
     "pathForRes": "menu_steam.png"
+  },
+  {
+    "name": "Dragon",
+    "nameOfButton": "Dragon",
+    "pathForRes": "menu_dragon.png"
+  },
+  {
+    "name": "Princess",
+    "nameOfButton": "Princess",
+    "pathForRes": "menu_princess.png"
   }
 ]

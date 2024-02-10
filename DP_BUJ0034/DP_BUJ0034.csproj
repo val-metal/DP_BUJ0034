@@ -84,12 +84,16 @@
 	  <None Remove="Resources\Images\Car\Player_1.png" />
 	  <None Remove="Resources\Images\Car\Player_2.png" />
 	  <None Remove="Resources\Images\Car\Player_3.png" />
-	  <None Remove="Resources\Images\Dragon_\Finish_1.png" />
-	  <None Remove="Resources\Images\Dragon_\Finish_2.png" />
-	  <None Remove="Resources\Images\Dragon_\Finish_3.png" />
-	  <None Remove="Resources\Images\Dragon_\Player_1.png" />
-	  <None Remove="Resources\Images\Dragon_\Player_2.png" />
-	  <None Remove="Resources\Images\Dragon_\Player_3.png" />
+	  <None Remove="Resources\Images\Dragon\Background_Img.png" />
+	  <None Remove="Resources\Images\Dragon\Finish_1.png" />
+	  <None Remove="Resources\Images\Dragon\Finish_2.png" />
+	  <None Remove="Resources\Images\Dragon\Finish_3.png" />
+	  <None Remove="Resources\Images\Dragon\Path_Texture_1.png" />
+	  <None Remove="Resources\Images\Dragon\Path_Texture_2.png" />
+	  <None Remove="Resources\Images\Dragon\Path_Texture_3.png" />
+	  <None Remove="Resources\Images\Dragon\Player_1.png" />
+	  <None Remove="Resources\Images\Dragon\Player_2.png" />
+	  <None Remove="Resources\Images\Dragon\Player_3.png" />
 	  <None Remove="Resources\Images\end1.png" />
 	  <None Remove="Resources\Images\Frog\Background_Texture.png" />
 	  <None Remove="Resources\Images\Frog\Finish_1.png" />
@@ -109,10 +113,13 @@
 	  <None Remove="Resources\Images\Fruit_\Player_3.png" />
 	  <None Remove="Resources\Images\menu1.gif" />
 	  <None Remove="Resources\Images\menu_Cars.png" />
+	  <None Remove="Resources\Images\menu_dragon.png" />
 	  <None Remove="Resources\Images\menu_frog.png" />
 	  <None Remove="Resources\Images\menu_mermaid.png" />
 	  <None Remove="Resources\Images\menu_neon.png" />
 	  <None Remove="Resources\Images\menu_pirate.png" />
+	  <None Remove="Resources\Images\menu_pirate2.png" />
+	  <None Remove="Resources\Images\menu_princess.png" />
 	  <None Remove="Resources\Images\menu_steam.png" />
 	  <None Remove="Resources\Images\menu_train.png" />
 	  <None Remove="Resources\Images\Mermaid\Background_Img.png" />
@@ -154,6 +161,13 @@
 	  <None Remove="Resources\Images\path3_1_check.png" />
 	  <None Remove="Resources\Images\path3_3.png" />
 	  <None Remove="Resources\Images\path3_3_check.png" />
+	  <None Remove="Resources\Images\Pirate2\Background_Texture.png" />
+	  <None Remove="Resources\Images\Pirate2\Path_Texture_1.png" />
+	  <None Remove="Resources\Images\Pirate2\Path_Texture_2.png" />
+	  <None Remove="Resources\Images\Pirate2\Path_Texture_3.png" />
+	  <None Remove="Resources\Images\Pirate2\Player_1.png" />
+	  <None Remove="Resources\Images\Pirate2\Player_2.png" />
+	  <None Remove="Resources\Images\Pirate2\Player_3.png" />
 	  <None Remove="Resources\Images\Pirate\Background_Img.png" />
 	  <None Remove="Resources\Images\Pirate\Finish_1.png" />
 	  <None Remove="Resources\Images\Pirate\Finish_2.png" />
@@ -167,12 +181,16 @@
 	  <None Remove="Resources\Images\Pirate\treasure1.png" />
 	  <None Remove="Resources\Images\Pirate\treasure2.png" />
 	  <None Remove="Resources\Images\Pirate\treasure3.png" />
-	  <None Remove="Resources\Images\Princess_\Finish_1.png" />
-	  <None Remove="Resources\Images\Princess_\Finish_2.png" />
-	  <None Remove="Resources\Images\Princess_\Finish_3.png" />
-	  <None Remove="Resources\Images\Princess_\Player_1.png" />
-	  <None Remove="Resources\Images\Princess_\Player_2.png" />
-	  <None Remove="Resources\Images\Princess_\Player_3.png" />
+	  <None Remove="Resources\Images\Princess\Background_Img.png" />
+	  <None Remove="Resources\Images\Princess\Finish_1.png" />
+	  <None Remove="Resources\Images\Princess\Finish_2.png" />
+	  <None Remove="Resources\Images\Princess\Finish_3.png" />
+	  <None Remove="Resources\Images\Princess\Path_Color_1.png" />
+	  <None Remove="Resources\Images\Princess\Path_Color_2.png" />
+	  <None Remove="Resources\Images\Princess\Path_Color_3.png" />
+	  <None Remove="Resources\Images\Princess\Player_1.png" />
+	  <None Remove="Resources\Images\Princess\Player_2.png" />
+	  <None Remove="Resources\Images\Princess\Player_3.png" />
 	  <None Remove="Resources\Images\star_1.png" />
 	  <None Remove="Resources\Images\star_1_check.png" />
 	  <None Remove="Resources\Images\star_2.png" />
@@ -210,8 +228,13 @@
 	  <None Remove="Resources\Images\Train\Player_2.png" />
 	  <None Remove="Resources\Images\Train\Player_3.png" />
 	  <None Remove="Resources\Player_1.png" />
+	  <None Remove="Resources\Raw\adventure1.mp3" />
 	  <None Remove="Resources\Raw\AllLevels.json" />
+	  <None Remove="Resources\Raw\chill1.mp3" />
+	  <None Remove="Resources\Raw\chill2.mp3" />
 	  <None Remove="Resources\Raw\happy1.mp3" />
+	  <None Remove="Resources\Raw\happy2.mp3" />
+	  <None Remove="Resources\Raw\MusicFiles.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -232,12 +255,15 @@
 	  <EmbeddedResource Include="Resources\Images\Car\Player_1.png" />
 	  <EmbeddedResource Include="Resources\Images\Car\Player_2.png" />
 	  <EmbeddedResource Include="Resources\Images\Car\Player_3.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_1.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_2.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Finish_3.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_1.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_2.png" />
-	  <EmbeddedResource Include="Resources\Images\Dragon_\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Path_Texture_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Path_Texture_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Path_Texture_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Dragon\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\end1.png" />
 	  <EmbeddedResource Include="Resources\Images\Frog\Background_Texture.png" />
 	  <EmbeddedResource Include="Resources\Images\Frog\Finish_1.png" />
@@ -276,6 +302,13 @@
 	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_1.png" />
 	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_2.png" />
 	  <EmbeddedResource Include="Resources\Images\NeonCity\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Path_Texture_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Path_Texture_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Background_Texture.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Path_Texture_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\Pirate\Finish_1.png" />
 	  <EmbeddedResource Include="Resources\Images\Pirate\Finish_2.png" />
 	  <EmbeddedResource Include="Resources\Images\Pirate\Finish_3.png" />
@@ -286,15 +319,19 @@
 	  <EmbeddedResource Include="Resources\Images\Pirate\Player_1.png" />
 	  <EmbeddedResource Include="Resources\Images\Pirate\Player_2.png" />
 	  <EmbeddedResource Include="Resources\Images\Pirate\Player_3.png" />
-	  <EmbeddedResource Include="Resources\Images\Pirate\treasure1.png" />
-	  <EmbeddedResource Include="Resources\Images\Pirate\treasure2.png" />
-	  <EmbeddedResource Include="Resources\Images\Pirate\treasure3.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_1.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_2.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Finish_3.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Player_1.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Player_2.png" />
-	  <EmbeddedResource Include="Resources\Images\Princess_\Player_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Pirate2\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Background_Img.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Finish_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Finish_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Finish_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Path_Color_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Path_Color_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Path_Color_3.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Player_1.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Player_2.png" />
+	  <EmbeddedResource Include="Resources\Images\Princess\Player_3.png" />
 	  <EmbeddedResource Include="Resources\Images\SteamSky\Background_Img.png" />
 	  <EmbeddedResource Include="Resources\Images\SteamSky\Finish_1.png" />
 	  <EmbeddedResource Include="Resources\Images\SteamSky\Finish_2.png" />
@@ -324,6 +361,10 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="7.0.86" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\Dragon\Background_Img.png" />
 	</ItemGroup>
 
 	<ItemGroup>
