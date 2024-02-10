@@ -6,8 +6,10 @@
              x:DataType="viewmodel:SelectLevelViewModel"
              Title="SelectLevelMenu">
     
-    <VerticalStackLayout x:Name="LevelsLoad">
-        <Label Text="{Binding Complete_score}"/>
+    <ScrollView >
+        <VerticalStackLayout x:Name="LevelsLoad">
+            <Label Text="{Binding Complete_score}"/>
+        </VerticalStackLayout>
 
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

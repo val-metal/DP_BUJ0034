@@ -2,16 +2,36 @@
   {
     "name": "Car",
     "nameOfButton": "Cars",
-    "pathForRes": "star_1.png"
+    "pathForRes": "menu_cars.png"
   },
   {
     "name": "Frog",
     "nameOfButton": "Frogs",
-    "pathForRes": "Player_1.png"
+    "pathForRes": "menu_frog.png"
   },
   {
     "name": "Train",
     "nameOfButton": "Trains",
-    "pathForRes": "Player_1.png"
+    "pathForRes": "menu_train.png"
+  },
+  {
+    "name": "Mermaid",
+    "nameOfButton": "Mermaid",
+    "pathForRes": "menu_mermaid.png"
+  },
+  {
+    "name": "NeonCity",
+    "nameOfButton": "NeonCity",
+    "pathForRes": "menu_neon.png"
+  },
+  {
+    "name": "Pirate",
+    "nameOfButton": "Pirate",
+    "pathForRes": "menu_pirate.png"
+  },
+  {
+    "name": "SteamSky",
+    "nameOfButton": "SteamSky",
+    "pathForRes": "menu_steam.png"
   }
 ]

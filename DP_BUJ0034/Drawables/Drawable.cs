@@ -27,10 +27,13 @@ namespace DP_BUJ0034.Drawables{
         public float height { get; set; }
         public float width { get; set; }
         public GameBoard gameBoard { get; set; }
+
+        public int curretPlayer { get; set; }
         public TextureProvider textureProvider { get; set; }
         public Drawable() { textureProvider = new(); }
         IImage imageback;
         public void Draw(ICanvas canvas, RectF dirtyRect) {
+            
             this.width = dirtyRect.Height;
             this.height = dirtyRect.Width;
             // SkiaBitmapExportContext skiaBitmapExportContext = new((int)width, (int)height, 1);
@@ -46,15 +49,20 @@ namespace DP_BUJ0034.Drawables{
                 DrawGameBorder(canvas, dirtyRect);
 
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++){
-                   // DrawStardEnd(canvas);
+                    // DrawStardEnd(canvas);
 
-                    
-                   // DrawControlDots(canvas, currentPath);
+
+                    // DrawControlDots(canvas, currentPath);
                     //Žlutá
+                    if (currentPath == curretPlayer)
+                    {
+                        continue;
+                    }
                     DrawCurveTo(canvas,currentPath);
                     //Zelená
                     //DrawLineTo(canvas, currentPath);
                 }
+                DrawCurveTo(canvas, curretPlayer);
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++)
                 {
                     // DrawStardEnd(canvas);

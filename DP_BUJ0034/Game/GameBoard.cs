@@ -323,6 +323,8 @@ namespace DP_BUJ0034.Game{
             int randomSmer;
             float maxX = 0;
             float goingbackCounter = 0;
+            int back_count=0;
+            float rozdil = 0;
             bool startReturning = false;
             while (lastDot != true) {
 
@@ -333,7 +335,7 @@ namespace DP_BUJ0034.Game{
                 float final_distance = distance + random_tolerance;
                 int angels_count = angles.Length;
 
-                if (startReturning)
+                if (startReturning || back_count>2)
                 {
                     angles = new float[] { 0, 45, 90, 270, 315 };
                    
@@ -365,10 +367,16 @@ namespace DP_BUJ0034.Game{
                     {
                         goingbackCounter += 1;
                     }
-                    else if (goingbackCounter == 3)
+                    else if (goingbackCounter == 2)
                     {
                         goingbackCounter = 0;
                         startReturning = true;
+                    }
+                    rozdil = path[currentPath].dot.Last().x - eventual_dot.x;
+                    if (rozdil > (distance / 4))
+                    {
+                        back_count++;
+
                     }
                     path[currentPath].dot.Add(eventual_dot);
                 }
@@ -445,10 +453,16 @@ namespace DP_BUJ0034.Game{
                         {
                             goingbackCounter+=1;
                         }
-                        else if (goingbackCounter == 3)
+                        else if (goingbackCounter == 2)
                         {
                             goingbackCounter = 0;
                             startReturning = true;
+                        }
+                        rozdil = path[currentPath].dot.Last().x - eventual_dot.x;
+                        if (rozdil > (distance / 4))
+                        {
+                            back_count++;
+
                         }
                         path[currentPath].dot.Add(try_dot);
                     }

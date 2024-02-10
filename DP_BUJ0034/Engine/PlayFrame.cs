@@ -48,7 +48,7 @@ namespace DP_BUJ0034.Engine
                     //{
                     //    gameBoard.end[playerI].isVisited = false;
                     //}
-;
+                    drawable.curretPlayer = playerI;
 
                     break;
                 }
