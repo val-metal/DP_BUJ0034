@@ -371,6 +371,9 @@
 	  <Compile Update="Board.xaml.cs">
 	    <DependentUpon>Board.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Setting.xaml.cs">
+	    <DependentUpon>Setting.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -384,6 +387,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SelectLevelMenu.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Setting.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

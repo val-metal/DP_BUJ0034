@@ -15,23 +15,23 @@
                  CornerRadius="20"
                  >
         </BoxView>
-        <Label Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="50">Název APP</Label>
-        <Border BackgroundColor="#3E0449" Opacity="0.3"  Margin="30"
+
+        <Border BackgroundColor="#4a22d2" Opacity="0.3"  Margin="30"
                 Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Border.StrokeShape>
-                <RoundRectangle CornerRadius="66,0,0,66" />
+                <RoundRectangle CornerRadius="55,0,0,55" />
             </Border.StrokeShape>
         </Border>
-        <Border Stroke="#3E0449" StrokeThickness="7" Margin="30"
+        <Border Stroke="#4a22d2" StrokeThickness="7" Margin="30"
                 Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="66,0,0,66" />
-            </Border.StrokeShape>
-            <Label Text="Název APP"
-           TextColor="White" 
             
-            FontSize="50"
-                   VerticalOptions="Center" HorizontalOptions="Center" 
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="55,0,0,55" />
+            </Border.StrokeShape>
+            
+            <Label Text=" HappyTrails "
+                TextColor="White" FontSize="50" 
+                VerticalOptions="Center" HorizontalOptions="Center" 
             />
         </Border>
        
@@ -41,7 +41,7 @@
               RowSpacing="5">
 
             <Button Grid.Row="1" Grid.Column="1" x:Name="menulevelsbutton" Text="Hrát si" FontSize="20" Command="{Binding goToMenuSelectCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="1.0"/>
-            <Button Grid.Row="2" Grid.Column="1" x:Name="CounterBtn" Text="Nastavení" FontSize="20" Clicked="OnCounterClicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Opacity="1.0"/>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="CounterBtn" Text="Nastavení" FontSize="20" Command="{Binding goToSettingCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Opacity="1.0"/>
         </Grid>
         
     </Grid>

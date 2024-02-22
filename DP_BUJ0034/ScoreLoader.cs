@@ -53,9 +53,21 @@ namespace DP_BUJ0034
             int parsednum = Int32.Parse(data);
             if (parsednum < num)
             {
-                await SecureStorage.Default.SetAsync(levelName, ""+num);
-            }    
+                await SecureStorage.Default.SetAsync(levelName, "" + num);
+            }
         }
-        
+
+        public async Task ResetStars()
+        {
+            LevelInfo[] levelinfo = await LevelLoader.LoadAllLevels();
+            for(int i = 0; i < levelinfo.Length; i++)
+            {
+                
+                await SecureStorage.Default.SetAsync(levelinfo[i].name, "0");
+       
+                
+            }
+        }
+
     }
 }

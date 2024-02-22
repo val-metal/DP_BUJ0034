@@ -4,12 +4,27 @@
              x:Class="DP_BUJ0034.SelectLevelMenu"
              xmlns:viewmodel="clr-namespace:DP_BUJ0034.ViewModels"
              x:DataType="viewmodel:SelectLevelViewModel"
-             Title="SelectLevelMenu">
+             BackgroundImageSource="selectlevelmenu1.gif"
+             Title="">
     
     <ScrollView >
-        <VerticalStackLayout x:Name="LevelsLoad">
-            <Label Text="{Binding Complete_score}"/>
-        </VerticalStackLayout>
+        <Grid RowDefinitions="4*,20*" ColumnDefinitions="1*, 4*, 1*">
+            <Label Text=" Výběr hry"
+                Grid.Row="0" Grid.Column="1"
+                TextColor="White" FontSize="20" 
+                VerticalOptions="Center" HorizontalOptions="Center" 
+            />
+            <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="White" Opacity="0.5"
+                 CornerRadius="20"
+                     Margin="5"
+                 >
+            </BoxView>
+            <Grid x:Name="LevelsLoad" ColumnDefinitions="1*,1*" Grid.Row="1" Grid.Column="1" Margin="5">
+                <Label Text="{Binding Complete_score}"/>
+             </Grid>
+        </Grid>
 
     </ScrollView>
 </ContentPage>

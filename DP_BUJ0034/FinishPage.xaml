@@ -4,13 +4,25 @@
              x:Class="DP_BUJ0034.FinishPage"
              xmlns:viewmodel="clr-namespace:DP_BUJ0034.ViewModels"
              x:DataType="viewmodel:FinishPageViewModel"
-             Title="FinishPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="You win!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"/>
-        <Image Source="{Binding ImgName}" HeightRequest="64" WidthRequest="64"></Image>
-        <Button Text="Back to Menu" Command="{Binding GoToMenuCommand}"></Button>
-    </VerticalStackLayout>
+             BackgroundImageSource="finishpage1.gif"
+             Title="">
+    <Grid RowDefinitions="1*,2*,0.6*, 0.3*"
+          ColumnDefinitions="1*, 1*,1*, 1*"
+          RowSpacing="3">
+        <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                 Color="White" Opacity="0.8" CornerRadius="20"
+                 >
+        </BoxView>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+            Text="Vyhrál si!" TextColor="White" FontSize="30" 
+            VerticalOptions="Center" HorizontalOptions="Center">
+        </Label>
+        <Label Grid.Row="1" Grid.Column="2"
+            Text="90%" TextColor="Black" FontSize="60" 
+            VerticalOptions="Center" HorizontalOptions="Center">
+        </Label>
+        <Image Grid.Row="1" Grid.Column="1" Margin="30" Source="{Binding ImgName}" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"></Image>
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="Zpět na výběr levelu" CornerRadius="16" Command="{Binding GoToMenuCommand}"></Button>
+    </Grid>
+    
 </ContentPage>

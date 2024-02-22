@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using DP_BUJ0034.Engine;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,25 +21,50 @@ namespace DP_BUJ0034.ViewModels
         int complete_score;
         public SelectLevelViewModel() {
         }
-        public async Task insertLevels(VerticalStackLayout vsl)
+        public async Task insertLevels(Microsoft.Maui.Controls.Grid vsl)
         {
+            
             Task t = configPage(vsl);
             t.WaitAsync(CancellationToken.None);
-            loadScores();
+            
+        }
+        public async void refreshScore(object sender, EventArgs e)
+        {
+            await loadScores();
         }
         public async Task loadScores()
         {
             (scores,Complete_score) = await ScoreLoader.LoadScore().ConfigureAwait(false);
         }
-        public async Task configPage(VerticalStackLayout LevelsLoad)
+        public async Task configPage(Microsoft.Maui.Controls.Grid LevelsLoad)
         {
+            await loadScores();
             levelInfos = await LevelLoader.LoadAllLevels();
-            for(int i = 0; i < levelInfos.Length-1; i++)
+            int count = levelInfos.Length;
+            int row_count = (int)Math.Ceiling((double)count / 2);
+            for(int i = 0; i < row_count; i++)
             {
+                LevelsLoad.RowDefinitions.Add(new RowDefinition());
+            }
+            LevelsLoad.VerticalOptions= LayoutOptions.CenterAndExpand;
+
+            //LevelsLoad.Add(new BoxView
+            //{
+            //    Color = Colors.Blue
+            //}, 1, 0);
+            //LevelsLoad.Add(new BoxView
+            //{
+            //    Color = Colors.Red
+            //}, 0, 1);
+
+            for (int i = 0; i < levelInfos.Length-1; i++)
+            {
+               
+                
+
                 Button temp = new Button();
                 string name = levelInfos[i].name;
                 temp.Text = levelInfos[i].nameOfButton;
-
 
                 temp.VerticalOptions = LayoutOptions.CenterAndExpand;
                 temp.Padding = new Thickness(0,0,0,20);
@@ -49,9 +75,38 @@ namespace DP_BUJ0034.ViewModels
                 temp.Command = new Command(async () => { await Shell.Current.Navigation.PushAsync(new LevelSettings(name)); });
 
 
+                Microsoft.Maui.Controls.Image lockInfo = new Microsoft.Maui.Controls.Image();
+
+
+                if (levelInfos[i].unlockAt >Complete_score)
+                {
+                    temp.IsEnabled = false;
+                    //lockInfo.Source="lock.png";
+                    int y = 0;
+                }
+                else
+                {
+                    //lockInfo.Source = "unlock.png";t
+                    int x = 0;
+                }
+
+                if (i % 2 == 0)
+                {
+                    LevelsLoad.SetColumn(temp, 0);
+                    LevelsLoad.SetRow(temp, (i / 2));
+                }
+                else
+                {
+                    LevelsLoad.SetColumn(temp, 1);
+                    LevelsLoad.SetRow(temp, ((i - 1) / 2));
+                }
+               
+               
 
                 LevelsLoad.Children.Add(temp);
-                
+                LevelsLoad.Children.Add(lockInfo);
+
+
             }
 
         }

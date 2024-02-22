@@ -17,17 +17,33 @@ namespace DP_BUJ0034.Engine
         private string currentAudio;
         public AudioPlayerWrapper()
         {
+            
+          
         }
         public async Task Play(string audioName)
         {
-            if (audioPlayer is not null)
+            bool saveMusicSet = (await SettingLoader.load()).musicMute;
+
+            if (audioPlayer is not null )
             {
                 audioPlayer.Stop();
+                if (saveMusicSet == true)
+                {
+                    muteMusic();
+                }
+                else
+                {
+                    unmuteMusic();
+                }
             }
-            audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync(audioName));
-            audioPlayer.Play();
-            currentAudio = audioName;
-            audioPlayer.PlaybackEnded += repeat;
+            if (saveMusicSet == false)
+            {
+                audioPlayer = AudioManager.Current.CreatePlayer(await FileSystem.OpenAppPackageFileAsync(audioName));
+                audioPlayer.Play();
+                currentAudio = audioName;
+                audioPlayer.PlaybackEnded += repeat;
+            }
+           
         }
         public async Task PlayRandom()
         {
@@ -39,9 +55,9 @@ namespace DP_BUJ0034.Engine
             if (mfs.Length > 0)
             {
                 Random random = new Random();
-                int randomIndex = random.Next(0, mfs.Length); 
+                int randomIndex = random.Next(0, mfs.Length);
 
-               await Play(mfs[randomIndex].Name); 
+                await Play(mfs[randomIndex].Name);
 
             }
             else
@@ -53,6 +69,25 @@ namespace DP_BUJ0034.Engine
         private void repeat(object sender, EventArgs e)
         {
             audioPlayer.Play();
+        }
+
+        public void muteMusic()
+        {
+            if (audioPlayer is not null)
+            {
+                audioPlayer.Volume = 0;
+            }
+        }
+        public async Task unmuteMusic()
+        {
+            if (audioPlayer is not null)
+            {
+                audioPlayer.Volume = 1;
+            }
+            else
+            {
+               await PlayRandom();
+            }
         }
         //public static AudioPlayerWrapper GetInstance()
         //{

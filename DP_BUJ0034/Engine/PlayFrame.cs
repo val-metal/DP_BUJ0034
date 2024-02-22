@@ -77,15 +77,30 @@ namespace DP_BUJ0034.Engine
         }
         public void play(float height, float width)
         {
-            for (int i = 0; i < gameBoard.num_paths; i++)
+            if (num_paths == 4)
             {
-                gameBoard.generate_paths(height, width, i);
-            }
-            for (int i = 0; i < gameBoard.num_paths; i++)
-            {
-                gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
+                num_paths = 2;
+                gameBoard.num_paths = 2;
+                gameBoard.Generate_dor_for_3to1_path(height, width);
+                for (int i = 0; i < 3; i++)
+                {
+                    gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
 
+                }
             }
+            else
+            {
+                for (int i = 0; i < gameBoard.num_paths ; i++)
+                {
+                    gameBoard.generate_paths(height, width, i);
+                }
+                for (int i = 0; i < gameBoard.num_paths; i++)
+                {
+                    gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
+
+                }
+            }
+            
             drawable.gameBoard = gameBoard;
             
         }

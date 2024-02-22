@@ -11,7 +11,7 @@ namespace DP_BUJ0034
         public string name { get; set; }
         public string nameOfButton { get; set; }
         public string pathForRes { get; set; }
-
+        public int unlockAt { get; set; }
 
     }
 }

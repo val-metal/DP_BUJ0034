@@ -19,7 +19,8 @@ public static class MauiProgram
 			});
 		builder.Services.AddSingleton<MainPage>();
         builder.Services.AddTransient<SelectLevelMenu>();
-		builder.Services.AddTransient<FinishPage>();
+        builder.Services.AddSingleton<Setting>();
+        builder.Services.AddTransient<FinishPage>();
 		
 		builder=RegisterServices(builder);
 		builder = RegisterViewModels(builder);
@@ -34,6 +35,7 @@ public static class MauiProgram
     {
 		mauiAppBuilder.Services.AddSingleton<MainPageViewModel>();
         mauiAppBuilder.Services.AddSingleton<FinishPageViewModel>();
+        mauiAppBuilder.Services.AddSingleton<SettingViewModel>();
         mauiAppBuilder.Services.AddSingleton<SelectLevelViewModel>();
 
         return mauiAppBuilder;

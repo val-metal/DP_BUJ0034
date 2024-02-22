@@ -8,6 +8,7 @@ public partial class SelectLevelMenu : ContentPage
 	{
 		InitializeComponent();
 		svm.insertLevels(LevelsLoad);
+		this.NavigatedTo += svm.refreshScore;
 		BindingContext = svm;
 		
 	}

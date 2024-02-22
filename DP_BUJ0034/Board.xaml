@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:drawables="clr-namespace:DP_BUJ0034.Drawables"
              x:Class="DP_BUJ0034.Board"
-             Title="Board"
+             Title=""
              >
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
@@ -11,31 +11,24 @@
     <ContentPage.Resources>
         <drawables:Drawable x:Key="drawablee"/>
     </ContentPage.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <Label 
-            x:Name="sizes"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button
-                x:Name="Back"
-                Text="Back"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="Back_Clicked"
-                HorizontalOptions="Center" />
+    <Grid RowDefinitions="1*"
+          ColumnDefinitions="1*">
+ 
 
         <GraphicsView 
             x:Name="canvas"
-            Grid.Row="1"
+            Grid.Row="0" Grid.Column="0" 
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             DragInteraction="GameView_DragInteraction"
             Drawable="{StaticResource drawablee}" />
+
+        <Button
+                Grid.Row="0" Grid.Column="0" 
+                HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"
+                x:Name="Back"
+                Text="Zpět"
+                Clicked="Back_Clicked" />
 
     </Grid>
 

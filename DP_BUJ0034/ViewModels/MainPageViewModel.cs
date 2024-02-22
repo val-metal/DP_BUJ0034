@@ -14,9 +14,11 @@ namespace DP_BUJ0034.ViewModels
     {
         readonly AudioPlayerWrapper player;
         readonly SelectLevelMenu sllm;
-        public MainPageViewModel(AudioPlayerWrapper aw, SelectLevelMenu svm) {
+        readonly Setting sm;
+        public MainPageViewModel(AudioPlayerWrapper aw, SelectLevelMenu svm, Setting sm) {
             sllm = svm;
             player = aw;
+            this.sm = sm;
             player.PlayRandom();
             
         }
@@ -25,6 +27,11 @@ namespace DP_BUJ0034.ViewModels
         public async Task goToMenuSelect()
         {
             await Shell.Current.Navigation.PushAsync(sllm);
+        }
+        [RelayCommand]
+        public async Task goToSetting()
+        {
+            await Shell.Current.Navigation.PushAsync(sm);
         }
     }
 }

@@ -229,11 +229,24 @@ namespace DP_BUJ0034.Drawables{
             }
             else
             {
-                for (int i = 0; i < gameBoard.path[currentPath].backdot_with_t.Count; i += 10)
+                double traveled_distance = 0;
+
+                for (int i = 1; i < gameBoard.path[currentPath].backdot_with_t.Count; i++)
                 {
-                    canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x-20, gameBoard.path[currentPath].backdot_with_t[i].y-20,20,20);
+                    double deltaX = gameBoard.path[currentPath].backdot_with_t[i].x - gameBoard.path[currentPath].backdot_with_t[i - 1].x;
+                    double deltaY = gameBoard.path[currentPath].backdot_with_t[i].y - gameBoard.path[currentPath].backdot_with_t[i - 1].y;
+
+                    // Použití Pythagorovy věty
+                    traveled_distance += Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                    if (traveled_distance > 70)
+                    { traveled_distance = 0; canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x - 20, gameBoard.path[currentPath].backdot_with_t[i].y - 20, 20, 20); }
+
                 }
-                
+                //for (int i = 1; i < gameBoard.path[currentPath].backdot_with_t.Count; i+=10) {
+                //    canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x - 20, gameBoard.path[currentPath].backdot_with_t[i].y - 20, 20, 20);
+                //}
+                canvas.DrawPath(path_draw_Curve);
+
             }
         }
 

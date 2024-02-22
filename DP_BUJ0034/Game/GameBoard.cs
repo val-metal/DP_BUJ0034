@@ -60,9 +60,10 @@ namespace DP_BUJ0034.Game{
             start[currentPath] = new Points(true, false, width / 16 + 15, height/(this.num_paths+1)*(currentPath+1));
             end[currentPath] = new Points(false, true, width / 16 * 15, height /(this.num_paths + 1) * (currentPath + 1));
 
+           
             if (difficulty == 1)
             {
-                Generate_dot_for_path_1star(start[currentPath], end[currentPath], currentPath);
+                Generate_dot_for_path_1star(start[currentPath], end[currentPath], currentPath,false);
             }
             else if(difficulty == 2)
             {
@@ -172,11 +173,11 @@ namespace DP_BUJ0034.Game{
                 path[currentPath].backdot.Add(new Dots(back_x, back_y));
             }
         }
-
         public void Generate_dots_for_back_path_with_t(int currentPath)
         {
+
             int distance = 20;
-            for (int i = 0; i < path[currentPath].dot.Count()-1; i++)
+            for (int i = 0; i < path[currentPath].dot.Count() - 1; i++)
             {
                 Dots p1 = path[currentPath].dot[i];
                 Dots p2 = path[currentPath].controldots[i].Item1;
@@ -198,6 +199,52 @@ namespace DP_BUJ0034.Game{
             }
 
         }
+        //static double CalculateDistance(Dots dot1, Dots dot2)
+        //{
+        //    double deltaX = dot2.x - dot1.x;
+        //    double deltaY = dot2.y - dot1.y;
+
+        //    // Použití Pythagorovy věty
+        //    double distance = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+        //    return distance;
+        //}
+
+        //public void Generate_dots_for_back_path_with_t(int currentPath)
+        //{
+
+        //    int distance = 20;
+        //    for (int i = 0; i < path[currentPath].dot.Count() - 1; i++)
+        //    {
+        //        Dots p1 = path[currentPath].dot[i];
+        //        Dots p2 = path[currentPath].controldots[i].Item1;
+        //        Dots p3 = path[currentPath].controldots[i].Item2;
+        //        Dots p4 = path[currentPath].dot[i + 1];
+        //        int first = 0;
+        //        float step = (float)0.0008;
+        //        double realy_dot = 0;
+        //        double distance1 = CalculateDistance(p1, p2);
+        //        double distance2 = CalculateDistance(p2, p3);
+        //        double distance3 = CalculateDistance(p3, p4);
+        //        double sumOfDistances = distance1 + distance2 + distance3;
+        //        step = (float)sumOfDistances/1000;
+        //        for (float t = 0; t <= 0.95; t = t + step)
+        //        {
+        //                Dots point = getPointAt(t, p1, p2, p3, p4);
+        //                Dots normal = getNormalAt(t, p1, p2, p3, p4);
+
+        //                Dots offsetPoint = new Dots(
+        //                    x: point.x + normal.x * distance,
+        //                    y: point.y + normal.y * distance);
+        //                path[currentPath].backdot_with_t.Add(offsetPoint);
+
+
+        //        }
+
+        //    }
+
+        //}
+
+
 
         public Dots getPointAt(float t, Dots p1, Dots p2, Dots p3, Dots p4)
         {
@@ -240,8 +287,60 @@ namespace DP_BUJ0034.Game{
             Dots send = new Dots(x, y);
             return send;
         }
+        public void Generate_dor_for_3to1_path(float width, float height)
+        {
+            this.height = height;
+            this.width = width;
+            path[0] = new Paths();
+            path[1] = new Paths();
+            path[2] = new Paths();
+            Paths temp = new Paths();
+            float x = 0;
+            float y = 0;
+            Random random = new Random();
+            x = (float)random.Next((int)(width / 16 * 10), (int)(width / 16 * 12));
+            y = (float)random.Next((int)(height / 9 * 3), (int)(height / 9 * 6));
 
-        public void Generate_dot_for_path_1star(Points start, Points end, int currentPath)
+            start[0] = new Points(true, false, width / 16 + 15, height / 4);
+            start[1] = new Points(true, false, width / 16 + 15, height / 4 * 2);
+            start[2] = new Points(true, false, width / 16 + 15, height / 4 * 3);
+            end[0] = new Points(false, true, width / 16 * 15, height / 2);
+            //zpětný bod
+            Points middle = new Points(false, false, x, y);
+
+            Generate_dot_for_path_1star(start[0], middle, 0,true);
+            Generate_dot_for_path_1star(start[2], middle, 2,true);
+
+            path[2].dot.Reverse();
+
+            for (int i = 0; i < path[2].dot.Count; i++)
+            {
+                path[0].dot.Add(path[2].dot[i]);
+            }
+
+            Generate_dots1(start[1], end[0],1);
+            int count_3to1 = 2;
+            for(int j=0; j<count_3to1; j++)
+            {
+                for (int i = 0; i < path[j].dot.Count - 1; i++)
+                {
+                    Dots point1 = path[j].dot[i];
+                    Dots point2 = path[j].dot[i + 1];
+
+                    CalculateBezier_Points(point1, point2, i, j);
+                }
+                Generate_dots_for_back_path(j);
+                Generate_dots_for_back_path_with_t(j);
+            }
+            Paths[] paths = new Paths[2]; // Vytvoříme nové pole se dvěma prvky
+            paths[0] = path[0]; // První prvek nového pole bude první prvek původního pole
+            paths[1] = path[1]; // Druhý prvek nového pole bude druhý prvek původního pole
+            path = new Paths[2];
+            path = paths;
+
+
+        }
+        public void Generate_dot_for_path_1star(Points start, Points end, int currentPath, bool mode_3to1)
         {
             Random random = new Random();
             path[currentPath] = new Paths();
@@ -269,15 +368,15 @@ namespace DP_BUJ0034.Game{
                     offset_y = (random.Next((int)(distance_y / 4), (int)distance_y));
                 }
 
-                float newX = path[currentPath].dot.Last().x +offset_x;
-                float newY = path[currentPath].dot.Last().y +offset_y;
+                float newX = path[currentPath].dot.Last().x + offset_x;
+                float newY = path[currentPath].dot.Last().y + offset_y;
 
-                if ( newY > height / 9 && newY < height / 9 * 8 && blizko_cile==false)
+                if (newY > height / 9 && newY < height / 9 * 7.5 && blizko_cile == false)
                 {
-                    path[currentPath].dot.Add(new Dots(newX,newY));
-                    
+                    path[currentPath].dot.Add(new Dots(newX, newY));
+
                 }
-                if(blizko_cile==true)
+                if (blizko_cile == true)
                 {
                     if (newY < end.y)
                     {
@@ -290,19 +389,40 @@ namespace DP_BUJ0034.Game{
                     path[currentPath].dot.Add(new Dots(newX, newY));
 
                 }
+                float borderOfGame = (width / 16) * 12;
+                float finalBorderOfGame = (width / 16) * 14;
+                if (mode_3to1 == true)
+                {
+                    borderOfGame = end.x - (width / 16 * 2);
+                    finalBorderOfGame = end.x - (width / 16);
 
-
-                if (newX > ((width / 16) * 12)){
+                }
+                if (newX > borderOfGame)
+                {
                     blizko_cile = true;
                 }
 
-                if(newX > ((width / 16) * 14))
+                if (newX > finalBorderOfGame)
                 {
                     lastDot = true;
                 }
 
+
+
             }
-            path[currentPath].dot.Add(new Dots(end.x, end.y));
+            if (currentPath == 1 && mode_3to1 == true)
+            {
+                path[currentPath].dot.Add(new Dots(end.x, end.y + (height / 4)));
+                path[currentPath].dot.Add(new Dots(end.x, end.y));
+            }
+            else if(currentPath == 2 && mode_3to1 == true)
+            {
+                path[currentPath].dot.Add(new Dots(end.x, end.y - (height / 4)));
+            }
+            else
+            {
+                path[currentPath].dot.Add(new Dots(end.x, end.y));
+            }
 
         }
 
@@ -316,8 +436,9 @@ namespace DP_BUJ0034.Game{
             //Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
             path[currentPath] = new Paths();
             path[currentPath].dot.Add(new Dots(start.x, start.y));
+            path[currentPath].dot.Add(new Dots(start.x + width / 20, start.y));
             bool lastDot = false;
-            int is_first = 0;
+            int is_first = 1;
             Random random = new Random();
             float[] angles = { 0, 45, 90, 135, 180, 225, 270, 315 };
             int randomSmer;
@@ -356,7 +477,7 @@ namespace DP_BUJ0034.Game{
                 }
                
                 //Pokud je bod v hracím poli a nemá ostrý ůhel (rozuměj 60ˇ)
-                if (newX > width / 16 && newX < width / 16 * 15 && newY > height / 9 && newY < height / 9 * 8 && is_angel_bad >= 60 && is_angel_bad <= 300)
+                if (newX > width / 16*2 && newX < width / 16 * 13 && newY > height / 9 && newY < height / 9 * 7.5 && is_angel_bad >= 60 && is_angel_bad <= 300)
                 {
                     if (maxX < eventual_dot.x)
                     {
@@ -380,14 +501,17 @@ namespace DP_BUJ0034.Game{
                     }
                     path[currentPath].dot.Add(eventual_dot);
                 }
-
+                
                 //Pokud je bod blízko cíle
-                else if (newX > width / 16 * 13)
+                else if (newX > width / 16 * 14)
                 {
+                    path[currentPath].dot.Add(new Dots(end.x-width/18, end.y));
                     path[currentPath].dot.Add(new Dots(end.x, end.y));
                     lastDot = true;
                     continue;
+
                 }
+               
                 else
                 {
                     
@@ -399,11 +523,11 @@ namespace DP_BUJ0034.Game{
                     float[] try_angles;
                     float try_angle = is_angel_bad;
                     Dots try_dot = new Dots(0, 0);
-                    if (newX <= width / 16)
+                    if (newX <= width / 16*2)
                     {
                         try_angles = new float[] { 315, 0, 45 };
                     }
-                    else if (newX >= width / 16 * 15)
+                    else if (newX >= width / 16 * 13)
                     {
                         try_angles = new float[] { 225, 180, 135 };
                     }
@@ -430,7 +554,7 @@ namespace DP_BUJ0034.Game{
                             try_angle = CalculateAngel(path[currentPath].dot[count_of_dots - 2], path[currentPath].dot[count_of_dots - 1], try_dot, currentPath);
                         }
 
-                        if (try_dot.x > width / 16 && try_dot.x < width / 16 * 15 && try_dot.y > height / 9 && try_dot.y < (height / 9) * 8 && try_angle >= 60 && try_angle <= 300)
+                        if (try_dot.x > width / 16 && try_dot.x < width / 16 * 13 && try_dot.y > height / 9 && try_dot.y < (height / 9) * 8 && try_angle >= 60 && try_angle <= 300)
                          {
                             if (try_dot.x > width / 16 * 14)
                             {

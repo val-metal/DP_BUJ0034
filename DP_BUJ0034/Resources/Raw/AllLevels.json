@@ -2,51 +2,61 @@
   {
     "name": "Car",
     "nameOfButton": "Cars",
-    "pathForRes": "menu_cars.png"
+    "pathForRes": "menu_cars.png",
+    "unlockAt": 0
   },
   {
     "name": "Frog",
     "nameOfButton": "Frogs",
-    "pathForRes": "menu_frog.png"
+    "pathForRes": "menu_frog.png",
+    "unlockAt": 0
   },
   {
     "name": "Train",
     "nameOfButton": "Trains",
-    "pathForRes": "menu_train.png"
+    "pathForRes": "menu_train.png",
+    "unlockAt": 0
   },
   {
     "name": "Mermaid",
     "nameOfButton": "Mermaid",
-    "pathForRes": "menu_mermaid.png"
+    "pathForRes": "menu_mermaid.png",
+    "unlockAt": 16
   },
   {
     "name": "NeonCity",
     "nameOfButton": "NeonCity",
-    "pathForRes": "menu_neon.png"
+    "pathForRes": "menu_neon.png",
+    "unlockAt": 20
   },
   {
     "name": "Pirate",
     "nameOfButton": "Pirate",
-    "pathForRes": "menu_pirate.png"
+    "pathForRes": "menu_pirate.png",
+    "unlockAt": 0
   },
   {
     "name": "Pirate2",
     "nameOfButton": "Pirate2",
-    "pathForRes": "menu_pirate2.png"
+    "pathForRes": "menu_pirate2.png",
+    "unlockAt": 0
   },
   {
     "name": "SteamSky",
     "nameOfButton": "SteamSky",
-    "pathForRes": "menu_steam.png"
+    "pathForRes": "menu_steam.png",
+    "unlockAt": 0
   },
   {
     "name": "Dragon",
     "nameOfButton": "Dragon",
-    "pathForRes": "menu_dragon.png"
+    "pathForRes": "menu_dragon.png",
+    "unlockAt": 0
   },
   {
     "name": "Princess",
     "nameOfButton": "Princess",
-    "pathForRes": "menu_princess.png"
+    "pathForRes": "menu_princess.png",
+    "unlockAt": 0
   }
 ]
