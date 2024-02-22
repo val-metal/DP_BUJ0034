@@ -1,5 +1,6 @@
 ﻿
 using DP_BUJ0034.Drawables;
+using DP_BUJ0034.Engine.Generator;
 using DP_BUJ0034.Game;
 using Microsoft.Maui.Graphics;
 using System;
@@ -23,10 +24,17 @@ namespace DP_BUJ0034.Engine
         public PlayFrame(Drawable drawable,int num_path,int difficulty) {
             gameEnds = false;
             this.drawable = drawable;
-            this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path, difficulty);
-
             this.num_paths = num_path;
             this.num_difficulty = difficulty;
+            if (num_paths == 4)
+            {
+                num_path = 3;
+                this.num_difficulty = 4;
+            }
+            this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path, difficulty);
+
+            
+            
         }
         public void movePlayer(float x, float y)
         {
@@ -77,29 +85,29 @@ namespace DP_BUJ0034.Engine
         }
         public void play(float height, float width)
         {
-            if (num_paths == 4)
-            {
-                num_paths = 2;
-                gameBoard.num_paths = 2;
-                gameBoard.Generate_dor_for_3to1_path(height, width);
-                for (int i = 0; i < 3; i++)
-                {
-                    gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
-
-                }
-            }
-            else
-            {
+                IGenerator generator = GeneratorFactory.MakeGenerator(num_difficulty);
                 for (int i = 0; i < gameBoard.num_paths ; i++)
                 {
-                    gameBoard.generate_paths(height, width, i);
+
+                    gameBoard.generate_paths(height, width, i,generator);
+
                 }
+
                 for (int i = 0; i < gameBoard.num_paths; i++)
                 {
                     gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
 
                 }
-            }
+                if (num_paths == 4)
+                {
+                    num_paths = 4;
+                    gameBoard.num_paths = 2;
+                    Paths[] paths = new Paths[2];
+                    paths[0] = gameBoard.path[0]; 
+                    paths[1] = gameBoard.path[1];
+                    gameBoard.path = paths;
+                }
+            
             
             drawable.gameBoard = gameBoard;
             

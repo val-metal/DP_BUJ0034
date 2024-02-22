@@ -17,6 +17,8 @@ namespace DP_BUJ0034.Game
        // public List<(Dots, Dots)> controlbackdot_with_t;
         public List<Dots> backdot_with_t { get; set; }
         public List<float> angels;
+        public bool readyToConnect { get; set; }
+        public bool noback { get; set; }
 
         public Paths(){ 
             this.dot = new List<Dots>();

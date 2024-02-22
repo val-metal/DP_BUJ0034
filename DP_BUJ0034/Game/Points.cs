@@ -10,7 +10,8 @@ namespace DP_BUJ0034.Game
     {
         bool isStart;
         bool isEnd;
-        public bool isVisited=false;
+        public bool isVisited { get; set; }
+        public int df { get; set; }
         public Points(bool isStart, bool isEnd,float x,float y):base(x,y) { 
             this.isStart = isStart; 
             this.isEnd = isEnd;

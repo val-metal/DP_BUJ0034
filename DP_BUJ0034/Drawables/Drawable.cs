@@ -36,6 +36,7 @@ namespace DP_BUJ0034.Drawables{
             
             this.width = dirtyRect.Height;
             this.height = dirtyRect.Width;
+
             // SkiaBitmapExportContext skiaBitmapExportContext = new((int)width, (int)height, 1);
             // ICanvas canvas = skiaBitmapExportContext.Canvas;
 
@@ -52,11 +53,16 @@ namespace DP_BUJ0034.Drawables{
 
                     // DrawControlDots(canvas, currentPath);
                     //Žlutá
-                    if (currentPath == curretPlayer)
+                    if (curretPlayer > gameBoard.path.Length-1)
                     {
+                        curretPlayer = 0;
+                    }
+                    if (currentPath == curretPlayer)
+                    { 
                         continue;
                     }
                     DrawCurveTo(canvas,currentPath);
+
                     //Zelená
                     //DrawLineTo(canvas, currentPath);
                 }
@@ -199,11 +205,9 @@ namespace DP_BUJ0034.Drawables{
                     gameBoard.path[currentPath].dot[i + 1].x,
                     gameBoard.path[currentPath].dot[i + 1].y);
             }
-            //path_draw_Curve.MoveTo(gameBoard.path[currentPath].backdot[0].x, gameBoard.path[currentPath].backdot[0].y);
-            //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[0].x, gameBoard.path[currentPath].dot[0].y);
-            //path_draw_Curve.MoveTo(gameBoard.path[currentPath].backdot[0].x, gameBoard.path[currentPath].backdot[0].y);
-            path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].backdot.Count - 1].x,
-                gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
+            //možná dělá čáru i číle mezi přední a zpětnou hranou
+            //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].backdot.Count - 1].x,
+            //    gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
 
             for (int i = gameBoard.path[currentPath].backdot_with_t.Count-1;i>=0; i--)
             {
@@ -250,23 +254,6 @@ namespace DP_BUJ0034.Drawables{
             }
         }
 
-        public void DrawLineTo(ICanvas canvas, int currentPath)
-        {
-            PathF path_draw_without_bezier = new PathF();
-            PathF path_draw = new PathF();
-            path_draw_without_bezier.MoveTo(gameBoard.path[currentPath].dot[0].x, gameBoard.path[currentPath].dot[0].y);
-            path_draw.MoveTo(gameBoard.path[currentPath].backdot[0].x, gameBoard.path[currentPath].backdot[0].y);
-            for (int i = 1; i < gameBoard.path[currentPath].dot.Count; i++)
-            {
-                path_draw_without_bezier.LineTo(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y);
-                path_draw.LineTo(gameBoard.path[currentPath].backdot[i].x, gameBoard.path[currentPath].backdot[i].y);
-            }
-            canvas.StrokeColor = Colors.Green;
-            canvas.StrokeSize = 1;
-            canvas.StrokeLineJoin = LineJoin.Round;
-            //canvas.DrawPath(path_draw_without_bezier);
-            canvas.StrokeColor = Colors.Red;
-            //canvas.DrawPath(path_draw);
-        }
+
     }
 }
