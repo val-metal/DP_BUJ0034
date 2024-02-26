@@ -15,13 +15,16 @@ namespace DP_BUJ0034.ViewModels
 
         [ObservableProperty]
         public string imgName;
-        public FinishPageViewModel(int num_paths,int difficulty,string type) { 
+        [ObservableProperty]
+        public string timeString;
+        public FinishPageViewModel(int num_paths,int difficulty,string type,long time) { 
 
             this.num_paths = num_paths;
             this.difficulty = difficulty;
+            TimeString = Math.Floor(TimeSpan.FromMilliseconds(time).TotalMinutes)+":"+ Math.Floor(TimeSpan.FromMilliseconds(time).TotalSeconds);
 
 
-            if(difficulty == 1 ) {
+            if (difficulty == 1 ) {
                 imgName = "star_1.png";
             }
             else if( difficulty == 2 )
@@ -45,9 +48,10 @@ namespace DP_BUJ0034.ViewModels
         }
         [RelayCommand]
 
-        public void GoToMenu()
+        public async void GoToMenu()
         {
-            Shell.Current.Navigation.PushAsync(new SelectLevelMenu(new SelectLevelViewModel()));
+            await Shell.Current.Navigation.PopToRootAsync();
+            await Shell.Current.Navigation.PushAsync(new SelectLevelMenu(new SelectLevelViewModel()));
         }
     }
 }

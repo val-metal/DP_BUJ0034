@@ -28,7 +28,7 @@ namespace DP_BUJ0034.Engine
             set
             {
                 spritePath = value;
-                loadSprite();
+                //loadSprite();
             }
         }
 

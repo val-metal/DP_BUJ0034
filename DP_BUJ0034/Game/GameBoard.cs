@@ -41,15 +41,31 @@ namespace DP_BUJ0034.Game{
 
         public bool isAllVisited()
         {
-            for(int i=0;i<end.Length; i++)
+            if (end.Length > path.Length)
             {
-                if (end[i].isVisited==false)
+                end.Last().isVisited = false;
+                for (int i = 0; i < end.Length; i++)
                 {
-                    return false;
+                    if (end[i].isVisited == true)
+                    {
+                        return true;
+                    }
+
                 }
-                    
             }
-            return true;
+            else
+            {
+                for (int i = 0; i < end.Length; i++)
+                {
+                    if (end[i].isVisited == false)
+                    {
+                        return false;
+                    }
+
+                }
+                return true;
+            }
+            return false;
         }
 
         public void generate_paths(float width, float height, int currentPath,IGenerator generator)

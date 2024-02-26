@@ -56,7 +56,7 @@ public partial class Board : ContentPage
         playFrame.movePlayer(touch.X, touch.Y);
         if (playFrame.gameEnds)
         {
-            this.Navigation.PushAsync(new FinishPage(playFrame.num_paths,playFrame.num_difficulty,type));
+            this.Navigation.PushAsync(new FinishPage(playFrame.num_paths,playFrame.num_difficulty,type,playFrame.stopwatch.ElapsedMilliseconds));
         }
         canvas.Invalidate();
     }

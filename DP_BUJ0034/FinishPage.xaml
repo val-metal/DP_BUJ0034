@@ -6,10 +6,13 @@
              x:DataType="viewmodel:FinishPageViewModel"
              BackgroundImageSource="finishpage1.gif"
              Title="">
-    <Grid RowDefinitions="1*,2*,0.6*, 0.3*"
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+    <Grid RowDefinitions="1*,1*,1*,0.6*, 0.3*"
           ColumnDefinitions="1*, 1*,1*, 1*"
           RowSpacing="3">
-        <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+        <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"
                  Color="White" Opacity="0.8" CornerRadius="20"
                  >
         </BoxView>
@@ -21,8 +24,12 @@
             Text="90%" TextColor="Black" FontSize="60" 
             VerticalOptions="Center" HorizontalOptions="Center">
         </Label>
-        <Image Grid.Row="1" Grid.Column="1" Margin="30" Source="{Binding ImgName}" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"></Image>
-        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="Zpět na výběr levelu" CornerRadius="16" Command="{Binding GoToMenuCommand}"></Button>
+        <Label Grid.Row="2" Grid.Column="2"
+            Text="{Binding TimeString}" TextColor="Black" FontSize="60" 
+            VerticalOptions="Center" HorizontalOptions="Center">
+        </Label>
+        <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="30" Source="{Binding ImgName}" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"></Image>
+        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Zpět na výběr levelu" CornerRadius="16" Command="{Binding GoToMenuCommand}"></Button>
     </Grid>
     
 </ContentPage>

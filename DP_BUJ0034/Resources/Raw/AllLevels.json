@@ -1,62 +1,38 @@
 [
   {
-    "name": "Car",
-    "nameOfButton": "Cars",
-    "pathForRes": "menu_cars.png",
+    "name": "Zelenina",
+    "nameOfButton": "Zelenina",
+    "pathForRes": "menu_zelenina.png",
     "unlockAt": 0
   },
   {
-    "name": "Frog",
-    "nameOfButton": "Frogs",
-    "pathForRes": "menu_frog.png",
+    "name": "Princezny",
+    "nameOfButton": "Princezny",
+    "pathForRes": "menu_princezny.png",
     "unlockAt": 0
   },
   {
-    "name": "Train",
-    "nameOfButton": "Trains",
-    "pathForRes": "menu_train.png",
+    "name": "Domacimazlicci",
+    "nameOfButton": "Domácí mazlíčci",
+    "pathForRes": "menu_domacimazlicci.png",
     "unlockAt": 0
   },
   {
-    "name": "Mermaid",
-    "nameOfButton": "Mermaid",
-    "pathForRes": "menu_mermaid.png",
-    "unlockAt": 16
-  },
-  {
-    "name": "NeonCity",
-    "nameOfButton": "NeonCity",
-    "pathForRes": "menu_neon.png",
-    "unlockAt": 20
-  },
-  {
-    "name": "Pirate",
-    "nameOfButton": "Pirate",
-    "pathForRes": "menu_pirate.png",
+    "name": "Auta",
+    "nameOfButton": "Auta",
+    "pathForRes": "menu_auta.png",
     "unlockAt": 0
   },
   {
-    "name": "Pirate2",
-    "nameOfButton": "Pirate2",
-    "pathForRes": "menu_pirate2.png",
+    "name": "Morskepanny",
+    "nameOfButton": "Mořské panny",
+    "pathForRes": "menu_morskepanny.png",
     "unlockAt": 0
   },
   {
-    "name": "SteamSky",
-    "nameOfButton": "SteamSky",
-    "pathForRes": "menu_steam.png",
-    "unlockAt": 0
-  },
-  {
-    "name": "Dragon",
-    "nameOfButton": "Dragon",
-    "pathForRes": "menu_dragon.png",
-    "unlockAt": 0
-  },
-  {
-    "name": "Princess",
-    "nameOfButton": "Princess",
-    "pathForRes": "menu_princess.png",
+    "name": "Motyl",
+    "nameOfButton": "Motýl",
+    "pathForRes": "menu_motyl.png",
     "unlockAt": 0
   }
 ]

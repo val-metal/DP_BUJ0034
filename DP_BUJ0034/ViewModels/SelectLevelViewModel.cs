@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using DP_BUJ0034.Engine;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.PlatformConfiguration.GTKSpecific;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,15 +58,26 @@ namespace DP_BUJ0034.ViewModels
             //    Color = Colors.Red
             //}, 0, 1);
 
-            for (int i = 0; i < levelInfos.Length-1; i++)
+            for (int i = 0; i < levelInfos.Length; i++)
             {
-               
-                
 
+                //Microsoft.Maui.Controls.Grid grid = new Microsoft.Maui.Controls.Grid()
+                //{
+                //    RowDefinitions =  {
+                //        new RowDefinition()
+                //    },
+                //    ColumnDefinitions ={
+                //        new ColumnDefinition(),
+                //        new ColumnDefinition()
+                //    }
+                //};
+                //    Microsoft.Maui.Controls.BoxView boxView = new Microsoft.Maui.Controls.BoxView { Color = Colors.White };
+                //    grid.SetRow(boxView, 2);
+                
+            
                 Button temp = new Button();
                 string name = levelInfos[i].name;
                 temp.Text = levelInfos[i].nameOfButton;
-
                 temp.VerticalOptions = LayoutOptions.CenterAndExpand;
                 temp.Padding = new Thickness(0,0,0,20);
                 temp.ImageSource = levelInfos[i].pathForRes;

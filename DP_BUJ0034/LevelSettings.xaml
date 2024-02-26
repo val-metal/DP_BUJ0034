@@ -40,7 +40,7 @@
                 
              />
             <Button x:Name="path_3"  
-                Grid.Row="2" Grid.Column="1"
+                Grid.Row="2" Grid.Column="2"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
                 ImageSource="path3_3.png"
@@ -48,7 +48,7 @@
                 Command="{Binding pocetCestCommand}" CommandParameter="3" 
             />
             <Button x:Name="path_3_1"  
-                Grid.Row="2" Grid.Column="2"
+                Grid.Row="2" Grid.Column="1"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
                 ImageSource="path3_1.png"

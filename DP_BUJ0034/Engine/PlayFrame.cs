@@ -5,6 +5,7 @@ using DP_BUJ0034.Game;
 using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace DP_BUJ0034.Engine
         public GameBoard gameBoard { get; set; }
         
         public Drawable drawable { get; set; }
+        public Stopwatch stopwatch { get; set; }
         public bool gameEnds { get; set; }
         public int num_paths { get; set; }
         public int num_difficulty { get; set; }
@@ -26,6 +28,7 @@ namespace DP_BUJ0034.Engine
             this.drawable = drawable;
             this.num_paths = num_path;
             this.num_difficulty = difficulty;
+            stopwatch = new Stopwatch();
             if (num_paths == 4)
             {
                 num_path = 3;
@@ -41,6 +44,11 @@ namespace DP_BUJ0034.Engine
             if (gameBoard.isAllVisited() == true)
             {
                 gameEnds = true;
+                if (num_difficulty == 4)
+                {
+                    num_difficulty = gameBoard.difficulty;
+                }
+                stopwatch.Stop();
             }
             double distance_last = Math.Sqrt(Math.Pow((x - (gameBoard.player[id_last_player_move].size / 2)) - gameBoard.player[id_last_player_move].position.x, 2) + Math.Pow((y - (gameBoard.player[id_last_player_move].size / 2)) - gameBoard.player[id_last_player_move].position.y, 2));
             if (distance_last < gameBoard.player[id_last_player_move].size)
@@ -86,6 +94,7 @@ namespace DP_BUJ0034.Engine
         public void play(float height, float width)
         {
                 IGenerator generator = GeneratorFactory.MakeGenerator(num_difficulty);
+                stopwatch.Start();
                 for (int i = 0; i < gameBoard.num_paths ; i++)
                 {
 
@@ -93,7 +102,7 @@ namespace DP_BUJ0034.Engine
 
                 }
 
-                for (int i = 0; i < gameBoard.num_paths; i++)
+                for (int i = 0; i < gameBoard.path.Length; i++)
                 {
                     gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
 

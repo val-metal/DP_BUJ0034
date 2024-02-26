@@ -31,7 +31,6 @@ namespace DP_BUJ0034.Drawables{
         public int curretPlayer { get; set; }
         public TextureProvider textureProvider { get; set; }
         public Drawable() {textureProvider=new(); }
-        IImage imageback;
         public void Draw(ICanvas canvas, RectF dirtyRect) {
             
             this.width = dirtyRect.Height;
@@ -107,7 +106,7 @@ namespace DP_BUJ0034.Drawables{
         }
         private void DrawPlayer(ICanvas canvas)
         {
-                for (int i = 0; i < gameBoard.num_paths; i++)
+                for (int i = 0; i < gameBoard.player.Length; i++)
                 {
                     canvas.DrawRectangle(gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                     canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
@@ -154,9 +153,10 @@ namespace DP_BUJ0034.Drawables{
                     //canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 5);
                 }
                 else if (i == gameBoard.path[currentPath].dot.Count()-1){
-                   
-                    canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x-22.5f, gameBoard.path[currentPath].dot[i].y-22.5f, 45, 45);
-// canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 10);
+                    if (!gameBoard.path[currentPath].noback)
+                    {
+                        canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x - 22.5f, gameBoard.path[currentPath].dot[i].y - 22.5f, 80, 80);
+                    }
                 }
                 else{
                     canvas.StrokeColor = Colors.CadetBlue;
