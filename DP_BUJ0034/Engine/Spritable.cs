@@ -43,7 +43,6 @@ namespace DP_BUJ0034.Engine
             using (Stream stream = assembly.GetManifestResourceStream(spritePath))
             {
                 #if IOS || ANDROID || MACCATALYST
-                                                // PlatformImage isn't currently supported on Windows.
                                     sprite = PlatformImage.FromStream(stream);
                 #elif WINDOWS
                                 sprite = new W2DImageLoadingService().FromStream(stream);

@@ -11,6 +11,7 @@ public partial class Board : ContentPage
 {
     PlayFrame playFrame;
     string type;
+    string name;
 	public Board()
     {
 		InitializeComponent();
@@ -22,7 +23,7 @@ public partial class Board : ContentPage
 
 
     }
-    public Board(string type,int num_paths, int difficulty)
+    public Board(string type,int num_paths, int difficulty,string name)
     {
         InitializeComponent();
 
@@ -30,6 +31,7 @@ public partial class Board : ContentPage
         playFrame.drawable.textureProvider.loadByName(type);
         this.type = type;
         //canvas.Drawable=
+        this.name = name;
         idn();
 
 
@@ -56,7 +58,8 @@ public partial class Board : ContentPage
         playFrame.movePlayer(touch.X, touch.Y);
         if (playFrame.gameEnds)
         {
-            this.Navigation.PushAsync(new FinishPage(playFrame.num_paths,playFrame.num_difficulty,type,playFrame.stopwatch.ElapsedMilliseconds));
+            double percentage=playFrame.countMovePercentage();
+            this.Navigation.PushAsync(new FinishPage(playFrame.num_paths,playFrame.num_difficulty,type,playFrame.stopwatch.ElapsedMilliseconds,name,percentage));
         }
         canvas.Invalidate();
     }

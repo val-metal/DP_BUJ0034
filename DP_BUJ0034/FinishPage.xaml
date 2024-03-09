@@ -17,11 +17,11 @@
                  >
         </BoxView>
         <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
-            Text="Vyhrál si!" TextColor="White" FontSize="30" 
+            Text="{Binding LevelName}" TextColor="White" FontSize="30" 
             VerticalOptions="Center" HorizontalOptions="Center">
         </Label>
         <Label Grid.Row="1" Grid.Column="2"
-            Text="90%" TextColor="Black" FontSize="60" 
+            Text="{Binding Percentage}" TextColor="Black" FontSize="60" 
             VerticalOptions="Center" HorizontalOptions="Center">
         </Label>
         <Label Grid.Row="2" Grid.Column="2"

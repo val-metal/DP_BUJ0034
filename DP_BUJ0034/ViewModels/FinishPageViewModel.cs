@@ -17,8 +17,14 @@ namespace DP_BUJ0034.ViewModels
         public string imgName;
         [ObservableProperty]
         public string timeString;
-        public FinishPageViewModel(int num_paths,int difficulty,string type,long time) { 
+        [ObservableProperty]
+        public string levelName;
+        [ObservableProperty]
+        public string percentage;
+        public FinishPageViewModel(int num_paths,int difficulty,string type,long time,string levelName,double percentage) {
 
+            LevelName = levelName;
+            Percentage = percentage.ToString()+"%";
             this.num_paths = num_paths;
             this.difficulty = difficulty;
             TimeString = Math.Floor(TimeSpan.FromMilliseconds(time).TotalMinutes)+":"+ Math.Floor(TimeSpan.FromMilliseconds(time).TotalSeconds);

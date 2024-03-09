@@ -39,6 +39,7 @@ namespace DP_BUJ0034.Game{
             
         }
 
+
         public bool isAllVisited()
         {
             if (end.Length > path.Length)
@@ -131,6 +132,7 @@ namespace DP_BUJ0034.Game{
 
 
                     path[currentPath].backdot_with_t.Add(offsetPoint);
+                    path[currentPath].t_path.Add(false);
                 }
             }
 

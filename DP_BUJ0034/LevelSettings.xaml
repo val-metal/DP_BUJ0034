@@ -7,7 +7,7 @@
              BackgroundImageSource="levelsettings1.gif"
              Title="">
 
-    <Grid RowDefinitions="0.76*,2*,1*, 0.8*"
+    <Grid RowDefinitions="0.76*,2*,0.7*, 0.7*"
           ColumnDefinitions="1*, 2*, 1*">
         <BoxView Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"
                  Color="White" Opacity="0.8" CornerRadius="20"
@@ -21,37 +21,38 @@
         </Label>
         <Grid Grid.Row="1"  Grid.Column="1" 
               RowDefinitions="0.2*,2*,2*, 0.01*" ColumnDefinitions="0.1*,2*,2*, 0.1*"
-              RowSpacing="1" ColumnSpacing="1">
-            <Button x:Name="path_1" 
+              RowSpacing="3" ColumnSpacing="3">
+            <ImageButton x:Name="path_1" 
                 Grid.Row="1" Grid.Column="1"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="path1_1.png"
+                Source="path1_1.png"
+                
                 BackgroundColor="Transparent"
                 Command="{Binding pocetCestCommand}" CommandParameter="1" 
             />
-            <Button x:Name="path_2" 
+            <ImageButton x:Name="path_2" 
                 Grid.Row="1" Grid.Column="2"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="path2_2.png"
+                Source="path2_2.png"
                 BackgroundColor="Transparent"
                 Command="{Binding pocetCestCommand}" CommandParameter="2" 
                 
              />
-            <Button x:Name="path_3"  
+            <ImageButton x:Name="path_3"  
                 Grid.Row="2" Grid.Column="2"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="path3_3.png"
+                Source="path3_3.png"
                 BackgroundColor="Transparent"
                 Command="{Binding pocetCestCommand}" CommandParameter="3" 
             />
-            <Button x:Name="path_3_1"  
+            <ImageButton x:Name="path_3_1"  
                 Grid.Row="2" Grid.Column="1"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="path3_1.png"
+                Source="path3_1.png"
                 BackgroundColor="Transparent"
                 Command="{Binding pocetCestCommand}" CommandParameter="4" 
             />
@@ -60,29 +61,29 @@
               RowDefinitions="0.01*,2*,0.1*" ColumnDefinitions="0.1*,1*, 1*,1*, 0.1*"
               RowSpacing="1" ColumnSpacing="1">
 
-            <Button x:Name="difficulty_1"
+            <ImageButton x:Name="difficulty_1"
                 Grid.Row="1" Grid.Column="1"
-                VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="star_1.png"
+                Source="star_1.png"
                 BackgroundColor="Transparent"
                 Command="{Binding num_of_starsCommand}"
                 CommandParameter="1"
             />
-            <Button x:Name="difficulty_2"
+            <ImageButton x:Name="difficulty_2"
                 Grid.Row="1" Grid.Column="2"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="star_2.png"
+                Source="star_2.png"
                 BackgroundColor="Transparent"
                 Command="{Binding num_of_starsCommand}"
                 CommandParameter="2"
             />
-            <Button x:Name="difficulty_3"
+            <ImageButton x:Name="difficulty_3"
                 Grid.Row="1" Grid.Column="3"
-                VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand"
+                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                 CornerRadius="5"  BorderWidth="0"
-                ImageSource="star_3.png"
+                Source="star_3.png"
                 BackgroundColor="Transparent"
                 Command="{Binding num_of_starsCommand}"
                 CommandParameter="3"

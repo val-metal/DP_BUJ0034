@@ -39,11 +39,46 @@ namespace DP_BUJ0034.Engine
             
             
         }
+        List<int> FilterPointsByRectangle(List<Dots> points, int minX, int minY, int maxX, int maxY)
+        {
+            List<int> filteredPoints = new List<int>();
+            for (int i = 0; i < points.Count; i++)
+            {
+                if (points[i].x >= minX && points[i].x <= maxX && points[i].y >= minY && points[i].y <= maxY)
+                {
+                    filteredPoints.Add(i);
+                }
+            }
+            return filteredPoints;
+        }
+        public double countMovePercentage()
+        { 
+            List<double> doubles = new List<double>();
+            foreach(Paths path in gameBoard.path)
+            {
+                int truecount = 0;
+                foreach (bool i in path.t_path)
+                {
+                    if (i)
+                    {
+                        truecount++;
+                    }
+                }
+                doubles.Add((double)truecount/path.t_path.Count);
+            }
+            double countd=0;
+            foreach (double d in doubles)
+            {
+                countd += d;
+            }
+            return Math.Round((countd/doubles.Count)*100,1);
+        }
         public void movePlayer(float x, float y)
         {
             if (gameBoard.isAllVisited() == true)
             {
                 gameEnds = true;
+                
                 if (num_difficulty == 4)
                 {
                     num_difficulty = gameBoard.difficulty;
@@ -65,6 +100,7 @@ namespace DP_BUJ0034.Engine
                 //    gameBoard.end[playerI].isVisited = false;
                 //}
                 drawable.curretPlayer = id_last_player_move;
+
             }
             else
             {
@@ -89,7 +125,16 @@ namespace DP_BUJ0034.Engine
                         break;
                     }
                 }
+
             }
+            List<int> indexy = FilterPointsByRectangle
+    (gameBoard.path[id_last_player_move].backdot_with_t, (int)gameBoard.player[id_last_player_move].position.x, (int)gameBoard.player[id_last_player_move].position.y
+    , (int)(gameBoard.player[id_last_player_move].position.x + (float)gameBoard.player[id_last_player_move].size), (int)gameBoard.player[id_last_player_move].position.y + gameBoard.player[id_last_player_move].size);
+            foreach (int i in indexy)
+            {
+                gameBoard.path[id_last_player_move].t_path[i] = true;
+            }
+
         }
         public void play(float height, float width)
         {

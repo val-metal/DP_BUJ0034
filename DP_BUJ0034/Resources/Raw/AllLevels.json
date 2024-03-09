@@ -21,18 +21,24 @@
     "name": "Auta",
     "nameOfButton": "Auta",
     "pathForRes": "menu_auta.png",
-    "unlockAt": 0
+    "unlockAt": 7
   },
   {
     "name": "Morskepanny",
     "nameOfButton": "Mořské panny",
     "pathForRes": "menu_morskepanny.png",
-    "unlockAt": 0
+    "unlockAt": 9
   },
   {
     "name": "Motyl",
     "nameOfButton": "Motýl",
     "pathForRes": "menu_motyl.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Astronauti",
+    "nameOfButton": "Astronauti",
+    "pathForRes": "menu_astronauti.png",
     "unlockAt": 0
   }
 ]
