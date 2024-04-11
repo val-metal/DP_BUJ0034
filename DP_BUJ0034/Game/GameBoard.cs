@@ -25,18 +25,37 @@ namespace DP_BUJ0034.Game{
         public Points[] start { get; set; }
         public Points[] end { get; set; }
 
+        public List<Dots> playerHistory { get; }
+
+        private bool saveHistory;
 
         public GameBoard(float height, float width, int num_paths,int difficulty){
 
+            loadSettings();
             this.height = height;
             this.width = width;
             path = new Paths[num_paths];
             player=new Player[num_paths];
             start=new Points[num_paths];
             end=new Points[num_paths];
+            playerHistory = new List<Dots>();
             this.num_paths = num_paths;
             this.difficulty = difficulty;
-            
+        }
+        private async Task loadSettings()
+        {
+            SettingSave sw=await SettingLoader.load();
+            if (sw.moveView)
+            { 
+                saveHistory = true;
+            }
+        }
+        public void addUserMove(float x,float y)
+        {
+            if (saveHistory)
+            {
+                playerHistory.Add(new Dots(x, y));
+            }
         }
 
 
@@ -76,7 +95,7 @@ namespace DP_BUJ0034.Game{
             this.width = width;
             start[currentPath] = new Points(true, false, width / 16 + 15, height/(this.num_paths+1)*(currentPath+1));
             start[currentPath].df = difficulty;
-            end[currentPath] = new Points(false, true, width / 16 * 15, height /(this.num_paths + 1) * (currentPath + 1));
+            end[currentPath] = new Points(false, true, width / 16 * (float)(14.5), height /(this.num_paths + 1) * (currentPath + 1));
 
             path[currentPath] = generator.generatePath(start[currentPath], end[currentPath], width, height);
             if (path[currentPath].readyToConnect)

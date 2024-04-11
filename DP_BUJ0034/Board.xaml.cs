@@ -1,6 +1,7 @@
 
 using DP_BUJ0034.Drawables;
 using DP_BUJ0034.Engine;
+using DP_BUJ0034.ViewModels;
 using Microsoft.Maui.Graphics;
 
 
@@ -40,6 +41,8 @@ public partial class Board : ContentPage
     {
         await Task.Delay(150);
         canvas.Invalidate();
+        LevelInfo li = await LevelLoader.LoadLevelByName(name);
+        popisek_levelu.Text = li.name;
         Drawable neco = this.Resources["drawablee"] as Drawable;
         playFrame.drawable = neco;
         playFrame.play(neco.height, neco.width);

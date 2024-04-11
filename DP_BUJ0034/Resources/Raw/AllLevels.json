@@ -36,9 +36,70 @@
     "unlockAt": 0
   },
   {
+    "name": "Rytir",
+    "nameOfButton": "Rytíř",
+    "pathForRes": "menu_rytir.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Ovoce",
+    "nameOfButton": "Ovoce",
+    "pathForRes": "menu_ovoce.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Klauni",
+    "nameOfButton": "Klauni",
+    "pathForRes": "menu_klauni.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Cisla",
+    "nameOfButton": "Čísla",
+    "pathForRes": "menu_cisla.png",
+    "unlockAt": 0
+  },
+  {
     "name": "Astronauti",
     "nameOfButton": "Astronauti",
     "pathForRes": "menu_astronauti.png",
     "unlockAt": 0
+  },
+  {
+    "name": "Letadla",
+    "nameOfButton": "Letadla",
+    "pathForRes": "menu_letadla.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Pirati",
+    "nameOfButton": "Piráti",
+    "pathForRes": "menu_pirati.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Policie",
+    "nameOfButton": "Bezpčnostní složky",
+    "pathForRes": "menu_hasic.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Povolani",
+    "nameOfButton": "Povolání",
+    "pathForRes": "menu_povolani.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Superhrdinove",
+    "nameOfButton": "Superhrdinové",
+    "pathForRes": "menu_superhrdina.png",
+    "unlockAt": 0
+  },
+  {
+    "name": "Traktory",
+    "nameOfButton": "Traktory",
+    "pathForRes": "menu_traktory.png",
+    "unlockAt": 0
   }
 ]
+

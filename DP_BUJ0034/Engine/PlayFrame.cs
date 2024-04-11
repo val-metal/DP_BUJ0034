@@ -89,6 +89,7 @@ namespace DP_BUJ0034.Engine
             if (distance_last < gameBoard.player[id_last_player_move].size)
             {
                 gameBoard.player[id_last_player_move].position = new Dots(x, y);
+                gameBoard.addUserMove(x, y);
 
                 float end_distance = Dots.EuclidDistance(gameBoard.player[id_last_player_move].getCenter(), gameBoard.end[id_last_player_move]);
                 if (end_distance < gameBoard.player[id_last_player_move].size)
@@ -110,6 +111,7 @@ namespace DP_BUJ0034.Engine
                     if (distance < gameBoard.player[playerI].size)
                     {
                         gameBoard.player[playerI].position = new Dots(x, y);
+                        gameBoard.addUserMove(x, y);
 
                         float end_distance = Dots.EuclidDistance(gameBoard.player[playerI].getCenter(), gameBoard.end[playerI]);
                         if (end_distance < gameBoard.player[playerI].size)

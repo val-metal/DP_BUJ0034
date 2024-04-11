@@ -14,6 +14,7 @@ using IImage = Microsoft.Maui.Graphics.IImage;
 using System.Numerics;
 using Microsoft.Maui.Graphics;
 using DP_BUJ0034.Engine;
+using Windows.System.Update;
 
 
 #if IOS || ANDROID || MACCATALYST
@@ -36,22 +37,15 @@ namespace DP_BUJ0034.Drawables{
             this.width = dirtyRect.Height;
             this.height = dirtyRect.Width;
 
-            // SkiaBitmapExportContext skiaBitmapExportContext = new((int)width, (int)height, 1);
-            // ICanvas canvas = skiaBitmapExportContext.Canvas;
-
             DrawBackground(canvas);
-            //canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
-            //Size playerpos =new Size(height/16, width-((width / 9)*2))
                 
             if (gameBoard != null)
             {
-                DrawBorder(canvas, dirtyRect);
+                //DrawBorder(canvas, dirtyRect);
                 DrawGameBorder(canvas, dirtyRect);
 
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++){
 
-                    // DrawControlDots(canvas, currentPath);
-                    //Žlutá
                     if (curretPlayer > gameBoard.path.Length-1)
                     {
                         curretPlayer = 0;
@@ -62,9 +56,8 @@ namespace DP_BUJ0034.Drawables{
                     }
                     DrawCurveTo(canvas,currentPath);
 
-                    //Zelená
-                    //DrawLineTo(canvas, currentPath);
                 }
+                DrawPathHistory(canvas);
                 DrawCurveTo(canvas, curretPlayer);
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++)
                 {
@@ -72,8 +65,9 @@ namespace DP_BUJ0034.Drawables{
 
 
                     // DrawControlDots(canvas, currentPath);
-                    //Žlutá
-                    DrawDots(canvas, currentPath);
+
+                    //DrawDots(canvas, currentPath);
+                    DrawEnd(canvas, currentPath);
                     //Zelená
                     //DrawLineTo(canvas, currentPath);
                 }
@@ -83,10 +77,18 @@ namespace DP_BUJ0034.Drawables{
             string mainDir = FileSystem.Current.AppDataDirectory;
 
             string filePath = Path.Combine(mainDir, "MyTest.png");
-            // Save the image as a PNG file  
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + mainDir, "OK");
-            //skiaBitmapExportContext.WriteToStream
-            //canvass = canvas;
+            
+        }
+        private void DrawPathHistory(ICanvas canvas)
+        {
+            canvas.FillColor=Color.FromArgb("#a83232");
+            float hop = gameBoard.player[1].size / 2;
+            
+            foreach (Dots d in gameBoard.playerHistory)
+            {
+                
+                canvas.FillCircle(d.x, d.y, hop);
+            }
         }
         private void DrawBackground(ICanvas canvas)
         {
@@ -108,10 +110,26 @@ namespace DP_BUJ0034.Drawables{
         {
                 for (int i = 0; i < gameBoard.player.Length; i++)
                 {
-                    canvas.DrawRectangle(gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
+                    //canvas.DrawRectangle(gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                     canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                 }
+
             
+        }
+        private void DrawEnd(ICanvas canvas, int currentPath)
+        {
+            for (int i = 0; i < gameBoard.path[currentPath].dot.Count; i++)
+            {
+                if (i == gameBoard.path[currentPath].dot.Count() - 1)
+                {
+                    if (!gameBoard.path[currentPath].noback)
+                    {
+                        canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x - 22.5f, gameBoard.path[currentPath].dot[i].y - 22.5f, 80, 80);
+                    }
+                }
+                
+            }
+
         }
         public void DrawBorder(ICanvas canvas, RectF dirtyRect)
         {
@@ -133,16 +151,8 @@ namespace DP_BUJ0034.Drawables{
             canvas.StrokeSize = 1;
             canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
         }
-        //public void DrawStardEnd(ICanvas canvas){
-
-        //    canvas.StrokeColor = Colors.LightYellow;
-        //    canvas.StrokeSize = 4;
-        //    //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.start.x + " " + gameBoard.start.y, "OK");
-        //    canvas.DrawCircle(gameBoard.start.x, gameBoard.start.y, 5);
-        //    canvas.StrokeColor = Colors.LightGreen;
-        //    canvas.StrokeSize = 4;
-        //    canvas.DrawCircle(gameBoard.end.x, gameBoard.end.y, 5);
-        //}
+     
+         
         public void DrawDots(ICanvas canvas, int currentPath){
 
             for(int i = 0;i< gameBoard.path[currentPath].dot.Count;i++){
@@ -150,7 +160,6 @@ namespace DP_BUJ0034.Drawables{
                     canvas.StrokeColor = Colors.LightYellow;
                     canvas.StrokeSize = 5;
                     
-                    //canvas.DrawCircle(gameBoard.path[currentPath].dot[i].x, gameBoard.path[currentPath].dot[i].y, 5);
                 }
                 else if (i == gameBoard.path[currentPath].dot.Count()-1){
                     if (!gameBoard.path[currentPath].noback)
@@ -176,7 +185,6 @@ namespace DP_BUJ0034.Drawables{
 
                     canvas.StrokeSize = 3;
                     canvas.FillColor = Colors.Yellow;
-                    //canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, 8);
                 }
                 else{
                     canvas.StrokeColor = Colors.Blue;
@@ -184,7 +192,6 @@ namespace DP_BUJ0034.Drawables{
                     canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item1.x, gameBoard.path[currentPath].controldots[i].Item1.y, 6);
 
                     canvas.StrokeSize = 3;
-                    //canvas.FillColor = Colors.Yellow;
                     canvas.DrawCircle(gameBoard.path[currentPath].controldots[i].Item2.x, gameBoard.path[currentPath].controldots[i].Item2.y, 8);
                 
                 }       
@@ -192,9 +199,9 @@ namespace DP_BUJ0034.Drawables{
         }
         public void DrawCurveTo(ICanvas canvas, int currentPath){
             PathF path_draw_Curve = new PathF();
+            PathF path_draw_gray = new PathF();
             path_draw_Curve.MoveTo(gameBoard.path[currentPath].dot[0].x, gameBoard.path[currentPath].dot[0].y);
 
-            //Application.Current.MainPage.DisplayAlert("Upozornění", "Toto je ukázkové upozornění." + gameBoard.path[currentPath].dot.Count, "OK");
             for (int i = 0; i < gameBoard.path[currentPath].controldots.Count; i++)
             {
                 path_draw_Curve.CurveTo(
@@ -205,18 +212,18 @@ namespace DP_BUJ0034.Drawables{
                     gameBoard.path[currentPath].dot[i + 1].x,
                     gameBoard.path[currentPath].dot[i + 1].y);
             }
-            //možná dělá čáru i číle mezi přední a zpětnou hranou
-            //path_draw_Curve.LineTo(gameBoard.path[currentPath].dot[gameBoard.path[currentPath].backdot.Count - 1].x,
-            //    gameBoard.path[currentPath].dot[gameBoard.path[currentPath].dot.Count - 1].y);
+            path_draw_gray = path_draw_Curve;
+            canvas.DrawPath(path_draw_gray);
+            canvas.StrokeColor = Colors.Gray;
+            canvas.StrokeSize = 1;
+            canvas.StrokeLineJoin = LineJoin.Round;
 
             for (int i = gameBoard.path[currentPath].backdot_with_t.Count-1;i>=0; i--)
             {
                 path_draw_Curve.LineTo(gameBoard.path[currentPath].backdot_with_t[i].x, gameBoard.path[currentPath].backdot_with_t[i].y);
             }
 
-            canvas.StrokeColor = Colors.Yellow;
-            canvas.StrokeSize = 1;
-            canvas.StrokeLineJoin = LineJoin.Round;
+            
             if (!textureProvider.isRouteOfItems())
             {
                 ImagePaint imagePaint = new ImagePaint
@@ -227,9 +234,8 @@ namespace DP_BUJ0034.Drawables{
 
                 canvas.SetFillPaint(imagePaint, RectF.Zero);
                 canvas.FillPath(path_draw_Curve, WindingMode.NonZero);
-                //canvas.FillRectangle(0, 0, height, width);
                 canvas.StrokeDashOffset = 5;
-                canvas.DrawPath(path_draw_Curve);
+                //canvas.DrawPath(path_draw_gray);
             }
             else
             {
@@ -240,16 +246,12 @@ namespace DP_BUJ0034.Drawables{
                     double deltaX = gameBoard.path[currentPath].backdot_with_t[i].x - gameBoard.path[currentPath].backdot_with_t[i - 1].x;
                     double deltaY = gameBoard.path[currentPath].backdot_with_t[i].y - gameBoard.path[currentPath].backdot_with_t[i - 1].y;
 
-                    // Použití Pythagorovy věty
                     traveled_distance += Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
                     if (traveled_distance > 70)
                     { traveled_distance = 0; canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x - 20, gameBoard.path[currentPath].backdot_with_t[i].y - 20, 20, 20); }
 
                 }
-                //for (int i = 1; i < gameBoard.path[currentPath].backdot_with_t.Count; i+=10) {
-                //    canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x - 20, gameBoard.path[currentPath].backdot_with_t[i].y - 20, 20, 20);
-                //}
-                canvas.DrawPath(path_draw_Curve);
+                //canvas.DrawPath(path_draw_gray);
 
             }
         }

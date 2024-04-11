@@ -30,7 +30,7 @@
             </HorizontalStackLayout>
             <HorizontalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" >
                 <Label Text="Zobrazení tahu:"></Label>
-                <CheckBox ></CheckBox>
+                <CheckBox CheckedChanged="checkchange" IsChecked="{Binding Hecked}"></CheckBox>
             </HorizontalStackLayout>
             <Button Text="Resetování hvězdiček" Command="{Binding resetStarCommand}" 
                     Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Button>

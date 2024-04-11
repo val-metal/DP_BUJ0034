@@ -48,7 +48,7 @@ namespace DP_BUJ0034.ViewModels
                 LevelsLoad.RowDefinitions.Add(new RowDefinition());
             }
             LevelsLoad.VerticalOptions= LayoutOptions.CenterAndExpand;
-            LevelsLoad.HorizontalOptions = LayoutOptions.FillAndExpand;
+            LevelsLoad.HorizontalOptions = LayoutOptions.CenterAndExpand;
 
            
 
@@ -63,9 +63,9 @@ namespace DP_BUJ0034.ViewModels
                         new RowDefinition()
                     },
                     ColumnDefinitions ={
-                        new ColumnDefinition(new GridLength(3, GridUnitType.Star)),
-                        new ColumnDefinition(new GridLength(5, GridUnitType.Star)),
-                        new ColumnDefinition(new GridLength(2, GridUnitType.Star))
+                        new ColumnDefinition(new GridLength(1, GridUnitType.Star)),
+                        new ColumnDefinition(new GridLength(2, GridUnitType.Star)),
+                        new ColumnDefinition()
                     },
                     RowSpacing = 10,
                     ColumnSpacing = 10,
@@ -86,7 +86,7 @@ namespace DP_BUJ0034.ViewModels
                 
                 Microsoft.Maui.Controls.Image img = new Microsoft.Maui.Controls.Image();
                 img.Source = levelInfos[i].pathForRes;
-                img.VerticalOptions = LayoutOptions.FillAndExpand;
+                //img.VerticalOptions = LayoutOptions.FillAndExpand;
                 img.HorizontalOptions = LayoutOptions.FillAndExpand;
                 img.Margin = 3;
                 grid.SetRowSpan(img, 2);
@@ -97,7 +97,7 @@ namespace DP_BUJ0034.ViewModels
 
                 Label label=new Label();
                 label.Text = levelInfos[i].nameOfButton;
-                label.TextColor = Colors.Red;
+                label.TextColor = Color.FromHex("#4a22d2");
                 label.FontSize = 20;
                 label.VerticalOptions = LayoutOptions.CenterAndExpand;
                 label.HorizontalOptions = LayoutOptions.StartAndExpand;
@@ -140,7 +140,7 @@ namespace DP_BUJ0034.ViewModels
 
                     Label label_star = new Label();
                     label_star.Text = levelInfos[i].unlockAt.ToString();
-                    label_star.TextColor = Colors.Red;
+                    label_star.TextColor = Color.FromHex("#4a22d2");
                     label_star.FontSize = 16;
                     label_star.VerticalOptions = LayoutOptions.CenterAndExpand;
                     label_star.HorizontalOptions = LayoutOptions.EndAndExpand;
