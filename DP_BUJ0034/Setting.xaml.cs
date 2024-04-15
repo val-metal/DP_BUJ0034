@@ -14,8 +14,8 @@ public partial class Setting : ContentPage
 		this.Appearing += sm.updateSettings;
 	}
 
-    private void checkchange(object sender, CheckedChangedEventArgs e)
+    private async void checkchange(object sender, CheckedChangedEventArgs e)
     {
-        sm.switchMove();
+        await sm.switchMove();
     }
 }

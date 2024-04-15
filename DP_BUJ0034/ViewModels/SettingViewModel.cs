@@ -25,6 +25,7 @@ namespace DP_BUJ0034.ViewModels
         public bool enableOnMusic;
         [ObservableProperty]
         public bool hecked;
+        private bool first;
         public async void updateSettings(object sender, EventArgs e)
         {
 
@@ -53,10 +54,17 @@ namespace DP_BUJ0034.ViewModels
             SettingLoader.save(setting);
 
         }
-        public void switchMove()
+        public async Task switchMove()
         {
             setting.moveView = !setting.moveView;
-            SettingLoader.save(setting);
+            if (!first)
+            {
+                first = true;
+            }
+            else
+            {
+                await SettingLoader.save(setting);
+            }
         }
         [RelayCommand]
         public void muteMusic()

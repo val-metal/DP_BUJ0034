@@ -14,7 +14,6 @@ using IImage = Microsoft.Maui.Graphics.IImage;
 using System.Numerics;
 using Microsoft.Maui.Graphics;
 using DP_BUJ0034.Engine;
-using Windows.System.Update;
 
 
 #if IOS || ANDROID || MACCATALYST
@@ -82,12 +81,12 @@ namespace DP_BUJ0034.Drawables{
         private void DrawPathHistory(ICanvas canvas)
         {
             canvas.FillColor=Color.FromArgb("#a83232");
-            float hop = gameBoard.player[1].size / 2;
+            //float hop = gameBoard.player[1].size / 2;
             
             foreach (Dots d in gameBoard.playerHistory)
             {
                 
-                canvas.FillCircle(d.x, d.y, hop);
+                canvas.FillCircle(d.x, d.y, 32);
             }
         }
         private void DrawBackground(ICanvas canvas)

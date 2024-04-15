@@ -3,103 +3,141 @@
     "name": "Zelenina",
     "nameOfButton": "Zelenina",
     "pathForRes": "menu_zelenina.png",
-    "unlockAt": 0
+    "unlockAt": 0,
+    "levelText": "a"
   },
   {
     "name": "Princezny",
     "nameOfButton": "Princezny",
     "pathForRes": "menu_princezny.png",
-    "unlockAt": 0
+    "unlockAt": 0,
+    "levelText": "a"
   },
   {
     "name": "Domacimazlicci",
     "nameOfButton": "Domácí mazlíčci",
     "pathForRes": "menu_domacimazlicci.png",
-    "unlockAt": 0
+    "unlockAt": 0,
+    "levelText": "a"
   },
   {
     "name": "Auta",
     "nameOfButton": "Auta",
     "pathForRes": "menu_auta.png",
-    "unlockAt": 7
+    "unlockAt": 1,
+    "levelText": "a"
   },
   {
     "name": "Morskepanny",
     "nameOfButton": "Mořské panny",
     "pathForRes": "menu_morskepanny.png",
-    "unlockAt": 9
+    "unlockAt": 3,
+    "levelText": "a"
   },
   {
     "name": "Motyl",
     "nameOfButton": "Motýl",
     "pathForRes": "menu_motyl.png",
-    "unlockAt": 0
+    "unlockAt": 5,
+    "levelText": "a"
   },
   {
     "name": "Rytir",
     "nameOfButton": "Rytíř",
     "pathForRes": "menu_rytir.png",
-    "unlockAt": 0
+    "unlockAt": 7,
+    "levelText": "a"
   },
   {
     "name": "Ovoce",
     "nameOfButton": "Ovoce",
     "pathForRes": "menu_ovoce.png",
-    "unlockAt": 0
+    "unlockAt": 9,
+    "levelText": "a"
   },
   {
     "name": "Klauni",
     "nameOfButton": "Klauni",
     "pathForRes": "menu_klauni.png",
-    "unlockAt": 0
+    "unlockAt": 11,
+    "levelText": "a"
   },
   {
     "name": "Cisla",
     "nameOfButton": "Čísla",
     "pathForRes": "menu_cisla.png",
-    "unlockAt": 0
+    "unlockAt": 13,
+    "levelText": "a"
   },
   {
     "name": "Astronauti",
     "nameOfButton": "Astronauti",
     "pathForRes": "menu_astronauti.png",
-    "unlockAt": 0
+    "unlockAt": 15,
+    "levelText": "a"
   },
   {
     "name": "Letadla",
     "nameOfButton": "Letadla",
     "pathForRes": "menu_letadla.png",
-    "unlockAt": 0
+    "unlockAt": 17,
+    "levelText": "a"
   },
   {
     "name": "Pirati",
     "nameOfButton": "Piráti",
     "pathForRes": "menu_pirati.png",
-    "unlockAt": 0
+    "unlockAt": 19,
+    "levelText": "a"
   },
   {
     "name": "Policie",
     "nameOfButton": "Bezpčnostní složky",
     "pathForRes": "menu_hasic.png",
-    "unlockAt": 0
+    "unlockAt": 21,
+    "levelText": "a"
   },
   {
     "name": "Povolani",
     "nameOfButton": "Povolání",
     "pathForRes": "menu_povolani.png",
-    "unlockAt": 0
+    "unlockAt": 23,
+    "levelText": "a"
   },
   {
     "name": "Superhrdinove",
     "nameOfButton": "Superhrdinové",
     "pathForRes": "menu_superhrdina.png",
-    "unlockAt": 0
+    "unlockAt": 25,
+    "levelText": "a"
   },
   {
     "name": "Traktory",
     "nameOfButton": "Traktory",
     "pathForRes": "menu_traktory.png",
-    "unlockAt": 0
+    "unlockAt": 27,
+    "levelText": "a"
+  },
+  {
+    "name": "Frog",
+    "nameOfButton": "Žáby",
+    "pathForRes": "menu_zaby.png",
+    "unlockAt": 29,
+    "levelText": "a"
+  },
+  {
+    "name": "Mermaid",
+    "nameOfButton": "Mořské pany",
+    "pathForRes": "menu_pany.png",
+    "unlockAt": 31,
+    "levelText": "a"
+  },
+  {
+    "name": "Train",
+    "nameOfButton": "Vlaky",
+    "pathForRes": "menu_vlaky.png",
+    "unlockAt": 33,
+    "levelText": "a"
   }
 ]
 

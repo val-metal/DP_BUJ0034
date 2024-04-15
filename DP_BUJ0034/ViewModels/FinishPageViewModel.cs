@@ -29,19 +29,27 @@ namespace DP_BUJ0034.ViewModels
             this.difficulty = difficulty;
             TimeString = Math.Floor(TimeSpan.FromMilliseconds(time).TotalMinutes)+":"+ Math.Floor(TimeSpan.FromMilliseconds(time).TotalSeconds);
 
-
-            if (difficulty == 1 ) {
-                imgName = "star_1.png";
-            }
-            else if( difficulty == 2 )
+            if (percentage < 80)
             {
-                imgName = "star_2.png";
+                imgName = "star_0.png";
             }
-            else if (difficulty == 3)
+            else
             {
-                imgName = "star_3.png";
+                if (difficulty == 1)
+                {
+                    imgName = "star_1.png";
+                }
+                else if (difficulty == 2)
+                {
+                    imgName = "star_2.png";
+                }
+                else if (difficulty == 3)
+                {
+                    imgName = "star_3.png";
+                }
+                addScore(type);
             }
-            addScore(type);
+            
 
         }
         public async Task showScore(int num_paths, int difficulty, string type)

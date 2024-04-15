@@ -16,6 +16,7 @@ namespace DP_BUJ0034.ViewModels
 {
     public partial class SelectLevelViewModel : ObservableObject
     {
+        
         LevelInfo[] levelInfos;
         int[] scores;
         [ObservableProperty]
@@ -63,12 +64,12 @@ namespace DP_BUJ0034.ViewModels
                         new RowDefinition()
                     },
                     ColumnDefinitions ={
-                        new ColumnDefinition(new GridLength(1, GridUnitType.Star)),
-                        new ColumnDefinition(new GridLength(2, GridUnitType.Star)),
-                        new ColumnDefinition()
+                        new ColumnDefinition(new GridLength(0.3, GridUnitType.Star)),
+                        new ColumnDefinition(),
+                        new ColumnDefinition(new GridLength(0.3, GridUnitType.Star))
                     },
                     RowSpacing = 10,
-                    ColumnSpacing = 10,
+                    ColumnSpacing = 3,
                 };
 
                 Microsoft.Maui.Controls.BoxView boxView_for_view = new Microsoft.Maui.Controls.BoxView { Color = Colors.White, Opacity = 0.6, CornerRadius = 10 };
@@ -82,12 +83,10 @@ namespace DP_BUJ0034.ViewModels
                 Microsoft.Maui.Controls.BoxView boxView = new Microsoft.Maui.Controls.BoxView { Color = Colors.White, Opacity = 0,CornerRadius =10};
                 
                 
-
-                
                 Microsoft.Maui.Controls.Image img = new Microsoft.Maui.Controls.Image();
                 img.Source = levelInfos[i].pathForRes;
                 //img.VerticalOptions = LayoutOptions.FillAndExpand;
-                img.HorizontalOptions = LayoutOptions.FillAndExpand;
+                img.HorizontalOptions = LayoutOptions.StartAndExpand;
                 img.Margin = 3;
                 grid.SetRowSpan(img, 2);
                 grid.SetRow(img, 0);  
@@ -98,9 +97,9 @@ namespace DP_BUJ0034.ViewModels
                 Label label=new Label();
                 label.Text = levelInfos[i].nameOfButton;
                 label.TextColor = Color.FromHex("#4a22d2");
-                label.FontSize = 20;
+                label.FontSize = 15;
                 label.VerticalOptions = LayoutOptions.CenterAndExpand;
-                label.HorizontalOptions = LayoutOptions.StartAndExpand;
+                label.HorizontalOptions = LayoutOptions.CenterAndExpand;
                 grid.SetRowSpan(label, 2);
                 grid.SetRow(label, 0);
                 grid.SetColumn(label, 1);
@@ -133,7 +132,7 @@ namespace DP_BUJ0034.ViewModels
                     
                     star_img.Source = "star_1.png";
                     star_img.VerticalOptions = LayoutOptions.CenterAndExpand;
-                    star_img.HorizontalOptions = LayoutOptions.StartAndExpand;
+                    star_img.HorizontalOptions = LayoutOptions.CenterAndExpand;
                     grid_for_img_star.SetRow(star_img, 0);
                     grid_for_img_star.SetColumn(star_img, 1);
                     grid_for_img_star.Add(star_img);
@@ -143,7 +142,7 @@ namespace DP_BUJ0034.ViewModels
                     label_star.TextColor = Color.FromHex("#4a22d2");
                     label_star.FontSize = 16;
                     label_star.VerticalOptions = LayoutOptions.CenterAndExpand;
-                    label_star.HorizontalOptions = LayoutOptions.EndAndExpand;
+                    label_star.HorizontalOptions = LayoutOptions.CenterAndExpand;
                     grid_for_img_star.SetRow(label_star, 0);
                     grid_for_img_star.SetColumn(label_star, 0);
                     grid_for_img_star.Add(label_star);
@@ -151,7 +150,7 @@ namespace DP_BUJ0034.ViewModels
                     grid.SetRow(grid_for_img_star, 0);
                     grid.SetColumn(grid_for_img_star, 2);
                     grid_for_img_star.VerticalOptions = LayoutOptions.EndAndExpand;
-                    grid_for_img_star.HorizontalOptions = LayoutOptions.CenterAndExpand;
+                    grid_for_img_star.HorizontalOptions = LayoutOptions.EndAndExpand;
                     grid.Add(grid_for_img_star);
 
                 }

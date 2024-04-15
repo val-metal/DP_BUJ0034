@@ -5,6 +5,7 @@
              xmlns:viewmodel="clr-namespace:DP_BUJ0034.ViewModels"
              x:DataType="viewmodel:LevelSettingsViewModel"
              BackgroundImageSource="levelsettings1.gif"
+             Shell.NavBarIsVisible="false"
              Title="">
 
     <Grid RowDefinitions="0.76*,2*,0.7*, 0.7*"
