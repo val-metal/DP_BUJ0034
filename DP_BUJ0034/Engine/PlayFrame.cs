@@ -1,10 +1,12 @@
 ﻿
 using DP_BUJ0034.Drawables;
 using DP_BUJ0034.Engine.Generator;
+using DP_BUJ0034.Expectations;
 using DP_BUJ0034.Game;
 using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -15,16 +17,20 @@ namespace DP_BUJ0034.Engine
     public class PlayFrame
     {
         public GameBoard gameBoard { get; set; }
-        
         public Drawable drawable { get; set; }
         public Stopwatch stopwatch { get; set; }
         public bool gameEnds { get; set; }
         public int num_paths { get; set; }
         public int num_difficulty { get; set; }
-        private int id_last_player_move; 
+        public int id_last_player_move;
+        public bool running { get; set; }
                
         public PlayFrame(Drawable drawable,int num_path,int difficulty) {
             gameEnds = false;
+            if (num_path < 0 || num_path > 4 || difficulty < 0 || difficulty > 3)
+            {
+                throw new ArgumentException();
+            }
             this.drawable = drawable;
             this.num_paths = num_path;
             this.num_difficulty = difficulty;
@@ -75,6 +81,10 @@ namespace DP_BUJ0034.Engine
         }
         public void movePlayer(float x, float y)
         {
+            if (running == false)
+            {
+                throw new EngineNotRunningException();
+            }
             if (gameBoard.isAllVisited() == true)
             {
                 gameEnds = true;
@@ -140,6 +150,7 @@ namespace DP_BUJ0034.Engine
         }
         public void play(float height, float width)
         {
+                running = true;
                 IGenerator generator = GeneratorFactory.MakeGenerator(num_difficulty);
                 stopwatch.Start();
                 for (int i = 0; i < gameBoard.num_paths ; i++)

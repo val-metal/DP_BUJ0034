@@ -74,7 +74,6 @@ namespace DP_BUJ0034.Engine.Generator
 
                 if (current == end)
                 {
-                    // Reconstruct path
                     List<Node> path = new List<Node>();
                     while (current != null)
                     {

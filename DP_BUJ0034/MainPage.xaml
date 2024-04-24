@@ -37,11 +37,16 @@
        
         <Grid Grid.Row="1" Grid.Column="1"
             RowDefinitions="0.8*,1.2*,1.2*, 0.8*"
-          ColumnDefinitions="0.8*, 2*, 0.8*"
-              RowSpacing="5">
-
-            <Button Grid.Row="1" Grid.Column="1" x:Name="menulevelsbutton" Text="Hrát si" FontSize="20" Command="{Binding goToMenuSelectCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="1.0"/>
-            <Button Grid.Row="2" Grid.Column="1" x:Name="CounterBtn" Text="Nastavení" FontSize="20" Command="{Binding goToSettingCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Opacity="1.0"/>
+          ColumnDefinitions="0.8*, 0.7*,1*, 0.8*"
+              RowSpacing="5" >
+            <BoxView Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Color="White" Opacity="0.5" CornerRadius="5"></BoxView >
+            <Image Margin="5" Source="button_play.png"  Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" ></Image>
+            <Label Grid.Column="2" Grid.Row="1" Text="Hrát si" TextColor="#4a22d2" FontSize="20" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Button Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" x:Name="menulevelsbutton" Text="" FontSize="20" Command="{Binding goToMenuSelectCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Opacity="0"/>
+            <BoxView Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" Color="White" Opacity="0.5" CornerRadius="5"></BoxView >
+            <Image Margin="5" Source="button_nastaveni.png"  Grid.Column="1" Grid.Row="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" ></Image>
+            <Label Grid.Column="2" Grid.Row="2" Text="Nastavení" TextColor="#4a22d2" FontSize="20" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" x:Name="CounterBtn" Text="" FontSize="20" Command="{Binding goToSettingCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Opacity="0"/>
         </Grid>
         
     </Grid>

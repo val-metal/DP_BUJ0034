@@ -17,7 +17,11 @@ namespace DP_BUJ0034.Engine.Generator
             }
             else if (difficulty == 2)
             {
-                return new PathTwoDifficulty();
+                Random random = new Random();
+                int randomNumber = random.Next(1, 4);
+                if (randomNumber == 1) { return new PathTwoDifficulty(); }
+                else if (randomNumber == 2) { return new PathTwoDifficulty(); }
+                else { return new PathOneDifficulty(); }
             }
             else if(difficulty == 3)
             {

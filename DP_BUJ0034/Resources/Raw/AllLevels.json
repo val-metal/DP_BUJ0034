@@ -4,140 +4,140 @@
     "nameOfButton": "Zelenina",
     "pathForRes": "menu_zelenina.png",
     "unlockAt": 0,
-    "levelText": "a"
+    "levelText": "Zjisti, kam zelenina dorazí?"
   },
   {
     "name": "Princezny",
     "nameOfButton": "Princezny",
     "pathForRes": "menu_princezny.png",
     "unlockAt": 0,
-    "levelText": "a"
+    "levelText": "Kam půjdou princezny?"
   },
   {
     "name": "Domacimazlicci",
     "nameOfButton": "Domácí mazlíčci",
     "pathForRes": "menu_domacimazlicci.png",
     "unlockAt": 0,
-    "levelText": "a"
+    "levelText": "Najdi s domácémi mazlíčky oblíbené hračky!"
   },
   {
     "name": "Auta",
     "nameOfButton": "Auta",
     "pathForRes": "menu_auta.png",
     "unlockAt": 1,
-    "levelText": "a"
+    "levelText": "Táhni autíčkem a zjisti, kam dorazí?"
   },
   {
     "name": "Morskepanny",
     "nameOfButton": "Mořské panny",
     "pathForRes": "menu_morskepanny.png",
     "unlockAt": 3,
-    "levelText": "a"
+    "levelText": "Co ztratila mořská panna?"
   },
   {
     "name": "Motyl",
     "nameOfButton": "Motýl",
     "pathForRes": "menu_motyl.png",
     "unlockAt": 5,
-    "levelText": "a"
+    "levelText": "Kam motýl poletí?"
   },
   {
     "name": "Rytir",
     "nameOfButton": "Rytíř",
     "pathForRes": "menu_rytir.png",
     "unlockAt": 7,
-    "levelText": "a"
+    "levelText": "Provázej rytíře na jeho cestě!"
   },
   {
     "name": "Ovoce",
     "nameOfButton": "Ovoce",
     "pathForRes": "menu_ovoce.png",
     "unlockAt": 9,
-    "levelText": "a"
+    "levelText": "Z kterého stromu je ovoce?"
   },
   {
     "name": "Klauni",
     "nameOfButton": "Klauni",
     "pathForRes": "menu_klauni.png",
     "unlockAt": 11,
-    "levelText": "a"
+    "levelText": "Který předmět patří klaunovi?"
   },
   {
     "name": "Cisla",
     "nameOfButton": "Čísla",
     "pathForRes": "menu_cisla.png",
     "unlockAt": 13,
-    "levelText": "a"
+    "levelText": "Kolik má objekt hran?"
   },
   {
     "name": "Astronauti",
     "nameOfButton": "Astronauti",
     "pathForRes": "menu_astronauti.png",
     "unlockAt": 15,
-    "levelText": "a"
+    "levelText": "Na kterou planetu cestuje astronaut?"
   },
   {
     "name": "Letadla",
     "nameOfButton": "Letadla",
     "pathForRes": "menu_letadla.png",
     "unlockAt": 17,
-    "levelText": "a"
+    "levelText": "Táhni letadlem a zjisti, kam dorazí?"
   },
   {
     "name": "Pirati",
     "nameOfButton": "Piráti",
     "pathForRes": "menu_pirati.png",
     "unlockAt": 19,
-    "levelText": "a"
+    "levelText": "Na kterou loď se nalodí pirát?"
   },
   {
     "name": "Policie",
-    "nameOfButton": "Bezpčnostní složky",
+    "nameOfButton": "Bezpečnostní složky",
     "pathForRes": "menu_hasic.png",
     "unlockAt": 21,
-    "levelText": "a"
+    "levelText": "Najdi správné auto!"
   },
   {
     "name": "Povolani",
     "nameOfButton": "Povolání",
     "pathForRes": "menu_povolani.png",
     "unlockAt": 23,
-    "levelText": "a"
+    "levelText": "Který nástroj používá jaké povolaní?"
   },
   {
     "name": "Superhrdinove",
     "nameOfButton": "Superhrdinové",
     "pathForRes": "menu_superhrdina.png",
     "unlockAt": 25,
-    "levelText": "a"
+    "levelText": "Zachraň město se superhrdiny!"
   },
   {
     "name": "Traktory",
     "nameOfButton": "Traktory",
     "pathForRes": "menu_traktory.png",
     "unlockAt": 27,
-    "levelText": "a"
+    "levelText": "Pomož traktorům na poli!"
   },
   {
     "name": "Frog",
     "nameOfButton": "Žáby",
     "pathForRes": "menu_zaby.png",
     "unlockAt": 29,
-    "levelText": "a"
+    "levelText": "Nakrm žáby!"
   },
   {
     "name": "Mermaid",
     "nameOfButton": "Mořské pany",
     "pathForRes": "menu_pany.png",
     "unlockAt": 31,
-    "levelText": "a"
+    "levelText": "Po kterých mušlích půjde která panna?"
   },
   {
     "name": "Train",
     "nameOfButton": "Vlaky",
     "pathForRes": "menu_vlaky.png",
     "unlockAt": 33,
-    "levelText": "a"
+    "levelText": "Táhni mašinkou a zjisti, kam dorazí?"
   }
 ]
 

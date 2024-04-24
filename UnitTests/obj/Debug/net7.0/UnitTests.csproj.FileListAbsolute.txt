@@ -123,3 +123,8 @@ C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\obj\Debug\net7.0\refint\Uni
 C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\obj\Debug\net7.0\UnitTests.pdb
 C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\obj\Debug\net7.0\UnitTests.genruntimeconfig.cache
 C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\obj\Debug\net7.0\ref\UnitTests.dll
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\bin\Debug\net7.0\Castle.Core.dll
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\bin\Debug\net7.0\Moq.dll
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\bin\Debug\net7.0\System.Diagnostics.EventLog.dll
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\ValMe\Documents\GitHub\DP_BUJ0034\UnitTests\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll

@@ -7,33 +7,41 @@
              BackgroundImageSource="setting1.gif"
              Title="">
     
-    <Grid RowDefinitions="0.8*,2*, 0.5*"
+    <Grid RowDefinitions="0.4*,0.4*,2*, 0.5*"
           ColumnDefinitions="1*, 2*, 1*">
-        <Label Grid.Row="0"  Grid.Column="1" 
+        <Button
+                Grid.Row="0"  Grid.Column="2" 
+                HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                x:Name="Back"
+                Text="Zpět"
+                Opacity="0.8"
+                ImageSource="button_zpet.png"
+                Command="{Binding goBackCommand}"
+                Margin="5"/>
+
+        <Label Grid.RowSpan="2"  Grid.Row="0" Grid.Column="1" 
                Text="Nastavení"
-               TextColor="White" FontSize="20" 
+               TextColor="White" FontSize="30" 
                VerticalOptions="Center" HorizontalOptions="Center" >
 
         </Label>
-        <BoxView Grid.Row="1" Grid.Column="1"
+        <BoxView Grid.Row="2" Grid.Column="1"
                  Color="White" Opacity="0.5"
                  CornerRadius="20"
                  >
             
         </BoxView>
-        <Grid Grid.Row="1" Grid.Column="1"
-              RowDefinitions="1*,1*,1*,1*, 1*"
-                  ColumnDefinitions="1*, 2*, 1*">
-            <HorizontalStackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" >
-                <Button Text="On" Command="{Binding unmuteMusicCommand}" IsEnabled="{Binding EnableOnMusic}"></Button>
-                <Button Text="Off" Command="{Binding muteMusicCommand}" IsEnabled="{Binding EnableOffMusic}"></Button>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" >
-                <Label Text="Zobrazení tahu:"></Label>
-                <CheckBox CheckedChanged="checkchange" IsChecked="{Binding Hecked}"></CheckBox>
-            </HorizontalStackLayout>
-            <Button Text="Resetování hvězdiček" Command="{Binding resetStarCommand}" 
-                    Grid.Row="3" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"></Button>
+        <Grid Grid.Row="2" Grid.Column="1"
+              RowDefinitions="0.5*,1*,1*,1*, 0.5*"
+                  ColumnDefinitions="0.5*, 1*,1*, 0.5*">
+            <ImageButton Grid.Row="1" Grid.Column="1" Command="{Binding unmuteMusicCommand}" IsEnabled="{Binding EnableOnMusic}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Source="button_sound_on.png"></ImageButton>
+            <ImageButton  Grid.Row="1" Grid.Column="2" Command="{Binding muteMusicCommand}" IsEnabled="{Binding EnableOffMusic}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Source="button_sound_off.png"></ImageButton>
+
+            <Label Text="Zobrazení tahu: " FontSize="18" TextColor="#4a22d2" Grid.Row="2" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" ></Label>
+            <CheckBox CheckedChanged="checkchange" IsChecked="{Binding Hecked}"  Grid.Row="2" Grid.Column="2" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></CheckBox>
+
+            <Button Text="Resetování hvězdiček" FontSize="18" Command="{Binding resetStarCommand}" 
+                    Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
 
         </Grid>
 

@@ -8,19 +8,28 @@
              Shell.NavBarIsVisible="false"
              Title="">
 
-    <Grid RowDefinitions="0.76*,2*,0.7*, 0.7*"
+    <Grid RowDefinitions="0.6*,0.2*,2*,0.7*, 0.7*"
           ColumnDefinitions="1*, 2*, 1*">
-        <BoxView Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"
+        <BoxView Grid.Row="2" Grid.RowSpan="2" Grid.Column="1"
                  Color="White" Opacity="0.8" CornerRadius="20"
                  >
         </BoxView>
-        <Label Grid.Row="0"  Grid.Column="1" 
+        <Button
+                Grid.Row="0"  Grid.Column="3" 
+                HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                x:Name="Back"
+                Text="Zpět"
+                Opacity="0.8"
+                Command="{Binding goBackCommand}"
+                ImageSource="button_zpet.png"
+                Margin="5"/>
+        <Label Grid.RowSpan="2" Grid.Row="0"  Grid.Column="1" 
                Text="Výběr obtížnosti"
-               TextColor="White" FontSize="20" 
+               TextColor="White" FontSize="30" 
                VerticalOptions="Center" HorizontalOptions="Center" >
            
         </Label>
-        <Grid Grid.Row="1"  Grid.Column="1" 
+        <Grid Grid.Row="2"  Grid.Column="1" 
               RowDefinitions="0.2*,2*,2*, 0.01*" ColumnDefinitions="0.1*,2*,2*, 0.1*"
               RowSpacing="3" ColumnSpacing="3">
             <ImageButton x:Name="path_1" 
@@ -58,7 +67,7 @@
                 Command="{Binding pocetCestCommand}" CommandParameter="4" 
             />
         </Grid>
-        <Grid Grid.Row="2"  Grid.Column="1" 
+        <Grid Grid.Row="3"  Grid.Column="1" 
               RowDefinitions="0.01*,2*,0.1*" ColumnDefinitions="0.1*,1*, 1*,1*, 0.1*"
               RowSpacing="1" ColumnSpacing="1">
 
@@ -91,7 +100,7 @@
             />
         </Grid>
         <Button Text="Spustit hru" Command="{Binding startGameCommand}"
-                Grid.Row="3" Grid.Column="1"
+                Grid.Row="4" Grid.Column="1"
                 Margin="10"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
             />

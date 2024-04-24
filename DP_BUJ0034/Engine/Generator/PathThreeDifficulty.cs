@@ -111,12 +111,11 @@ namespace DP_BUJ0034.Engine.Generator
                     }
                     else if (newY <= height / 9)
                     {
-                        //Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT:" + height + " WIDTH" + width, "OK");
+                       
                         try_angles = new float[] { 45, 90, 135 };
                     }
                     else if (newY >= (height / 9 * 8))
                     {
-                        // Application.Current.MainPage.DisplayAlert("Upozornění", "SHIT" + " HEIGHT2222:" + height + " WIDTH" + width, "OK");
                         try_angles = new float[] { 315, 270, 225 };
                     }
                     else { try_angles = angles; }

@@ -17,7 +17,6 @@ namespace DP_BUJ0034.ViewModels
         public SettingViewModel(AudioPlayerWrapper apw) 
         { 
             this.awp = apw;
-            
         }
         [ObservableProperty]
         public bool enableOffMusic;
@@ -26,6 +25,11 @@ namespace DP_BUJ0034.ViewModels
         [ObservableProperty]
         public bool hecked;
         private bool first;
+        [RelayCommand]
+        public async Task goBack()
+        {
+            await Shell.Current.Navigation.PopAsync();
+        }
         public async void updateSettings(object sender, EventArgs e)
         {
 

@@ -68,7 +68,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Remove="Resources\Images\dotnet_bot.svg" />
 	  <MauiImage Remove="Resources\Images\end1.png" />
 	  <MauiImage Remove="Resources\Images\stone64.png" />
 	</ItemGroup>
@@ -85,6 +84,12 @@
 	  <None Remove="Resources\Images\Astronauti\Player_2.png" />
 	  <None Remove="Resources\Images\Astronauti\Player_3.png" />
 	  <None Remove="Resources\Images\AtticButton.png" />
+	  <None Remove="Resources\Images\Button_nastaveni.png" />
+	  <None Remove="Resources\Images\Button_play.png" />
+	  <None Remove="Resources\Images\Button_replay.png" />
+	  <None Remove="Resources\Images\button_sound_off.png" />
+	  <None Remove="Resources\Images\button_sound_on.png" />
+	  <None Remove="Resources\Images\Button_zpet.png" />
 	  <None Remove="Resources\Images\Cisla\Background_Img.png" />
 	  <None Remove="Resources\Images\Cisla\Finish_1.png" />
 	  <None Remove="Resources\Images\Cisla\Finish_2.png" />
@@ -105,6 +110,7 @@
 	  <None Remove="Resources\Images\Domacimazlicci\Player_1.png" />
 	  <None Remove="Resources\Images\Domacimazlicci\Player_2.png" />
 	  <None Remove="Resources\Images\Domacimazlicci\Player_3.png" />
+	  <None Remove="Resources\Images\finish_clock.png" />
 	  <None Remove="Resources\Images\Klauni\Background_Img.png" />
 	  <None Remove="Resources\Images\Klauni\Finish_1.png" />
 	  <None Remove="Resources\Images\Klauni\Finish_2.png" />
@@ -408,7 +414,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidAotProfile Include="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 	  <EmbeddedResource Include="Resources\Images\Astronauti\Background_Img.png" />
 	  <EmbeddedResource Include="Resources\Images\Astronauti\Finish_1.png" />
 	  <EmbeddedResource Include="Resources\Images\Astronauti\Finish_2.png" />

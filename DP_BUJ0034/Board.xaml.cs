@@ -42,7 +42,7 @@ public partial class Board : ContentPage
         await Task.Delay(150);
         canvas.Invalidate();
         LevelInfo li = await LevelLoader.LoadLevelByName(name);
-        popisek_levelu.Text = li.name;
+        popisek_levelu.Text = li.levelText;
         Drawable neco = this.Resources["drawablee"] as Drawable;
         playFrame.drawable = neco;
         playFrame.play(neco.height, neco.width);
@@ -57,7 +57,6 @@ public partial class Board : ContentPage
     private void GameView_DragInteraction(object sender, TouchEventArgs e)
     {
         var touch = e.Touches.First();
-        //Application.Current.MainPage.DisplayAlert("Upozornìní", "Toto je ukázkové upozornìní."+touch.X+" "+playFrame.gameBoard.player.position.X, "OK");
         playFrame.movePlayer(touch.X, touch.Y);
         if (playFrame.gameEnds)
         {

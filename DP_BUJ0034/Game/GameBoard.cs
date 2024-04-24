@@ -1,15 +1,5 @@
 ﻿using DP_BUJ0034.Engine;
 using DP_BUJ0034.Engine.Generator;
-using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace DP_BUJ0034.Game{
@@ -27,7 +17,7 @@ namespace DP_BUJ0034.Game{
 
         public List<Dots> playerHistory { get; }
 
-        private bool saveHistory;
+        public bool saveHistory;
 
         public GameBoard(float height, float width, int num_paths,int difficulty){
 
@@ -133,6 +123,10 @@ namespace DP_BUJ0034.Game{
         {
 
             int distance = 20;
+            if (difficulty == 1)
+            { 
+                distance = 35;
+            }    
             for (int i = 0; i < path[currentPath].dot.Count() - 1; i++)
             {
                 Dots p1 = path[currentPath].dot[i];

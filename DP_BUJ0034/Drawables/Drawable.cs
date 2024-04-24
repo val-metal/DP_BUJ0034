@@ -130,25 +130,12 @@ namespace DP_BUJ0034.Drawables{
             }
 
         }
-        public void DrawBorder(ICanvas canvas, RectF dirtyRect)
-        {
-
-            canvas.StrokeColor = Colors.White;
-            canvas.StrokeSize = 4;
-            canvas.StrokeLineJoin = LineJoin.Round;
-            float left = dirtyRect.Left;
-            float top = dirtyRect.Top;
-            float right = dirtyRect.Right;
-            float bottom = dirtyRect.Bottom;
-            Console.WriteLine(right + " " + bottom);
-            canvas.DrawRectangle(left, top, right, bottom);
-
-        }
+        
         public void DrawGameBorder(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.White;
             canvas.StrokeSize = 1;
-            canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
+            //canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
         }
      
          

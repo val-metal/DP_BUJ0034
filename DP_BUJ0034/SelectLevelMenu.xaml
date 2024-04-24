@@ -9,21 +9,31 @@
              Title="">
             
 
-        <Grid RowDefinitions="4*,18*,0.5*" ColumnDefinitions="0.6*,0.6*, 8*, 0.6*,0.6*">
+        <Grid RowDefinitions="3*,1*,18*,0.5*" ColumnDefinitions="0.6*,0.6*, 8*, 0.6*,0.6*">
             <Label Text=" Výběr hry"
-                Grid.Row="0" Grid.Column="2"
-                TextColor="White" FontSize="32"
+               Grid.RowSpan="2" Grid.Row="0" Grid.Column="2"
+                TextColor="White" FontSize="30"
                    FontAttributes="Bold"
                 VerticalOptions="Center" HorizontalOptions="Center" 
             />
-            <BoxView Grid.Row="1"
+        <Button
+                Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="3" 
+                HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                x:Name="Back"
+                Text="Zpět"
+                Opacity="0.8"
+            Command="{Binding goBackCommand}"
+                ImageSource="button_zpet.png"
+                Margin="5"/>
+        <BoxView  Grid.RowSpan="2" Grid.Row="2"
                  Grid.ColumnSpan="3" Grid.Column="1"
                  Color="White" Opacity="0.5"
                  CornerRadius="20"
                    
                  >
             </BoxView>
-        <Grid RowDefinitions="1*" ColumnDefinitions="1*, 1*" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" Margin="5">
+
+        <Grid RowDefinitions="1*" ColumnDefinitions="1*, 1*"  Grid.RowSpan="2" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" Margin="5">
             <BoxView Grid.Row="0"   Grid.ColumnSpan="2" Grid.Column="0"
                  Color="White" Opacity="0.5"
                  CornerRadius="10" 
@@ -34,7 +44,7 @@
             <Label Text="{Binding Complete_score}" FontSize="30" TextColor="#4a22d2" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" ></Label>
             <Image Source="star_1.png" Grid.Row="0"  Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" ></Image>
         </Grid>
-        <ScrollView VerticalScrollBarVisibility="Always"  Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Padding="3" Margin="4">
+        <ScrollView VerticalScrollBarVisibility="Always"   Grid.RowSpan="2" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Padding="3" Margin="4">
                 <Grid x:Name="LevelsLoad" ColumnDefinitions="0.8*,0.8*" Padding="5">
                  </Grid>
             </ScrollView>

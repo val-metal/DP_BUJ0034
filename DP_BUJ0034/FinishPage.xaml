@@ -22,14 +22,20 @@
         </Label>
         <Label Grid.Row="1" Grid.Column="2"
             Text="{Binding Percentage}" TextColor="Black" FontSize="60" 
-            VerticalOptions="Center" HorizontalOptions="Center">
+            VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
         </Label>
-        <Label Grid.Row="2" Grid.Column="2"
+        <Grid Grid.Row="2" Grid.Column="2" RowDefinitions="1*" ColumnDefinitions="0.6*, 0.3*" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" >
+            <Label Grid.Row="0" Grid.Column="0"
             Text="{Binding TimeString}" TextColor="Black" FontSize="60" 
-            VerticalOptions="Center" HorizontalOptions="Center">
-        </Label>
+            VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+            </Label>
+            <Image Source="finish_clock.png" Grid.Row="0" Grid.Column="1" Margin="15" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Image>
+        </Grid>
         <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="30" Source="{Binding ImgName}" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand"></Image>
-        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Zpět na výběr levelu" CornerRadius="16" Command="{Binding GoToMenuCommand}"></Button>
+        <HorizontalStackLayout  Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" >
+            <Button HorizontalOptions="Start" Text="Zpět na výběr levelu" CornerRadius="16" Command="{Binding GoToMenuCommand}" ImageSource="button_zpet.png"></Button>
+            <Button HorizontalOptions="Start" Text="Opakovat hru" CornerRadius="16" Command="{Binding RepeatCommand}" IsVisible="{Binding IsContinueShow}" ImageSource="button_replay.png"></Button>
+        </HorizontalStackLayout>
     </Grid>
     
 </ContentPage>

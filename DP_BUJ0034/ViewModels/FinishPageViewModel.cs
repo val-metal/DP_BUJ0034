@@ -12,6 +12,7 @@ namespace DP_BUJ0034.ViewModels
     {
         public int num_paths;
         public int difficulty;
+        string type;
 
         [ObservableProperty]
         public string imgName;
@@ -21,17 +22,30 @@ namespace DP_BUJ0034.ViewModels
         public string levelName;
         [ObservableProperty]
         public string percentage;
+        [ObservableProperty]
+        public bool isContinueShow;
         public FinishPageViewModel(int num_paths,int difficulty,string type,long time,string levelName,double percentage) {
 
+            this.type = type;
             LevelName = levelName;
             Percentage = percentage.ToString()+"%";
             this.num_paths = num_paths;
             this.difficulty = difficulty;
-            TimeString = Math.Floor(TimeSpan.FromMilliseconds(time).TotalMinutes)+":"+ Math.Floor(TimeSpan.FromMilliseconds(time).TotalSeconds);
+            double minuty=Math.Floor(TimeSpan.FromMilliseconds(time).TotalMinutes);
+            double sekundy= (Math.Floor(TimeSpan.FromMilliseconds(time).TotalSeconds)) % 60;
+            if (sekundy < 10)
+            {
+                TimeString = minuty + ":0" + sekundy;
+            }
+            else
+            {
+                TimeString = minuty + ":" + sekundy;
+            }
 
             if (percentage < 80)
             {
                 imgName = "star_0.png";
+                isContinueShow = true;
             }
             else
             {
@@ -62,10 +76,17 @@ namespace DP_BUJ0034.ViewModels
         }
         [RelayCommand]
 
-        public async void GoToMenu()
+        public async Task GoToMenu()
         {
             await Shell.Current.Navigation.PopToRootAsync();
             await Shell.Current.Navigation.PushAsync(new SelectLevelMenu(new SelectLevelViewModel()));
+        }
+        [RelayCommand]
+
+        public async Task Repeat()
+        {
+            await Shell.Current.Navigation.PopToRootAsync();
+            await Shell.Current.Navigation.PushAsync(new Board(type,num_paths,difficulty,LevelName));
         }
     }
 }
