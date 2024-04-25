@@ -21,8 +21,6 @@ namespace DP_BUJ0034.ViewModels
         public ImageButton difficulty_1;
         public ImageButton difficulty_2;
         public ImageButton difficulty_3;
-        private bool path_selected;
-        private bool difficulty_selected;
         [RelayCommand]
         public async Task goBack()
         {
@@ -82,27 +80,15 @@ namespace DP_BUJ0034.ViewModels
             }
             else if (Difficulty == 2)
             {
-
                 difficulty_1.Source = "star_1.png";
                 difficulty_2.Source = "star_2_check.png";
                 difficulty_3.Source = "star_3.png";
-
-                /*difficulty_1.BorderWidth = 0;
-                difficulty_2.BorderWidth = 3;
-                difficulty_2.BorderColor = Colors.Red;
-                difficulty_3.BorderWidth = 0;*/
             }
             else if (Difficulty == 3)
             {
-
                 difficulty_1.Source = "star_1.png";
                 difficulty_2.Source = "star_2.png";
                 difficulty_3.Source = "star_3_check.png";
-                
-                /*difficulty_1.BorderWidth = 0;
-                difficulty_2.BorderWidth = 0;
-                difficulty_3.BorderWidth = 3;
-                difficulty_3.BorderColor = Colors.Red;*/
             }
             else
             {
@@ -114,11 +100,8 @@ namespace DP_BUJ0034.ViewModels
         [RelayCommand]
         private async Task startGame()
         {
-
              await Shell.Current.Navigation.PushAsync(new Board(type, NumPaths, Difficulty, name));
-
         }
-
 
         public LevelSettingsViewModel(string type, ImageButton path_1, ImageButton path_2, ImageButton path_3, ImageButton path_3_1, ImageButton difficulty_1, ImageButton difficulty_2, ImageButton difficulty_3,string name) {
             this.type = type;
@@ -133,7 +116,6 @@ namespace DP_BUJ0034.ViewModels
             this.difficulty_1.Source = "star_1_check.png";
             Difficulty = 1;
             NumPaths = 1;
-
             this.name = name;
         }
 

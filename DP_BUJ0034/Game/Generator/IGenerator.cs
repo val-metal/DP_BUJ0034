@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DP_BUJ0034.Engine.Generator
+namespace DP_BUJ0034.Game.Generator
 {
     public interface IGenerator
     {

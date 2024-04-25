@@ -11,7 +11,7 @@ namespace UnitTests.levelTests
     {
 
         [Fact]
-        public async Task GeneratePaths_ValidInput_path_num_player_num_1()
+        public void GeneratePaths_ValidInput_path_num_player_num_1()
         {
             float width = 100f;
             float height = 100f;
@@ -30,7 +30,7 @@ namespace UnitTests.levelTests
 
         }
         [Fact]
-        public async Task GeneratePaths_ValidInput_path_num_player_num_2()
+        public void GeneratePaths_ValidInput_path_num_player_num_2()
         {
             float width = 100f;
             float height = 100f;
@@ -49,7 +49,7 @@ namespace UnitTests.levelTests
 
         }
         [Fact]
-        public async Task GeneratePaths_ValidInput_path_num_player_num_3()
+        public void GeneratePaths_ValidInput_path_num_player_num_3()
         {
             float width = 100f;
             float height = 100f;
@@ -68,7 +68,7 @@ namespace UnitTests.levelTests
 
         }
         [Fact]
-        public async Task GeneratePaths_ValidInput_path_num_player_num_3_1()
+        public void GeneratePaths_ValidInput_path_num_player_num_3_1()
         {
             float width = 100f;
             float height = 100f;
@@ -85,7 +85,7 @@ namespace UnitTests.levelTests
             Assert.Equal(3, pf.gameBoard.start.Length);
         }
         [Fact]
-        public async Task Atributes_right_3_1()
+        public void Atributes_right_3_1()
         {
             float width = 100f;
             float height = 100f;
@@ -102,7 +102,7 @@ namespace UnitTests.levelTests
         }
 
         [Fact]
-        public async Task Atributes_right_others()
+        public void Atributes_right_others()
         {
             float width = 100f;
             float height = 100f;
@@ -115,7 +115,7 @@ namespace UnitTests.levelTests
         }
 
         [Fact]
-        public async Task Optimalization_Tests()
+        public void Optimalization_Tests()
         {
             float width = 100f;
             float height = 100f;
@@ -127,7 +127,7 @@ namespace UnitTests.levelTests
             
         }
         [Fact]
-        public async Task Optimalization_len()
+        public void Optimalization_len()
         {
             float width = 100f;
             float height = 100f;

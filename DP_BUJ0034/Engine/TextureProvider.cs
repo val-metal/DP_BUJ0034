@@ -1,19 +1,12 @@
-﻿using DP_BUJ0034.Expectations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IImage = Microsoft.Maui.Graphics.IImage;
-
+﻿using IImage = Microsoft.Maui.Graphics.IImage;
 using System.Reflection;
-
 
 #if IOS || ANDROID || MACCATALYST
 using Microsoft.Maui.Graphics.Platform;
 #elif WINDOWS
 using Microsoft.Maui.Graphics.Win2D;
 #endif
+
 namespace DP_BUJ0034.Engine
 {
     public class TextureProvider
@@ -41,25 +34,23 @@ namespace DP_BUJ0034.Engine
         private void loadImages()
         {
             Assembly assembly = GetType().GetTypeInfo().Assembly;
-            //canvas.BlendMode = BlendMode.Difference;
+            
             using (Stream stream = assembly.GetManifestResourceStream(textureSet.background))
             {
-                #if IOS || ANDROID || MACCATALYST
-                                                // PlatformImage isn't currently supported on Windows.
-                                    backgroundImage = PlatformImage.FromStream(stream);
+                #if IOS || ANDROID || MACCATALYST                         
+                    backgroundImage = PlatformImage.FromStream(stream);
                 #elif WINDOWS
-                backgroundImage = new W2DImageLoadingService().FromStream(stream);
+                    backgroundImage = new W2DImageLoadingService().FromStream(stream);
                 #endif
             }
             for(int i=0;i<textureSet.paths.Count;i++) {
                 using (Stream stream = assembly.GetManifestResourceStream(textureSet.paths[i]))
                 {
-#if IOS || ANDROID || MACCATALYST
-                                                // PlatformImage isn't currently supported on Windows.
-                    paths.Add(PlatformImage.FromStream(stream));
-#elif WINDOWS
-                    paths.Add(new W2DImageLoadingService().FromStream(stream));
-#endif
+                    #if IOS || ANDROID || MACCATALYST
+                        paths.Add(PlatformImage.FromStream(stream));
+                    #elif WINDOWS
+                        paths.Add(new W2DImageLoadingService().FromStream(stream));
+                    #endif
                 }
 
             }
@@ -68,25 +59,22 @@ namespace DP_BUJ0034.Engine
             {
                 using (Stream stream = assembly.GetManifestResourceStream(textureSet.player[i]))
                 {
-#if IOS || ANDROID || MACCATALYST
-                                                // PlatformImage isn't currently supported on Windows.
-                    player.Add(PlatformImage.FromStream(stream));
-#elif WINDOWS
-                    player.Add(new W2DImageLoadingService().FromStream(stream));
-#endif
+                    #if IOS || ANDROID || MACCATALYST
+                        player.Add(PlatformImage.FromStream(stream));
+                    #elif WINDOWS
+                        player.Add(new W2DImageLoadingService().FromStream(stream));
+                    #endif
                 }
-
             }
             for (int i = 0; i < textureSet.finish.Count; i++)
             {
                 using (Stream stream = assembly.GetManifestResourceStream(textureSet.finish[i]))
                 {
-#if IOS || ANDROID || MACCATALYST
-                    // PlatformImage isn't currently supported on Windows.
-                    finish.Add(PlatformImage.FromStream(stream));
-#elif WINDOWS
-                    finish.Add(new W2DImageLoadingService().FromStream(stream));
-#endif
+                    #if IOS || ANDROID || MACCATALYST
+                        finish.Add(PlatformImage.FromStream(stream));
+                    #elif WINDOWS
+                        finish.Add(new W2DImageLoadingService().FromStream(stream));
+                    #endif
                 }
 
             }
@@ -96,10 +84,8 @@ namespace DP_BUJ0034.Engine
         {
             if (i > textureSet.player.Count-1 || i<0)
             {
-                // throw new SpriteIsNotFoundException("Texture cant be found");
                 i = textureSet.player.Count - 1;
             }
-            
             return player[i];
         }
         public IImage getRouteTexture(int i)
@@ -107,7 +93,6 @@ namespace DP_BUJ0034.Engine
             if (i > textureSet.paths.Count - 1 || i < 0)
             {
                 i = textureSet.paths.Count - 1;
-                // throw new SpriteIsNotFoundException("Texture cant be found");
             }
             return paths[i];
         }
@@ -119,7 +104,6 @@ namespace DP_BUJ0034.Engine
         {
             if (i > textureSet.finish.Count - 1 || i < 0)
             {
-                //throw new SpriteIsNotFoundException("Texture cant be found");
                 i = textureSet.finish.Count - 1;
             }
             return finish[i];

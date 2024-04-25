@@ -8,8 +8,8 @@ namespace DP_BUJ0034.Game
 {
     public class Points:Dots
     {
-        bool isStart;
-        bool isEnd;
+        public bool isStart { get; set; }
+        public bool isEnd { get; set; }
         public bool isVisited { get; set; }
         public int df { get; set; }
         public Points(bool isStart, bool isEnd,float x,float y):base(x,y) { 

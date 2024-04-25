@@ -1,10 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DP_BUJ0034.ViewModels
 {
@@ -65,10 +60,6 @@ namespace DP_BUJ0034.ViewModels
             }
             
 
-        }
-        public async Task showScore(int num_paths, int difficulty, string type)
-        { 
-            
         }
         public async Task addScore(string type)
         {

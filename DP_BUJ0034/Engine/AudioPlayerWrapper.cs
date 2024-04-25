@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using System;
 using Plugin.Maui.Audio;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
@@ -15,11 +9,6 @@ namespace DP_BUJ0034.Engine
     {
         private IAudioPlayer audioPlayer;
         private string currentAudio;
-        public AudioPlayerWrapper()
-        {
-            
-          
-        }
         public async Task Play(string audioName)
         {
             bool saveMusicSet = (await SettingLoader.load()).musicMute;
@@ -33,7 +22,7 @@ namespace DP_BUJ0034.Engine
                 }
                 else
                 {
-                    unmuteMusic();
+                    await unmuteMusic();
                 }
             }
             if (saveMusicSet == false)
@@ -49,22 +38,19 @@ namespace DP_BUJ0034.Engine
         {
             using var stream = await FileSystem.OpenAppPackageFileAsync("MusicFiles.json");
             using var reader = new StreamReader(stream);
-
             string contents = reader.ReadToEnd();
             MusicFile[] mfs = JsonSerializer.Deserialize<MusicFile[]>(contents);
+
             if (mfs.Length > 0)
             {
                 Random random = new Random();
                 int randomIndex = random.Next(0, mfs.Length);
-
                 await Play(mfs[randomIndex].Name);
-
             }
             else
             {
-                // TODO :Exp
+                throw new InvalidDataException();
             }
-
         }
         private void repeat(object sender, EventArgs e)
         {
@@ -89,16 +75,6 @@ namespace DP_BUJ0034.Engine
                await PlayRandom();
             }
         }
-        //public static AudioPlayerWrapper GetInstance()
-        //{
-        //    if (instance == null)
-        //    {
-        //        instance = new AudioPlayerWrapper();
-        //    }
-
-        //    return instance;
-        //}
-
     }
 }
 

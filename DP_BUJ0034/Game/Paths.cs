@@ -14,7 +14,6 @@ namespace DP_BUJ0034.Game
         //Pro uzavření cesty vykreslení
         public List<(Dots, Dots)> controlbackdot;
         public List<Dots> backdot { get; set; }
-       // public List<(Dots, Dots)> controlbackdot_with_t;
         public List<Dots> backdot_with_t { get; set; }
         public List<bool> t_path { get; set; }
         public List<float> angels;
@@ -27,7 +26,6 @@ namespace DP_BUJ0034.Game
             this.controlbackdot = new List<(Dots, Dots)>();
             this.backdot = new List<Dots>();
             this.t_path = new List<bool>();
-           // this.controlbackdot_with_t = new List<(Dots, Dots)>();
             this.backdot_with_t = new List<Dots>();
             this.angels = new List<float>();
         }

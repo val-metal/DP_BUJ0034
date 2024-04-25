@@ -20,7 +20,6 @@ namespace DP_BUJ0034.Engine
         public bool pathIsColor;
         public bool pathIsIteam;
 
-
         public TextureSet(string nameOfLevel)
         {
             player = new List<string>(); paths = new List<string>(); finish = new List<string>();
@@ -63,7 +62,6 @@ namespace DP_BUJ0034.Engine
                 throw new SpriteIsNotFoundException();
             }
 
-
             finish.Add("DP_BUJ0034.Resources.Images." + nameOfLevel + ".Finish_1.png");
             finish.Add("DP_BUJ0034.Resources.Images." + nameOfLevel + ".Finish_2.png");
             finish.Add("DP_BUJ0034.Resources.Images." + nameOfLevel + ".Finish_3.png");
@@ -86,8 +84,6 @@ namespace DP_BUJ0034.Engine
             {
                 throw new SpriteIsNotFoundException();
             }
-
-
             this.nameOfLevel = nameOfLevel;
         }
 

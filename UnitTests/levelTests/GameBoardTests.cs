@@ -1,6 +1,6 @@
 ﻿using DP_BUJ0034.Engine;
-using DP_BUJ0034.Engine.Generator;
 using DP_BUJ0034.Game;
+using DP_BUJ0034.Game.Generator;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace UnitTests.levelTests
     public class GameBoardTests
     {
         [Fact]
-        public async Task GeneratePaths_ValidInput_CreatesPathAndGeneratesPoints()
+        public void GeneratePaths_ValidInput_CreatesPathAndGeneratesPoints()
         {
             float width = 100f;
             float height = 100f;

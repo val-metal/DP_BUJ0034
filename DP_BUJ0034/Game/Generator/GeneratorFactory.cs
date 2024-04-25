@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DP_BUJ0034.Engine.Generator
+
+namespace DP_BUJ0034.Game.Generator
 {
     public static class GeneratorFactory
     {
@@ -23,7 +24,7 @@ namespace DP_BUJ0034.Engine.Generator
                 else if (randomNumber == 2) { return new PathTwoDifficulty(); }
                 else { return new PathOneDifficulty(); }
             }
-            else if(difficulty == 3)
+            else if (difficulty == 3)
             {
 
                 return new PathThreeDifficulty();

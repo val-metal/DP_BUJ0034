@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DP_BUJ0034.Engine.Generator
+namespace DP_BUJ0034.Game.Generator
 {
     public class PathThreeDifficulty : IGenerator
     {
@@ -72,7 +72,7 @@ namespace DP_BUJ0034.Engine.Generator
                         startReturning = true;
                     }
                     rozdil = path.dot.Last().x - eventual_dot.x;
-                    if (rozdil > (distance / 4))
+                    if (rozdil > distance / 4)
                     {
                         back_count++;
 
@@ -111,10 +111,10 @@ namespace DP_BUJ0034.Engine.Generator
                     }
                     else if (newY <= height / 9)
                     {
-                       
+
                         try_angles = new float[] { 45, 90, 135 };
                     }
-                    else if (newY >= (height / 9 * 8))
+                    else if (newY >= height / 9 * 8)
                     {
                         try_angles = new float[] { 315, 270, 225 };
                     }
@@ -131,7 +131,7 @@ namespace DP_BUJ0034.Engine.Generator
                             try_angle = CalculateAngel(path.dot[count_of_dots - 2], path.dot[count_of_dots - 1], try_dot);
                         }
 
-                        if (try_dot.x > width / 16 && try_dot.x < width / 16 * 13 && try_dot.y > height / 9 && try_dot.y < (height / 9) * 8 && try_angle >= 60 && try_angle <= 300)
+                        if (try_dot.x > width / 16 && try_dot.x < width / 16 * 13 && try_dot.y > height / 9 && try_dot.y < height / 9 * 8 && try_angle >= 60 && try_angle <= 300)
                         {
                             if (try_dot.x > width / 16 * 14)
                             {
@@ -160,7 +160,7 @@ namespace DP_BUJ0034.Engine.Generator
                             startReturning = true;
                         }
                         rozdil = path.dot.Last().x - eventual_dot.x;
-                        if (rozdil > (distance / 4))
+                        if (rozdil > distance / 4)
                         {
                             back_count++;
 
@@ -172,7 +172,6 @@ namespace DP_BUJ0034.Engine.Generator
                         path.dot.Add(new Dots(end.x, end.y));
                         lastDot = true;
                         continue;
-                        //path.dot.Remove(path.dot[path.dot.Count - 1]);
                     }
 
                 }
@@ -190,7 +189,6 @@ namespace DP_BUJ0034.Engine.Generator
             {
                 int j = random.Next(0, i + 1);
 
-                // Prohodí prvky na pozicích i a j
                 T temp = try_angles[i];
                 try_angles[i] = try_angles[j];
                 try_angles[j] = temp;

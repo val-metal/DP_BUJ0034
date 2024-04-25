@@ -52,8 +52,6 @@ namespace DP_BUJ0034.ViewModels
             EnableOnMusic = !EnableOnMusic;
             EnableOffMusic = !EnableOffMusic;
             awp.unmuteMusic();
-            
-
             setting.musicMute = false;
             SettingLoader.save(setting);
 

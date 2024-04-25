@@ -63,7 +63,6 @@ namespace DP_BUJ0034.ViewModels
                 {
 
                     Microsoft.Maui.Controls.Image lock_img = new Microsoft.Maui.Controls.Image();
-                    //boxView.IsEnabled = false;
                     lock_img.Source="lock.png";
                     grid.SetRow(lock_img, 1);
                     grid.SetColumn(lock_img, 2);

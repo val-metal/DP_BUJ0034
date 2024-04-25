@@ -1,8 +1,8 @@
 ﻿
 using DP_BUJ0034.Drawables;
-using DP_BUJ0034.Engine.Generator;
 using DP_BUJ0034.Expectations;
 using DP_BUJ0034.Game;
+using DP_BUJ0034.Game.Generator;
 using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
@@ -41,9 +41,6 @@ namespace DP_BUJ0034.Engine
                 this.num_difficulty = 4;
             }
             this.gameBoard = new GameBoard(drawable.height, drawable.width, num_path, difficulty);
-
-            
-            
         }
         List<int> FilterPointsByRectangle(List<Dots> points, int minX, int minY, int maxX, int maxY)
         {
@@ -106,10 +103,6 @@ namespace DP_BUJ0034.Engine
                 {
                     gameBoard.end[id_last_player_move].isVisited = true;
                 }
-                //else
-                //{
-                //    gameBoard.end[playerI].isVisited = false;
-                //}
                 drawable.curretPlayer = id_last_player_move;
 
             }
@@ -128,10 +121,6 @@ namespace DP_BUJ0034.Engine
                         {
                             gameBoard.end[playerI].isVisited = true;
                         }
-                        //else
-                        //{
-                        //    gameBoard.end[playerI].isVisited = false;
-                        //}
                         drawable.curretPlayer = playerI;
                         id_last_player_move = playerI;
                         break;
@@ -155,14 +144,12 @@ namespace DP_BUJ0034.Engine
                 stopwatch.Start();
                 for (int i = 0; i < gameBoard.num_paths ; i++)
                 {
-
                     gameBoard.generate_paths(height, width, i,generator);
-
                 }
 
                 for (int i = 0; i < gameBoard.path.Length; i++)
                 {
-                    gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); //((gameBoard.width/9)*i)+gameBoard.width/9)
+                    gameBoard.player[i] = (new Player(new Dots(gameBoard.start[i].x, gameBoard.start[i].y), 64)); 
 
                 }
                 if (num_paths == 4)
@@ -174,10 +161,7 @@ namespace DP_BUJ0034.Engine
                     paths[1] = gameBoard.path[1];
                     gameBoard.path = paths;
                 }
-            
-            
             drawable.gameBoard = gameBoard;
-            
         }
     }
 }

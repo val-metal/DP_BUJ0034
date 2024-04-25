@@ -1,5 +1,5 @@
-﻿using DP_BUJ0034.Engine.Generator;
-using DP_BUJ0034.Game;
+﻿using DP_BUJ0034.Game;
+using DP_BUJ0034.Game.Generator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,23 +46,22 @@ namespace UnitTests.levelTests
             Assert.NotNull(generator);
             Assert.Equal(new PathThreeToOne().GetType(), generator.GetType());
         }
-            [Fact]
-            public void GeneratedPathWithinBounds_1()
+        [Fact]
+        public void GeneratedPathWithinBounds_1()
+        {
+            var generator = new PathOneDifficulty();
+            float width = 1280;
+            float height = 720;
+            GameBoard gb = new GameBoard(720, 1280, 1, 1);
+
+            gb.generate_paths(1280,720,0,generator);
+
+            foreach (var dot in gb.path[0].dot)
             {
-                var generator = new PathOneDifficulty();
-                float width = 1280;
-                float height = 720;
-                GameBoard gb = new GameBoard(720, 1280, 1, 1);
-
-                gb.generate_paths(1280,720,0,generator);
-
-                foreach (var dot in gb.path[0].dot)
-                {
-                    Assert.InRange(dot.y, height / 9, (height / 9) * 8);
-                    Assert.InRange(dot.x, (width / 16), (width / 16) * 15);
-                }
+                Assert.InRange(dot.y, height / 9, (height / 9) * 8);
+                Assert.InRange(dot.x, (width / 16), (width / 16) * 15);
             }
-
+        }
         [Fact]
         public void GeneratedPathWithinBounds_3()
         {
@@ -99,8 +98,6 @@ namespace UnitTests.levelTests
         public void GeneratedPathStartEnd_1()
         {
             var generator = new PathOneDifficulty();
-            float width = 1280;
-            float height = 720;
             GameBoard gb = new GameBoard(720, 1280, 1, 1);
 
             gb.generate_paths(1280, 720, 0, generator);
@@ -115,8 +112,6 @@ namespace UnitTests.levelTests
         public void GeneratedPathStartEnd_2()
         {
             var generator = new PathTwoDifficulty();
-            float width = 1280;
-            float height = 720;
             GameBoard gb = new GameBoard(720, 1280, 1, 1);
 
             gb.generate_paths(1280, 720, 0, generator);
@@ -129,8 +124,6 @@ namespace UnitTests.levelTests
         public void GeneratedPathStartEnd_3()
         {
             var generator = new PathThreeDifficulty();
-            float width = 1280;
-            float height = 720;
             GameBoard gb = new GameBoard(720, 1280, 1, 1);
 
             gb.generate_paths(1280, 720, 0, generator);
@@ -145,8 +138,6 @@ namespace UnitTests.levelTests
         public void GeneratedPathStartEnd_31()
         {
             var generator = new PathThreeToOne();
-            float width = 1280;
-            float height = 720;
             GameBoard gb = new GameBoard(720, 1280, 3, 4);
 
             gb.generate_paths(1280, 720, 0, generator);
@@ -165,8 +156,6 @@ namespace UnitTests.levelTests
         public void GeneratedPath_Distance_2()
         {
             var generator = new PathOneDifficulty();
-            float width = 1280;
-            float height = 720;
             GameBoard gb = new GameBoard(720, 1280, 1, 1);
 
             gb.generate_paths(1280, 720, 0, generator);

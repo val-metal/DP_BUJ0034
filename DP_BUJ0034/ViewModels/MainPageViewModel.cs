@@ -22,7 +22,6 @@ namespace DP_BUJ0034.ViewModels
             player.PlayRandom();
             
         }
-
         [RelayCommand]
         public async Task goToMenuSelect()
         {

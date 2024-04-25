@@ -78,19 +78,13 @@ namespace DP_BUJ0034.Game.Maze
                 current.isFrontier = false;
                 frontier.Remove(current);
 
-                //random select a parent
                 ParentInfo parentInfo = current.parentInfo[(int)(r.NextDouble() * 15) % current.parentInfo.Count];
 
-                //break the wall
-                //0-2 1-3
                 parentInfo.Parent.UnWall(parentInfo.Index);
                 current.UnWall((parentInfo.Index + 2) % 4);
 
-                //add new frontier
                 for (int i = 0; i < current.Count; i++)
                 {
-                    //not a frontier yet
-                    //and no walls destroyed
                     if (current[i] != null && current[i].parentInfo.Count == 0 && current[i].WallIsnotDestroyed())
                     {
                         frontier.Add(current[i]);
@@ -98,7 +92,6 @@ namespace DP_BUJ0034.Game.Maze
                         current[i].isFrontier = true;
                     }
                 }
-
                 visited++;
             }
         }

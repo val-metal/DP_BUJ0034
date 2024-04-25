@@ -1,8 +1,8 @@
 ﻿using DP_BUJ0034.Engine;
-using DP_BUJ0034.Engine.Generator;
+using DP_BUJ0034.Game.Generator;
 
-
-namespace DP_BUJ0034.Game{
+namespace DP_BUJ0034.Game
+{
 
     public class GameBoard{
 
@@ -47,8 +47,6 @@ namespace DP_BUJ0034.Game{
                 playerHistory.Add(new Dots(x, y));
             }
         }
-
-
         public bool isAllVisited()
         {
             if (end.Length > path.Length)
@@ -117,8 +115,6 @@ namespace DP_BUJ0034.Game{
                 Generate_dots_for_back_path_with_t(currentPath);
             }
         }
-
-       
         public void Generate_dots_for_back_path_with_t(int currentPath)
         {
 
@@ -200,22 +196,12 @@ namespace DP_BUJ0034.Game{
             path[0] = new Paths();
             path[1] = new Paths();
             path[2] = new Paths();
-            Paths temp = new Paths();
-            float x = 0;
-            float y = 0;
-            Random random = new Random();
-            x = (float)random.Next((int)(width / 16 * 10), (int)(width / 16 * 12));
-            y = (float)random.Next((int)(height / 9 * 3), (int)(height / 9 * 6));
 
             start[0] = new Points(true, false, width / 16 + 15, height / 4);
             start[1] = new Points(true, false, width / 16 + 15, height / 4 * 2);
             start[2] = new Points(true, false, width / 16 + 15, height / 4 * 3);
             end[0] = new Points(false, true, width / 16 * 15, height / 2);
-            //zpětný bod
-            Points middle = new Points(false, false, x, y);
 
-            //Generate_dot_for_path_1star(start[0], middle, 0,true);
-            //Generate_dot_for_path_1star(start[2], middle, 2,true);
 
             path[2].dot.Reverse();
 
@@ -224,7 +210,6 @@ namespace DP_BUJ0034.Game{
                 path[0].dot.Add(path[2].dot[i]);
             }
 
-            //Generate_dots1(start[1], end[0],1);
             int count_3to1 = 2;
             for(int j=0; j<count_3to1; j++)
             {
@@ -238,22 +223,19 @@ namespace DP_BUJ0034.Game{
                 
                 Generate_dots_for_back_path_with_t(j);
             }
-            Paths[] paths = new Paths[2]; // Vytvoříme nové pole se dvěma prvky
-            paths[0] = path[0]; // První prvek nového pole bude první prvek původního pole
-            paths[1] = path[1]; // Druhý prvek nového pole bude druhý prvek původního pole
+            Paths[] paths = new Paths[2]; 
+            paths[0] = path[0]; 
+            paths[1] = path[1]; 
             path = new Paths[2];
             path = paths;
 
 
         }
        
-       
-        //Funkční výpočet kontrolních bodů
         public void CalculateBezier_Points(Dots point1, Dots point2,int i, int currentPath){  
             Dots controlPoint1;
             Dots controlPoint2;
 
-            //Pokud ještě neexistuje kontrolní bod
             if (i == 0){
                 Dots midPoint1 = Dots.Add(point1, Dots.Multiply(Dots.Subtract(point2, point1), (float)0.333)); 
                 Dots midPoint2 = Dots.Add(point1, Dots.Multiply(Dots.Subtract(point2, point1), (float)0.666));            
@@ -271,8 +253,6 @@ namespace DP_BUJ0034.Game{
                 Dots normalizedVector2 = Dots.Normalize(vector2);
                 controlPoint2 = Dots.Add(midPoint2, Dots.Multiply(normalizedVector2, random2));
             }
-            //první kontrolní bod se vypočte 2xpočáteční bod-poslední kontrolní bod
-            //druhý již náhodně
             else{
                 Random random = new Random();
                 var lastItem = path[currentPath].controldots.Last();
@@ -284,10 +264,8 @@ namespace DP_BUJ0034.Game{
 
                 float randomR = random.Next(10, 21);
                                 
-                // Vypočítání vektoru mezi středním bodem a controlPoint1
                 Dots vector = Dots.Subtract(controlPoint1, midPoint);
 
-                // Normalizace vektoru a násobení náhodnou hodnotou r
                 Dots normalizedVector = Dots.Normalize(vector);
                 controlPoint2 = Dots.Add(midPoint, Dots.Multiply(normalizedVector, randomR));
 

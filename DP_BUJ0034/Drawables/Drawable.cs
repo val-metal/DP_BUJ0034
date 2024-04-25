@@ -1,20 +1,5 @@
 ﻿using DP_BUJ0034.Game;
-using Microsoft.Maui.Graphics.Skia;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-
-using System.Reflection;
-using IImage = Microsoft.Maui.Graphics.IImage;
-using System.Numerics;
-using Microsoft.Maui.Graphics;
 using DP_BUJ0034.Engine;
-
 
 #if IOS || ANDROID || MACCATALYST
 using Microsoft.Maui.Graphics.Platform;
@@ -27,12 +12,11 @@ namespace DP_BUJ0034.Drawables{
         public float height { get; set; }
         public float width { get; set; }
         public GameBoard gameBoard { get; set; }
-
         public int curretPlayer { get; set; }
         public TextureProvider textureProvider { get; set; }
         public Drawable() {textureProvider=new(); }
+        private bool debug { get; set; }
         public void Draw(ICanvas canvas, RectF dirtyRect) {
-            
             this.width = dirtyRect.Height;
             this.height = dirtyRect.Width;
 
@@ -40,8 +24,10 @@ namespace DP_BUJ0034.Drawables{
                 
             if (gameBoard != null)
             {
-                //DrawBorder(canvas, dirtyRect);
-                DrawGameBorder(canvas, dirtyRect);
+                if (debug)
+                {
+                    DrawGameBorder(canvas, dirtyRect);
+                }
 
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++){
 
@@ -60,32 +46,22 @@ namespace DP_BUJ0034.Drawables{
                 DrawCurveTo(canvas, curretPlayer);
                 for (int currentPath = 0; currentPath < gameBoard.num_paths; currentPath++)
                 {
-                    // DrawStardEnd(canvas);
-
-
-                    // DrawControlDots(canvas, currentPath);
-
-                    //DrawDots(canvas, currentPath);
+                    if (debug)
+                    {
+                        DrawControlDots(canvas, currentPath);
+                        DrawDots(canvas, currentPath);
+                    }
                     DrawEnd(canvas, currentPath);
-                    //Zelená
-                    //DrawLineTo(canvas, currentPath);
                 }
                 
                 DrawPlayer(canvas);
             }
-            string mainDir = FileSystem.Current.AppDataDirectory;
-
-            string filePath = Path.Combine(mainDir, "MyTest.png");
-            
         }
         private void DrawPathHistory(ICanvas canvas)
         {
             canvas.FillColor=Color.FromArgb("#a83232");
-            //float hop = gameBoard.player[1].size / 2;
-            
             foreach (Dots d in gameBoard.playerHistory)
             {
-                
                 canvas.FillCircle(d.x, d.y, 32);
             }
         }
@@ -98,7 +74,6 @@ namespace DP_BUJ0034.Drawables{
                     Image = textureProvider.getBackgroundTexture().Downsize(100)
                 };
                 canvas.SetFillPaint(imagePaint, RectF.Zero);
-
                 canvas.FillRectangle(0, 0, height, width);
             }
             else {
@@ -109,11 +84,8 @@ namespace DP_BUJ0034.Drawables{
         {
                 for (int i = 0; i < gameBoard.player.Length; i++)
                 {
-                    //canvas.DrawRectangle(gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                     canvas.DrawImage(textureProvider.getPlayerTexture(i), gameBoard.player[i].position.x - gameBoard.player[i].size / 2, gameBoard.player[i].position.y - gameBoard.player[i].size / 2, gameBoard.player[i].size, gameBoard.player[i].size);
                 }
-
-            
         }
         private void DrawEnd(ICanvas canvas, int currentPath)
         {
@@ -125,20 +97,15 @@ namespace DP_BUJ0034.Drawables{
                     {
                         canvas.DrawImage(textureProvider.getEndsTexture(currentPath), gameBoard.path[currentPath].dot[i].x - 22.5f, gameBoard.path[currentPath].dot[i].y - 22.5f, 80, 80);
                     }
-                }
-                
+                } 
             }
-
         }
-        
         public void DrawGameBorder(ICanvas canvas, RectF dirtyRect)
         {
             canvas.StrokeColor = Colors.White;
             canvas.StrokeSize = 1;
-            //canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
+            canvas.DrawRectangle(height / 16, width / 9, height / 16 * 14, width / 9 * 7);
         }
-     
-         
         public void DrawDots(ICanvas canvas, int currentPath){
 
             for(int i = 0;i< gameBoard.path[currentPath].dot.Count;i++){
@@ -160,7 +127,6 @@ namespace DP_BUJ0034.Drawables{
                 } 
             }                     
         }
-
         public void DrawControlDots(ICanvas canvas, int currentPath){
 
             for (int i = 0; i < gameBoard.path[currentPath].controldots.Count - 1; i++){
@@ -221,7 +187,6 @@ namespace DP_BUJ0034.Drawables{
                 canvas.SetFillPaint(imagePaint, RectF.Zero);
                 canvas.FillPath(path_draw_Curve, WindingMode.NonZero);
                 canvas.StrokeDashOffset = 5;
-                //canvas.DrawPath(path_draw_gray);
             }
             else
             {
@@ -237,7 +202,6 @@ namespace DP_BUJ0034.Drawables{
                     { traveled_distance = 0; canvas.DrawImage(textureProvider.getRouteTexture(currentPath), gameBoard.path[currentPath].backdot_with_t[i].x - 20, gameBoard.path[currentPath].backdot_with_t[i].y - 20, 20, 20); }
 
                 }
-                //canvas.DrawPath(path_draw_gray);
 
             }
         }

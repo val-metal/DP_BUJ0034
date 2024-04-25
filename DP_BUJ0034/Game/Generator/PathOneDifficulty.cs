@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DP_BUJ0034.Engine.Generator
+namespace DP_BUJ0034.Game.Generator
 {
     public class PathOneDifficulty : IGenerator
     {
-      
+
         public Paths generatePath(Points start, Points end, float width, float height)
         {
             Random random = new Random();
@@ -26,16 +26,16 @@ namespace DP_BUJ0034.Engine.Generator
             while (lastDot == false)
             {
 
-                offset_x = (random.Next((int)(distance_x / 2), (int)distance_x));
-                zapor = (random.Next(0, 2) == 0);
+                offset_x = random.Next((int)(distance_x / 2), (int)distance_x);
+                zapor = random.Next(0, 2) == 0;
 
                 if (zapor == true)
                 {
-                    offset_y = (random.Next((int)(-distance_y), (int)(-distance_y / 4)));
+                    offset_y = random.Next((int)-distance_y, (int)(-distance_y / 4));
                 }
                 else
                 {
-                    offset_y = (random.Next((int)(distance_y / 4), (int)distance_y));
+                    offset_y = random.Next((int)(distance_y / 4), (int)distance_y);
                 }
 
                 float newX = path.dot.Last().x + offset_x;
@@ -59,8 +59,8 @@ namespace DP_BUJ0034.Engine.Generator
                     path.dot.Add(new Dots(newX, newY));
 
                 }
-                float borderOfGame = end.x-((width / 16) *3);
-                float finalBorderOfGame = end.x-(width / 16);
+                float borderOfGame = end.x - width / 16 * 3;
+                float finalBorderOfGame = end.x - width / 16;
                 if (newX > borderOfGame)
                 {
                     blizko_cile = true;
@@ -70,11 +70,7 @@ namespace DP_BUJ0034.Engine.Generator
                 {
                     lastDot = true;
                 }
-
-
-
             }
-         
             path.dot.Add(new Dots(end.x, end.y));
             return path;
 
