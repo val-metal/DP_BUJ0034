@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IocnR22FGO0n3cPCs4iBgKTqdUESvZ+LiciO+YRiNxPpzEWsEdIDCpzRWFaBs6iWNJqPLFe7anIkiIShCTBaDw==",
+  "dgSpecHash": "eaPJ1Z9U3Q7/Tzss/4HlaOcyRaTAvGCR+HZxWOEEIdJocNN37e0sf3s0O1sLj3oaQnIDlJc7oT029Zf0hwaF/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\ValMe\\Documents\\GitHub\\DP_BUJ0034\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
@@ -17,8 +17,7 @@
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.extensions.logging.debug\\7.0.0\\microsoft.extensions.logging.debug.7.0.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.graphics\\7.0.86\\microsoft.maui.graphics.7.0.86.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.graphics.skia\\7.0.86\\microsoft.maui.graphics.skia.7.0.86.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.graphics\\7.0.101\\microsoft.maui.graphics.7.0.101.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -46,9 +45,6 @@
     "C:\\Users\\ValMe\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\skiasharp\\2.88.2\\skiasharp.2.88.2.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.2\\skiasharp.nativeassets.macos.2.88.2.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.2\\skiasharp.nativeassets.win32.2.88.2.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -111,7 +107,13 @@
     "C:\\Users\\ValMe\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\ValMe\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
-    "C:\\Users\\ValMe\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    "C:\\Users\\ValMe\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.controls.runtime.any\\7.0.101\\microsoft.maui.controls.runtime.any.7.0.101.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.essentials.runtime.any\\7.0.101\\microsoft.maui.essentials.runtime.any.7.0.101.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.core.runtime.any\\7.0.101\\microsoft.maui.core.runtime.any.7.0.101.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.essentials.ref.any\\7.0.101\\microsoft.maui.essentials.ref.any.7.0.101.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.core.ref.any\\7.0.101\\microsoft.maui.core.ref.any.7.0.101.nupkg.sha512",
+    "C:\\Users\\ValMe\\.nuget\\packages\\microsoft.maui.controls.ref.any\\7.0.101\\microsoft.maui.controls.ref.any.7.0.101.nupkg.sha512"
   ],
   "logs": []
 }

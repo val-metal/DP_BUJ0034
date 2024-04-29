@@ -9,9 +9,7 @@ namespace DP_BUJ0034.Game
     public class Paths
     {
         public List<Dots> dot { get; set; }
-        //Pro CurveTo
         public List<(Dots, Dots)> controldots;
-        //Pro uzavření cesty vykreslení
         public List<(Dots, Dots)> controlbackdot;
         public List<Dots> backdot { get; set; }
         public List<Dots> backdot_with_t { get; set; }

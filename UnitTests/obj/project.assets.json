@@ -222,7 +222,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.101": {
         "type": "package",
         "compile": {
           "lib/net7.0/Microsoft.Maui.Graphics.dll": {
@@ -231,23 +231,6 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.Maui.Graphics.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "Microsoft.Maui.Graphics.Skia/7.0.86": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Maui.Graphics": "7.0.86",
-          "SkiaSharp": "2.88.2"
-        },
-        "compile": {
-          "lib/net7.0/Microsoft.Maui.Graphics.Skia.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Maui.Graphics.Skia.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -821,61 +804,6 @@
           "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
-          }
-        }
-      },
-      "SkiaSharp/2.88.2": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.2",
-          "SkiaSharp.NativeAssets.macOS": "2.88.2"
-        },
-        "compile": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.macOS/2.88.2": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/_._": {}
-        },
-        "runtime": {
-          "lib/net5.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.Win32/2.88.2": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/_._": {}
-        },
-        "runtime": {
-          "lib/net5.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-arm64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
           }
         }
       },
@@ -2056,7 +1984,6 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.1",
           "Microsoft.Extensions.Logging.Debug": "7.0.0",
-          "Microsoft.Maui.Graphics.Skia": "7.0.86",
           "Plugin.Maui.Audio": "2.0.0"
         },
         "compile": {
@@ -2536,10 +2463,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Maui.Graphics/7.0.86": {
-      "sha512": "v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ==",
+    "Microsoft.Maui.Graphics/7.0.101": {
+      "sha512": "2+dHQpufctgN66Y+otNnBu9o+ODYlHvc2ufQ185wB2GqhklQeeko4xFsZSj3weDif4Idg0cgAY84qU3cQ0OcTw==",
       "type": "package",
-      "path": "microsoft.maui.graphics/7.0.86",
+      "path": "microsoft.maui.graphics/7.0.101",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2575,51 +2502,8 @@
         "lib/netstandard2.1/Microsoft.Maui.Graphics.dll",
         "lib/netstandard2.1/Microsoft.Maui.Graphics.pdb",
         "lib/netstandard2.1/Microsoft.Maui.Graphics.xml",
-        "microsoft.maui.graphics.7.0.86.nupkg.sha512",
+        "microsoft.maui.graphics.7.0.101.nupkg.sha512",
         "microsoft.maui.graphics.nuspec"
-      ]
-    },
-    "Microsoft.Maui.Graphics.Skia/7.0.86": {
-      "sha512": "6r1KnCnY4fA57tSCdSZyA0Q9bYckdp7w6TEhsyu/yJGkjDoXnsD4FzaUwOmZBFLCR9MOq+VnVCMHp4/ZY/sYNw==",
-      "type": "package",
-      "path": "microsoft.maui.graphics.skia/7.0.86",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net7.0-android33.0/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-android33.0/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-android33.0/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-ios16.1/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-maccatalyst16.1/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-macos13.0/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-macos13.0/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-macos13.0/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-tizen7.0/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-tizen7.0/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-tizen7.0/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-windows10.0.19041/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-windows10.0.19041/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-windows10.0.19041/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0-windows10.0.20348/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0-windows10.0.20348/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0-windows10.0.20348/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/net7.0/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/net7.0/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/net7.0/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/netstandard2.0/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/netstandard2.0/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/netstandard2.0/Microsoft.Maui.Graphics.Skia.xml",
-        "lib/netstandard2.1/Microsoft.Maui.Graphics.Skia.dll",
-        "lib/netstandard2.1/Microsoft.Maui.Graphics.Skia.pdb",
-        "lib/netstandard2.1/Microsoft.Maui.Graphics.Skia.xml",
-        "microsoft.maui.graphics.skia.7.0.86.nupkg.sha512",
-        "microsoft.maui.graphics.skia.nuspec"
       ]
     },
     "Microsoft.NET.Test.Sdk/17.5.0": {
@@ -3202,131 +3086,6 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
-      ]
-    },
-    "SkiaSharp/2.88.2": {
-      "sha512": "B7ToGj6WO4K4iEtD1Lydrt5FARxMNbNjnlEa4M2TaKs3EM0cmZLrJjCaZvfOJL9gXkswJb5pTSJL9Qz9AHd+Jw==",
-      "type": "package",
-      "path": "skiasharp/2.88.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
-        "lib/monoandroid1.0/SkiaSharp.dll",
-        "lib/monoandroid1.0/SkiaSharp.pdb",
-        "lib/monoandroid1.0/SkiaSharp.xml",
-        "lib/net462/SkiaSharp.dll",
-        "lib/net462/SkiaSharp.pdb",
-        "lib/net462/SkiaSharp.xml",
-        "lib/net5.0/SkiaSharp.dll",
-        "lib/net5.0/SkiaSharp.pdb",
-        "lib/net5.0/SkiaSharp.xml",
-        "lib/net6.0-android30.0/SkiaSharp.dll",
-        "lib/net6.0-android30.0/SkiaSharp.pdb",
-        "lib/net6.0-android30.0/SkiaSharp.xml",
-        "lib/net6.0-ios13.6/SkiaSharp.dll",
-        "lib/net6.0-ios13.6/SkiaSharp.pdb",
-        "lib/net6.0-ios13.6/SkiaSharp.xml",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
-        "lib/net6.0-macos10.15/SkiaSharp.dll",
-        "lib/net6.0-macos10.15/SkiaSharp.pdb",
-        "lib/net6.0-macos10.15/SkiaSharp.xml",
-        "lib/net6.0-tizen7.0/SkiaSharp.dll",
-        "lib/net6.0-tizen7.0/SkiaSharp.pdb",
-        "lib/net6.0-tizen7.0/SkiaSharp.xml",
-        "lib/net6.0-tvos13.4/SkiaSharp.dll",
-        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
-        "lib/net6.0-tvos13.4/SkiaSharp.xml",
-        "lib/net6.0/SkiaSharp.dll",
-        "lib/net6.0/SkiaSharp.pdb",
-        "lib/net6.0/SkiaSharp.xml",
-        "lib/netcoreapp3.1/SkiaSharp.dll",
-        "lib/netcoreapp3.1/SkiaSharp.pdb",
-        "lib/netcoreapp3.1/SkiaSharp.xml",
-        "lib/netstandard1.3/SkiaSharp.dll",
-        "lib/netstandard1.3/SkiaSharp.pdb",
-        "lib/netstandard1.3/SkiaSharp.xml",
-        "lib/netstandard2.0/SkiaSharp.dll",
-        "lib/netstandard2.0/SkiaSharp.pdb",
-        "lib/netstandard2.0/SkiaSharp.xml",
-        "lib/netstandard2.1/SkiaSharp.dll",
-        "lib/netstandard2.1/SkiaSharp.pdb",
-        "lib/netstandard2.1/SkiaSharp.xml",
-        "lib/tizen40/SkiaSharp.dll",
-        "lib/tizen40/SkiaSharp.pdb",
-        "lib/tizen40/SkiaSharp.xml",
-        "lib/uap10.0.10240/SkiaSharp.dll",
-        "lib/uap10.0.10240/SkiaSharp.pdb",
-        "lib/uap10.0.10240/SkiaSharp.xml",
-        "lib/uap10.0.16299/SkiaSharp.dll",
-        "lib/uap10.0.16299/SkiaSharp.pdb",
-        "lib/uap10.0.16299/SkiaSharp.xml",
-        "lib/xamarinios1.0/SkiaSharp.dll",
-        "lib/xamarinios1.0/SkiaSharp.pdb",
-        "lib/xamarinios1.0/SkiaSharp.xml",
-        "lib/xamarinmac2.0/SkiaSharp.dll",
-        "lib/xamarinmac2.0/SkiaSharp.pdb",
-        "lib/xamarinmac2.0/SkiaSharp.xml",
-        "lib/xamarintvos1.0/SkiaSharp.dll",
-        "lib/xamarintvos1.0/SkiaSharp.pdb",
-        "lib/xamarintvos1.0/SkiaSharp.xml",
-        "lib/xamarinwatchos1.0/SkiaSharp.dll",
-        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
-        "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "skiasharp.2.88.2.nupkg.sha512",
-        "skiasharp.nuspec"
-      ]
-    },
-    "SkiaSharp.NativeAssets.macOS/2.88.2": {
-      "sha512": "mUtY9w9KP6LnhE3VgwE331ttOclx239MENCo1aPT27AJX6QkDpeeqSK83/Rggu3NYPkUwIdg6fU1MOBdv2as4A==",
-      "type": "package",
-      "path": "skiasharp.nativeassets.macos/2.88.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/net462/SkiaSharp.NativeAssets.macOS.targets",
-        "build/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
-        "build/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/net462/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
-        "lib/net462/_._",
-        "lib/net5.0/_._",
-        "lib/net6.0-macos10.15/_._",
-        "lib/netcoreapp3.1/_._",
-        "lib/netstandard1.3/_._",
-        "lib/xamarinmac2.0/_._",
-        "runtimes/osx/native/libSkiaSharp.dylib",
-        "skiasharp.nativeassets.macos.2.88.2.nupkg.sha512",
-        "skiasharp.nativeassets.macos.nuspec"
-      ]
-    },
-    "SkiaSharp.NativeAssets.Win32/2.88.2": {
-      "sha512": "FgUHWpnfLcFiqAXuJEgcvUn5p7gHwkkfclWFU8LKfydUzwJyq+izWxL5OCVgbB8wYrX/TSx42uh8LwstEAURzw==",
-      "type": "package",
-      "path": "skiasharp.nativeassets.win32/2.88.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/net462/SkiaSharp.NativeAssets.Win32.targets",
-        "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
-        "lib/net462/_._",
-        "lib/net5.0/_._",
-        "lib/netcoreapp3.1/_._",
-        "lib/netstandard1.3/_._",
-        "runtimes/win-arm64/native/libSkiaSharp.dll",
-        "runtimes/win-x64/native/libSkiaSharp.dll",
-        "runtimes/win-x86/native/libSkiaSharp.dll",
-        "skiasharp.nativeassets.win32.2.88.2.nupkg.sha512",
-        "skiasharp.nativeassets.win32.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -6502,8 +6261,7 @@
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "Microsoft.Extensions.Logging >= 7.0.0",
-      "Microsoft.Extensions.Logging.Abstractions >= 7.0.0",
-      "Microsoft.Maui.Graphics >= 7.0.86",
+      "Microsoft.Maui.Graphics >= 7.0.101",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.70",
       "coverlet.collector >= 3.2.0",
@@ -6554,6 +6312,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -6575,14 +6338,9 @@
             "version": "[7.0.0, )",
             "autoReferenced": true
           },
-          "Microsoft.Extensions.Logging.Abstractions": {
-            "target": "Package",
-            "version": "[7.0.0, )",
-            "autoReferenced": true
-          },
           "Microsoft.Maui.Graphics": {
             "target": "Package",
-            "version": "[7.0.86, )",
+            "version": "[7.0.101, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Test.Sdk": {
@@ -6621,6 +6379,32 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Maui.Controls.Ref.any",
+            "version": "[7.0.101, 7.0.101]"
+          },
+          {
+            "name": "Microsoft.Maui.Controls.Runtime.any",
+            "version": "[7.0.101, 7.0.101]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Ref.any",
+            "version": "[7.0.101, 7.0.101]"
+          },
+          {
+            "name": "Microsoft.Maui.Core.Runtime.any",
+            "version": "[7.0.101, 7.0.101]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Ref.any",
+            "version": "[7.0.101, 7.0.101]"
+          },
+          {
+            "name": "Microsoft.Maui.Essentials.Runtime.any",
+            "version": "[7.0.101, 7.0.101]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.Maui.Controls": {
             "privateAssets": "all"
@@ -6635,7 +6419,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

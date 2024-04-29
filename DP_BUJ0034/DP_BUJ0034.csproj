@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0;net7.0-ios;net7.0-maccatalyst;net7.0-android33.0</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -403,7 +403,6 @@
 		<None Remove="Resources\Images\Train\Player_3.png" />
 		<None Remove="Resources\Player_1.png" />
 		<None Remove="Resources\Raw\adventure1.mp3" />
-		<None Remove="Resources\Raw\AllLevels - Kopie.json" />
 		<None Remove="Resources\Raw\AllLevels.json" />
 		<None Remove="Resources\Raw\chill1.mp3" />
 		<None Remove="Resources\Raw\chill2.mp3" />
@@ -686,7 +685,6 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Graphics.Skia" Version="7.0.86" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.0.0" />
 	</ItemGroup>
 
@@ -701,12 +699,6 @@
 		<Compile Update="Setting.xaml.cs">
 			<DependentUpon>Setting.xaml</DependentUpon>
 		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-		<MauiAsset Update="Resources\Raw\AllLevels - Kopie.json">
-			<LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
-		</MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>

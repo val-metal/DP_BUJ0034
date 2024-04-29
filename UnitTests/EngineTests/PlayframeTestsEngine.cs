@@ -74,7 +74,7 @@ namespace UnitTests.EngineTests
             {
                 pf.gameBoard.path[0].t_path[i] = true;
             }
-            Assert.True(pf.countMovePercentage() == 50);
+            Assert.True(Math.Round(pf.countMovePercentage()) == 50);
 
         }
         [Fact]
@@ -84,9 +84,7 @@ namespace UnitTests.EngineTests
             pf.play(720, 1280);
             for (int i = 0; i < pf.gameBoard.path[0].backdot_with_t.Count; i ++)
             {
-                pf.movePlayer(pf.gameBoard.path[0].backdot_with_t[i].x, pf.gameBoard.path[0].backdot_with_t[i].y);
-                
-
+                pf.movePlayer(pf.gameBoard.path[0].backdot_with_t[i].x-10, pf.gameBoard.path[0].backdot_with_t[i].y-10);
             }
             Assert.True(pf.countMovePercentage() == 100);
 

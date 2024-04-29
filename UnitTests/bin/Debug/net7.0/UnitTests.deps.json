@@ -12,50 +12,49 @@
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
-          "Microsoft.Maui.Graphics": "7.0.86",
+          "Microsoft.Maui.Graphics": "7.0.101",
           "Microsoft.NET.Test.Sdk": "17.5.0",
           "Moq": "4.20.70",
           "coverlet.collector": "3.2.0",
           "xunit": "2.4.2",
           "xunit.runner.visualstudio": "2.4.5",
-          "runtimepack.Microsoft.Maui.Core.Runtime.any": "7.0.86",
-          "runtimepack.Microsoft.Maui.Controls.Runtime.any": "7.0.86",
-          "runtimepack.Microsoft.Maui.Essentials.Runtime.any": "7.0.86"
+          "runtimepack.Microsoft.Maui.Core.Runtime.any": "7.0.101",
+          "runtimepack.Microsoft.Maui.Controls.Runtime.any": "7.0.101",
+          "runtimepack.Microsoft.Maui.Essentials.Runtime.any": "7.0.101"
         },
         "runtime": {
           "UnitTests.dll": {}
         }
       },
-      "runtimepack.Microsoft.Maui.Core.Runtime.any/7.0.86": {
+      "runtimepack.Microsoft.Maui.Core.Runtime.any/7.0.101": {
         "runtime": {
           "Microsoft.Maui.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           }
         }
       },
-      "runtimepack.Microsoft.Maui.Controls.Runtime.any/7.0.86": {
+      "runtimepack.Microsoft.Maui.Controls.Runtime.any/7.0.101": {
         "runtime": {
           "Microsoft.Maui.Controls.Compatibility.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           },
           "Microsoft.Maui.Controls.Xaml.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           },
           "Microsoft.Maui.Controls.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           }
         }
       },
-      "runtimepack.Microsoft.Maui.Essentials.Runtime.any/7.0.86": {
+      "runtimepack.Microsoft.Maui.Essentials.Runtime.any/7.0.101": {
         "runtime": {
           "Microsoft.Maui.Essentials.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           }
         }
       },
@@ -184,23 +183,11 @@
           }
         }
       },
-      "Microsoft.Maui.Graphics/7.0.86": {
+      "Microsoft.Maui.Graphics/7.0.101": {
         "runtime": {
           "lib/net7.0/Microsoft.Maui.Graphics.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
-          }
-        }
-      },
-      "Microsoft.Maui.Graphics.Skia/7.0.86": {
-        "dependencies": {
-          "Microsoft.Maui.Graphics": "7.0.86",
-          "SkiaSharp": "2.88.2"
-        },
-        "runtime": {
-          "lib/net7.0/Microsoft.Maui.Graphics.Skia.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "7.0.70.16"
+            "fileVersion": "7.0.97.4"
           }
         }
       },
@@ -597,46 +584,6 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "SkiaSharp/2.88.2": {
-        "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.2",
-          "SkiaSharp.NativeAssets.macOS": "2.88.2"
-        },
-        "runtime": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "assemblyVersion": "2.88.0.0",
-            "fileVersion": "2.88.2.0"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.macOS/2.88.2": {
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "rid": "osx",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.Win32/2.88.2": {
-        "runtimeTargets": {
-          "runtimes/win-arm64/native/libSkiaSharp.dll": {
-            "rid": "win-arm64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1283,7 +1230,6 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.1",
           "Microsoft.Extensions.Logging.Debug": "7.0.0",
-          "Microsoft.Maui.Graphics.Skia": "7.0.86",
           "Plugin.Maui.Audio": "2.0.0"
         },
         "runtime": {
@@ -1298,17 +1244,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "runtimepack.Microsoft.Maui.Core.Runtime.any/7.0.86": {
+    "runtimepack.Microsoft.Maui.Core.Runtime.any/7.0.101": {
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
     },
-    "runtimepack.Microsoft.Maui.Controls.Runtime.any/7.0.86": {
+    "runtimepack.Microsoft.Maui.Controls.Runtime.any/7.0.101": {
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
     },
-    "runtimepack.Microsoft.Maui.Essentials.Runtime.any/7.0.86": {
+    "runtimepack.Microsoft.Maui.Essentials.Runtime.any/7.0.101": {
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
@@ -1404,19 +1350,12 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Maui.Graphics/7.0.86": {
+    "Microsoft.Maui.Graphics/7.0.101": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-v0VB9NhVrJarOzl7BHs2LaFQE+syKQ8o1Wbs+I4CGxmQO4cosmoFPUa0ogp1oaJe8Tazu504+P8JDy8fhDsSKQ==",
-      "path": "microsoft.maui.graphics/7.0.86",
-      "hashPath": "microsoft.maui.graphics.7.0.86.nupkg.sha512"
-    },
-    "Microsoft.Maui.Graphics.Skia/7.0.86": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6r1KnCnY4fA57tSCdSZyA0Q9bYckdp7w6TEhsyu/yJGkjDoXnsD4FzaUwOmZBFLCR9MOq+VnVCMHp4/ZY/sYNw==",
-      "path": "microsoft.maui.graphics.skia/7.0.86",
-      "hashPath": "microsoft.maui.graphics.skia.7.0.86.nupkg.sha512"
+      "sha512": "sha512-2+dHQpufctgN66Y+otNnBu9o+ODYlHvc2ufQ185wB2GqhklQeeko4xFsZSj3weDif4Idg0cgAY84qU3cQ0OcTw==",
+      "path": "microsoft.maui.graphics/7.0.101",
+      "hashPath": "microsoft.maui.graphics.7.0.101.nupkg.sha512"
     },
     "Microsoft.NET.Test.Sdk/17.5.0": {
       "type": "package",
@@ -1606,27 +1545,6 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
-    },
-    "SkiaSharp/2.88.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-B7ToGj6WO4K4iEtD1Lydrt5FARxMNbNjnlEa4M2TaKs3EM0cmZLrJjCaZvfOJL9gXkswJb5pTSJL9Qz9AHd+Jw==",
-      "path": "skiasharp/2.88.2",
-      "hashPath": "skiasharp.2.88.2.nupkg.sha512"
-    },
-    "SkiaSharp.NativeAssets.macOS/2.88.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mUtY9w9KP6LnhE3VgwE331ttOclx239MENCo1aPT27AJX6QkDpeeqSK83/Rggu3NYPkUwIdg6fU1MOBdv2as4A==",
-      "path": "skiasharp.nativeassets.macos/2.88.2",
-      "hashPath": "skiasharp.nativeassets.macos.2.88.2.nupkg.sha512"
-    },
-    "SkiaSharp.NativeAssets.Win32/2.88.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FgUHWpnfLcFiqAXuJEgcvUn5p7gHwkkfclWFU8LKfydUzwJyq+izWxL5OCVgbB8wYrX/TSx42uh8LwstEAURzw==",
-      "path": "skiasharp.nativeassets.win32/2.88.2",
-      "hashPath": "skiasharp.nativeassets.win32.2.88.2.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

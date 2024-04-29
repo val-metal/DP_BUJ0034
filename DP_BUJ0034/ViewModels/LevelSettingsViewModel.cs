@@ -102,7 +102,6 @@ namespace DP_BUJ0034.ViewModels
         {
              await Shell.Current.Navigation.PushAsync(new Board(type, NumPaths, Difficulty, name));
         }
-
         public LevelSettingsViewModel(string type, ImageButton path_1, ImageButton path_2, ImageButton path_3, ImageButton path_3_1, ImageButton difficulty_1, ImageButton difficulty_2, ImageButton difficulty_3,string name) {
             this.type = type;
             this.path_1 = path_1;

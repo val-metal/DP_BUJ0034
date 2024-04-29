@@ -146,8 +146,6 @@ namespace DP_BUJ0034.Game
             }
 
         }
-
-
         public Dots getPointAt(float t, Dots p1, Dots p2, Dots p3, Dots p4)
         {
             float x = (float)Math.Pow(1 - t, 3) * p1.x +

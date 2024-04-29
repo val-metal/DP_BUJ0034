@@ -27,8 +27,6 @@ namespace DP_BUJ0034.Game
 
             return MathF.Sqrt(deltaX * deltaX + deltaY * deltaY);
         }
-
-
         public static Dots Multiply(Dots dot, float scalar)
         {
             return new Dots(dot.x * scalar, dot.y * scalar);
